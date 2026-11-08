@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+   <fo:layout-master-set>
+      <fo:simple-page-master master-name="pagina"
+                             page-width="21cm"
+                             page-height="29.7cm"
+                             margin-top="2cm"
+                             margin-bottom="2cm"
+                             margin-left="2cm"
+                             margin-right="2cm">
+         <fo:region-body/>
+      </fo:simple-page-master>
+   </fo:layout-master-set>
+   <fo:page-sequence master-reference="pagina">
+      <fo:flow flow-name="xsl-region-body">
+         <fo:block font-size="18pt"
+                   font-family="Arial"
+                   font-weight="bold"
+                   text-align="center"
+                   space-after="20pt">
+                        INFORME DEL ALUMNO
+                    </fo:block>
+         <fo:block font-size="12pt" font-family="Arial" space-after="10pt"> Nombre: José</fo:block>
+         <fo:block font-size="12pt" font-family="Arial" space-after="10pt"> Curso: DAW</fo:block>
+         <fo:block font-size="12pt" font-family="Arial"> Módulo: Lenguajes de marcas</fo:block>
+         <fo:block space-after="15pt"/>
+         <fo:block font-size="12pt" font-family="Arial" space-after="10pt"> Nombre: María</fo:block>
+         <fo:block font-size="12pt" font-family="Arial" space-after="10pt"> Curso: DAW</fo:block>
+         <fo:block font-size="12pt" font-family="Arial"> Módulo: Lenguajes de marcas</fo:block>
+         <fo:block space-after="15pt"/>
+         <fo:block font-size="12pt" font-family="Arial" space-after="10pt"> Nombre: Pedro</fo:block>
+         <fo:block font-size="12pt" font-family="Arial" space-after="10pt"> Curso: DAW</fo:block>
+         <fo:block font-size="12pt" font-family="Arial"> Módulo: Lenguajes de marcas</fo:block>
+         <fo:block space-after="15pt"/>
+         <fo:block font-size="12pt" font-family="Arial" space-after="10pt"> Nombre: Ana</fo:block>
+         <fo:block font-size="12pt" font-family="Arial" space-after="10pt"> Curso: DAW</fo:block>
+         <fo:block font-size="12pt" font-family="Arial"> Módulo: Lenguajes de marcas</fo:block>
+         <fo:block space-after="15pt"/>
+      </fo:flow>
+   </fo:page-sequence>
+</fo:root>

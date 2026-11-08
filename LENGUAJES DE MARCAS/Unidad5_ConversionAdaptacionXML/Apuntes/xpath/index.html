@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Editorial</th>
+                    <th>Fecha de publicación</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="tablaLibros">
+            </tbody>
+        </table>
+        <button onclick="cargarXML()">Cargar XML</button>
+        <button onclick="vaciarTabla()">Vaciar tabla</button>
+        <script>
+        function XPath() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "libros.xml", false);
+            xhr.send();
+
+            var xmlDoc = xhr.responseXML;
+            var resultado = xmlDoc.evaluate("count(//libro)", xmlDoc, null, XPathResult.ANY_TYPE, null);
+            // Si quisiera ver la fecha de libros cuyo titulo empieza por la letra "E", sería: "//libro[starts-with(titulo, 'E')]/fecha_publicacion"
+            // Para obtener el numero total de nodos de libro usamos la función "count": "count(//libro)"
+            // Si quiero obtener el sumatorio de todos los nodos precio, sería: "sum(//libro/precio)"
+            var resultadoPrecios = xmlDoc.evaluate("sum(//libro/precio)", xmlDoc, null, XPathResult.ANY_TYPE, null);
+            console.log("Precio total: " + resultadoPrecios.numberValue/resultado.numberValue);
+            // Si queremos filtrar nodos que contiene una palabra concreta, por ejemplo "soledad", sería: "//libro[contains(titulo, 'soledad')]"
+            var resultadoFiltro = xmlDoc.evaluate("//libro[contains(titulo, 'Soledad')]", xmlDoc, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+            console.log("Libros que contienen la palabra 'Soledad' en el título: " + resultadoFiltro.snapshotLength);
+            // Desactivar para comprobar count: 
+            // var nodo = resultado.iterateNext();
+            //while (nodo) {
+            //    console.log(nodo.textContent);
+            //    nodo = resultado.iterateNext();
+            //}
+
+            console.log("Total de libros: " + resultado.numberValue);
+        }
+        XPath();
+        function cargarXML() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "libros.xml", false);
+            xhr.send();
+
+            if (xhr.status === 200) {
+                let xmlDoc = xhr.responseXML;
+                let libros = xmlDoc.getElementsByTagName("libro");
+                let tabla = document.getElementById("tablaLibros");
+                for (let i = 0; i < libros.length; i++) {
+                    let libro = libros[i];
+                    let titulo = libro.querySelector("titulo").textContent;
+                    let autor = libro.querySelector("autor").textContent;
+                    let Editorial = libro.querySelector("editorial").textContent;
+                    let fecha_publicacion = libro.querySelector("fecha_publicacion").textContent;
+                    let precio = libro.querySelector("precio").textContent;
+
+                    let fila = "<tr><td>" + titulo + "</td><td>" + autor + "</td><td>" + Editorial + "</td><td>" + fecha_publicacion + "</td><td>" + precio + "</td></tr>";
+                    tabla.innerHTML += fila;
+                }
+            }
+        }
+        function vaciarTabla() {
+            document.getElementById("tablaLibros").innerHTML = "";
+        }
+    </script>
+    </body>
+</html>

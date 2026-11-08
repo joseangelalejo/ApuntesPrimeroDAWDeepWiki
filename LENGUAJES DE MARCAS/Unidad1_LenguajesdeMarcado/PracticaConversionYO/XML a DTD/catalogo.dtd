@@ -1,0 +1,15 @@
+<!ELEMENT catalogo (pelicula+)>
+
+<!ELEMENT pelicula (titulo, director, anio, actores)>
+<!ATTLIST pelicula
+    codigo ID #REQUIRED
+    pais CDATA #IMPLIED>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT director (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+<!ELEMENT actores (actor+)>
+
+<!ELEMENT actor (#PCDATA)>
+<!ATTLIST actor
+    rol CDATA #IMPLIED>

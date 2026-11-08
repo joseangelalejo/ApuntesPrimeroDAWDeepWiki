@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Documento con ejercicios prácticos de manipulación de DOM - Atributos y estilos</h1>
+    <!-- EJERCICIO 1 – Añadir atributo dinámicamente usando setAttribute() -->
+    <h2>Ejercicio 1</h2>
+    <a id="miEnlace">Mi enlace</a>
+    <button onclick="activarEnlace()">Activar enlace</button>
+    <br>
+
+    <!-- EJERCICIO 2 – Eliminar atributo con removeAttribute() -->
+    <h2>Ejercicio 2</h2>
+    <img id="miImagen" width="300" src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/importar-imagen-r.png" alt="Imagen de ejemplo">
+    <br>
+    <button onclick="eliminarAtributos()">Eliminar atributos</button>
+    <br>
+
+    <!-- EJERCICIO 3 – Deshabilitar y habilitar Input -->
+    <h2>Ejercicio 3</h2>
+    <input type="text" id="miInput" placeholder="Campo genérico">
+    <button onclick="bloquearDesbloquear()">Bloquear/Desbloquear Input</button>
+    <br>
+
+    <!-- EJERCICIO 4 – Cambiar clase mediante atributo -->
+    <h2> Ejercicio 4</h2>
+    <p class="rojo">Párrafo genérico</p>
+    <button onclick="cambiarClase()">Cambiar clase del párrafo</button>
+    <br>
+
+    <!-- EJERCICIO 5 – Control de visibilidad con hidden -->
+    <h2> Ejercicio 5</h2>
+    <button onclick="ocultarMostrar()">Ocultar o mostrar texto</button>
+    <div id="divejercicio5">
+        Texto genérico para pruebas
+    </div>
+    <br>
+
+    <!-- EJERCICIO 6 – Cambiar clase usando className -->
+    <h2> Ejercicio 6</h2>
+    <button onclick="cambiarClase2()">Cambiar className de divs</button>
+    <div class="cajaNormal" style="background-color: lightcyan; height: 30px; border: 2px solid black;"></div>
+    <br>
+    <div class="cajaDestacada" style="background-color: lightcoral; height: 30px; border: 2px solid black;"></div>
+    <br>
+
+    <!-- EJERCICIO 7 – Modificar un estilo directamente con style -->
+    <h2> Ejercicio 7</h2>
+    <p id="parrafoEstilos">Parrafo para cambio de color y tamaño</p>
+    <button onclick="modificarColor()"> Modificar <b>color</b></button>
+    <button onclick="modificarTamano()"> Modificar <b>tamaño</b></button>
+    <br>
+
+    <!-- EJERCICIO 8 – Aplicar múltiples estilos desde JavaScript -->
+    <h2> Ejercicio 8</h2>
+    <p id="parrafoEj8">Párrafo genérico ejercicio 8</p>
+    <button onclick="modificarEstilos()">Botón para cambiar estilos del párrafo</button>
+    <button onclick="resetearEstilos()"> Botón para resetear estilso del párrafo</button>
+    <script>
+        /* EJERCICIO 1 – Añadir atributo dinámicamente usando setAttribute() */
+        function activarEnlace() {
+            let enlace = document.getElementById("miEnlace");
+            if (enlace.hasAttribute("href")) {
+                enlace.setAttribute("href", "https://www.youtube.com")
+            } else {
+                enlace.setAttribute("href", "https://www.google.com")
+            }
+        }
+        
+        /* EJERCICIO 2 – Eliminar atributo con removeAttribute() */
+        function eliminarAtributos() {
+            let imagen = document.getElementById("miImagen");
+            imagen.removeAttribute("width"); /* Para eliminar el atributo width */
+        }
+        
+        /* EJERCICIO 3 – Deshabilitar y habilitar Input */
+        function bloquearDesbloquear() {
+            let toggleInput = document.getElementById("miInput");
+            toggleInput.toggleAttribute("disabled"); /* Para activar o desactivar el Input*/
+        }
+        
+        /* EJERCICIO 4 – Cambiar clase mediante atributo */
+        function cambiarClase() {
+            let parrafo = document.querySelector('p');
+            if (parrafo.className === "rojo") {
+                parrafo.setAttribute("class", "azul")
+            } else {
+                parrafo.setAttribute("class", "rojo")
+            }
+        }
+        
+        /* EJERCICIO 5 – Control de visibilidad con hidden */
+        function ocultarMostrar() {
+            let visible = document.getElementById("divejercicio5");
+            visible.toggleAttribute("hidden")
+        }
+        
+        /* EJERCICIO 6 – Cambiar clase usando className */
+        function cambiarClase2() {
+            let div = document.querySelector('.cajaNormal, .cajaDestacada');
+            if (div.className === "cajaNormal") {
+                div.className = "cajaDestacada";
+            } else {
+                div.className = "cajaNormal";
+            }
+        }
+
+        /* EJERCICIO 7 – Modificar un estilo directamente con style */
+        function modificarColor() {
+            let parrafo2 = document.getElementById("parrafoEstilos");
+            if (parrafo2.style.color === "red") {
+                parrafo2.style.color = "blue";
+            } else if (parrafo2.style.color === "blue") {
+                parrafo2.style.color = "red";
+            } else {
+                parrafo2.style.color = "red";
+            }
+        }
+        function modificarTamano() {
+            let parrafo2 = document.getElementById("parrafoEstilos");
+            if (parrafo2.style.fontSize === "25px") {
+                parrafo2.style.fontSize = "18px";
+            } else {
+                parrafo2.style.fontSize = "25px";
+            }
+        }
+
+        /* EJERCICIO 8 – Aplicar múltiples estilos desde JavaScript */
+
+        function modificarEstilos() {
+            let parrafo3 = document.getElementById("parrafoEj8");
+            parrafo3.style.color = "white";
+            parrafo3.style.backgroundColor = "black";
+            parrafo3.style.fontSize = "20px";
+            parrafo3.style.padding = "10px";
+        }
+        /*Función para resetear estilos*/
+        function resetearEstilos() {
+            let parrafo3 = document.getElementById("parrafoEj8");
+            parrafo3.style.color = "";
+            parrafo3.style.backgroundColor = "";
+            parrafo3.style.fontSize = "";
+            parrafo3.style.padding = "";
+        }
+    </script>
+</body>
+</html>

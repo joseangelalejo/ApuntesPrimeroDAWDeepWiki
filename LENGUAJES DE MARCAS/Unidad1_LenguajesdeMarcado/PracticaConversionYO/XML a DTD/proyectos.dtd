@@ -1,0 +1,26 @@
+<!ELEMENT proyectos (proyecto+)>
+
+<!ELEMENT proyecto (nombre, descripcion, tareas)>
+<!ATTLIST proyecto
+    id ID #REQUIRED
+    estado (pendiente | en_progreso | finalizado) #REQUIRED>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+
+<!ELEMENT tareas (tarea+)>
+<!ELEMENT tarea (titulo, asignadoA)>
+<!ATTLIST tarea
+    id ID #REQUIRED
+    prioridad (alta | media | baja) #IMPLIED>
+
+<!ELEMENT titulo (#PCDATA)>
+
+<!ELEMENT asignadoA EMPTY>
+<!ATTLIST asignadoA
+    refEmpleado IDREF #REQUIRED>
+
+<!ELEMENT empleados (empleado+)>
+<!ELEMENT empleado (nombre, email)>
+<!ATTLIST empleado
+    id ID #REQUIRED>

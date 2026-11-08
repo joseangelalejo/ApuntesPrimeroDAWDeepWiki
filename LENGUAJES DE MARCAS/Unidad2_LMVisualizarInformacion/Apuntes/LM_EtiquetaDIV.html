@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiqueta DIV</title>
+</head>
+<body>
+    <div style="border: 3px solid red; width: 90%; height: 90%; padding: 4px; background-color: lightblue; margin: 10px;">
+
+        <div style="border: 5px solid lightcoral; background-color: lightsalmon; display: flex; margin: 5px;padding: 10px;">
+            <div style="border: 3px solid black; width: 33.3%; height: 300px; flex-direction: column; margin: 10px; flex: 1; padding: 4px; background-color: lightgray;">
+                <p> Esto es un párrafo dentro de un div.</p>
+                <p> Esto es otro párrafo</p>
+            </div>
+
+            <div style="border: 3px solid blue; width: 33.3%; height: 300px; flex-direction: column; margin: 10px; padding: 4px; flex: 1; background-color: lightgray;">
+                <p> Siempre que creemos un div fuera de otro, por defecto se mostrará inmediatamente debajo.</p>
+                <p> Parrafo número dos</p>
+            </div>
+        </div>
+
+        <div style="border: 5px solid darkgoldenrod; margin: 5px;padding: 10px; background-color:beige">
+            <div style="border: 3px solid green; width: 50%; height: 100%; flex-direction: column; margin: 10px; padding: 4px; flex: 1; background-color: lightgray;">
+                <p> Podemos cambiar la alineación de un div conteniéndolo dentro de un div padre, y utilizamos float para indicar donde queremos que se muestre.</p>
+                <p> Parrafo número dos</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="alumno.xsl"?>
+<alumnos>
+    <alumno>
+        <nombre>José</nombre>
+        <curso>DAW</curso>
+        <modulo>Lenguajes de marcas</modulo>
+    </alumno>
+    <alumno>
+        <nombre>María</nombre>
+        <curso>DAW</curso>
+        <modulo>Lenguajes de marcas</modulo>
+    </alumno>
+    <alumno>
+        <nombre>Pedro</nombre>
+        <curso>DAW</curso>
+        <modulo>Lenguajes de marcas</modulo>
+    </alumno>
+    <alumno>
+        <nombre>Ana</nombre>
+        <curso>DAW</curso>
+        <modulo>Lenguajes de marcas</modulo>
+    </alumno>
+</alumnos>

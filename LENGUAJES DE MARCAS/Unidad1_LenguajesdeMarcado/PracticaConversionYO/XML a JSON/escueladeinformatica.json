@@ -1,0 +1,41 @@
+{
+    "nombre": "Academia Tech",
+    "ubicacion": {
+        "pais": "España",
+        "ciudad": "Barcelona"
+    },
+    "cursos": [
+        {
+            "titulo": "Programación en Java",
+            "nivel": "Intermedio",
+            "alumnos": [
+                {
+                    "nombre": "Ana",
+                    "edad": 22,
+                    "activo": true
+                },
+                {
+                    "nombre": "Luis",
+                    "edad": 25,
+                    "activo": false
+                }
+            ]
+        },
+        {
+            "titulo": "Desarrollo Web",
+            "nivel": "Principiante",
+            "alumnos": [ 
+                {
+                    "nombre": "Clara",
+                    "edad": 20,
+                    "activo": true
+                },
+                {
+                    "nombre": "Mario",
+                    "edad": 23,
+                    "activo": true
+                }
+            ]
+        }
+    ]
+}

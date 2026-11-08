@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 28_11_25</title>
+    <style>
+        /* Selectores de atributos */
+        a[href="https://www.google.com"][href="https://github.com"] {   /* Selector de atributos. Se aplica a las a con atributo href */
+            font-size: 18px;
+            color: lightblue
+        }
+        a[href] {
+            font-size: 16px;
+            color: orange;
+            font-family: 'David Libre', serif;
+            font-weight: bold;
+        }
+        a[href$="es"] {   /* Selector de atributos que terminan en "es" utilizando expresiones regulares */
+            font-size: 14px;
+            color: purple;
+            font-family: 'Arial', sans-serif;
+            font-weight: normal;
+        }
+        a[href*="minecraft"] {   /* Selector de atributos que contienen "minecraft" utilizando expresiones regulares */
+            font-size: 12px;
+            color: green;
+            font-family: Miracode, monospace;
+        }
+
+        /* Cuando aplicamos estilo a una etiqueta input, debemos indicar el TIPO de input*/
+        input[type="button"] {
+            background-color: rgb(207, 95, 95);
+            font-weight: bold;
+        }
+        /* Pseudo-clases */
+        input[id="mine"] {
+            color: rgba(205, 103, 66, 0.679);
+            background-color: lightgreen;
+            font-weight: bold;
+            font-family: Miracode, monospace;
+        }
+        input[id="mine"]:hover {
+            background-color: brown;
+            font-weight: bold;
+            background-color: rgba(205, 103, 66, 0.679);
+            color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <!-- Aplicando selectores de atributos-->
+    <a href="https://www.google.com">Google</a>
+    <a href="https://github.com">GitHub</a>
+    <a href="https://facebook.com">Facebook</a>
+    <a href="www.itp.es">Instituto Tecnológico Pablo de la Torre</a>
+    <a href="https://www.minecraft.net/es-es/">Minecraft</a>
+    <hr>
+    <!-- Aplicando atributo a un input -->
+    <form>
+        <input type="button" value="Pincha aquí">
+    </form>
+    <!-- Aplicando estilso mediante pseudoclases-->
+    <form>
+        <input id="mine" type="button" value="Web Minecraft" href="https://www.minecraft.net/es-es/">
+    </form>
+</body>
+</html>

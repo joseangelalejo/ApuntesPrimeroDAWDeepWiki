@@ -1,0 +1,217 @@
+<videojuegos>
+  <videojuego>
+    <titulo>The Legend of Zelda: Breath of the Wild</titulo>
+    <plataforma>Switch</plataforma>
+    <genero>Aventura</genero>
+    <anio>2017</anio>
+    <precio>59.99</precio>
+    <protagonistas>
+      <personaje>Link</personaje>
+      <personaje>Zelda</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>God of War</titulo>
+    <plataforma>PS4</plataforma>
+    <genero>Acción</genero>
+    <anio>2018</anio>
+    <precio>49.99</precio>
+    <protagonistas>
+      <personaje>Kratos</personaje>
+      <personaje>Atreus</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Minecraft</titulo>
+    <plataforma>Multiplataforma</plataforma>
+    <genero>Sandbox</genero>
+    <anio>2011</anio>
+    <precio>26.95</precio>
+    <protagonistas>
+      <personaje>Steve</personaje>
+      <personaje>Alex</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Hollow Knight</titulo>
+    <plataforma>PC</plataforma>
+    <genero>Metroidvania</genero>
+    <anio>2017</anio>
+    <precio>14.99</precio>
+    <protagonistas>
+      <personaje>El Caballero</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Red Dead Redemption 2</titulo>
+    <plataforma>PS4</plataforma>
+    <genero>Aventura</genero>
+    <anio>2018</anio>
+    <precio>39.99</precio>
+    <protagonistas>
+      <personaje>Arthur Morgan</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Among Us</titulo>
+    <plataforma>Multiplataforma</plataforma>
+    <genero>Social</genero>
+    <anio>2018</anio>
+    <precio>4.99</precio>
+    <protagonistas>
+      <personaje>Crewmates</personaje>
+      <personaje>Impostors</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Cyberpunk 2077</titulo>
+    <plataforma>PC</plataforma>
+    <genero>RPG</genero>
+    <anio>2020</anio>
+    <precio>59.99</precio>
+    <protagonistas>
+      <personaje>V</personaje>
+      <personaje>Johnny Silverhand</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Super Mario Odyssey</titulo>
+    <plataforma>Switch</plataforma>
+    <genero>Plataformas</genero>
+    <anio>2017</anio>
+    <precio>59.99</precio>
+    <protagonistas>
+      <personaje>Mario</personaje>
+      <personaje>Cappy</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Final Fantasy VII Remake</titulo>
+    <plataforma>PS4</plataforma>
+    <genero>RPG</genero>
+    <anio>2020</anio>
+    <precio>59.99</precio>
+    <protagonistas>
+      <personaje>Cloud</personaje>
+      <personaje>Tifa</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Animal Crossing: New Horizons</titulo>
+    <plataforma>Switch</plataforma>
+    <genero>Simulación</genero>
+    <anio>2020</anio>
+    <precio>49.99</precio>
+    <protagonistas>
+      <personaje>Isabelle</personaje>
+      <personaje>Tom Nook</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>FIFA 23</titulo>
+    <plataforma>Multiplataforma</plataforma>
+    <genero>Deportes</genero>
+    <anio>2022</anio>
+    <precio>69.99</precio>
+    <protagonistas>
+      <personaje>Kylian Mbappé</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Call of Duty: Modern Warfare II</titulo>
+    <plataforma>PC</plataforma>
+    <genero>Shooter</genero>
+    <anio>2022</anio>
+    <precio>69.99</precio>
+    <protagonistas>
+      <personaje>Soap</personaje>
+      <personaje>Ghost</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Stardew Valley</titulo>
+    <plataforma>Multiplataforma</plataforma>
+    <genero>Simulación</genero>
+    <anio>2016</anio>
+    <precio>13.99</precio>
+    <protagonistas>
+      <personaje>Granjeros</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Celeste</titulo>
+    <plataforma>PC</plataforma>
+    <genero>Plataformas</genero>
+    <anio>2018</anio>
+    <precio>19.99</precio>
+    <protagonistas>
+      <personaje>Madeline</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Genshin Impact</titulo>
+    <plataforma>PC</plataforma>
+    <genero>RPG</genero>
+    <anio>2020</anio>
+    <precio>0.00</precio>
+    <protagonistas>
+      <personaje>Lumine</personaje>
+      <personaje>Aether</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Portal 2</titulo>
+    <plataforma>PC</plataforma>
+    <genero>Puzles</genero>
+    <anio>2011</anio>
+    <precio>9.99</precio>
+    <protagonistas>
+      <personaje>Chell</personaje>
+      <personaje>GLaDOS</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>League of Legends</titulo>
+    <plataforma>PC</plataforma>
+    <genero>MOBA</genero>
+    <anio>2009</anio>
+    <precio>0.00</precio>
+    <protagonistas>
+      <personaje>Jinx</personaje>
+      <personaje>Yasuo</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>The Witcher 3: Wild Hunt</titulo>
+    <plataforma>PC</plataforma>
+    <genero>RPG</genero>
+    <anio>2015</anio>
+    <precio>39.99</precio>
+    <protagonistas>
+      <personaje>Geralt</personaje>
+      <personaje>Ciri</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>Overwatch</titulo>
+    <plataforma>Multiplataforma</plataforma>
+    <genero>Shooter</genero>
+    <anio>2016</anio>
+    <precio>39.99</precio>
+    <protagonistas>
+      <personaje>Tracer</personaje>
+      <personaje>Reinhardt</personaje>
+    </protagonistas>
+  </videojuego>
+  <videojuego>
+    <titulo>The Last of Us Part II</titulo>
+    <plataforma>PS4</plataforma>
+    <genero>Aventura</genero>
+    <anio>2020</anio>
+    <precio>59.99</precio>
+    <protagonistas>
+      <personaje>Ellie</personaje>
+      <personaje>Joel</personaje>
+    </protagonistas>
+  </videojuego>
+</videojuegos>

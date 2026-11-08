@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.contenedor-cv {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.columna-izquierda {
+    flex: 1.2;
+    background-color: #e8f4f8;
+    padding: 20px;
+}
+
+.columna-derecha {
+    flex: 1.8;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.foto {
+    text-align: center;
+}
+
+.foto img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #0284c7;
+}
+
+.nombre h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #0284c7;
+}
+
+.nombre h2 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #666;
+}
+
+.contacto p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.item-contacto {
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #0284c7;
+    margin: 5px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.item-contacto:hover {
+    background-color: #e8f4f8;
+}
+
+.icono {
+    color: #0284c7;
+    font-weight: bold;
+    font-family: 'Material Icons';
+}
+
+.texto {
+    font-weight: bold;
+}
+
+h2 {
+    color: #0284c7;
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.perfil p {
+    line-height: 1.6;
+}
+
+.item-experiencia, .item-educacion, .item-proyecto, .item-formacion {
+    margin-bottom: 20px;
+}
+
+
+
+.item-experiencia h3, .item-educacion h3, .item-proyecto h3, .item-formacion h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #0284c7;
+}
+
+.item-experiencia p, .item-educacion p, .item-proyecto p, .item-formacion p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+}
+
+.perfiles a {
+    color: #0284c7;
+    text-decoration: none;
+}
+
+.perfiles a:hover {
+    text-decoration: underline;
+}
+
+.grupo-habilidad h3 {
+    font-size: 14px;
+    color: #0284c7;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.item-habilidad {
+    display: inline-block;
+    margin: 5px 15px 5px 0;
+    font-size: 12px;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.idiomas {
+    text-align: left;
+}
+
+.idiomas h2 {
+    margin-bottom: 5px;
+}
+
+.item-idioma {
+    display: inline-block;
+    margin: 1px 10px;
+    font-size: 12px;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.barrita-progreso {
+    display: flex;
+    gap: 2px;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.rectangulo-progreso {
+    width: 20px;
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 2px;
+}
+
+.rectangulo-progreso.lleno {
+    background-color: #0284c7;
+}
+
+.perfiles {
+    text-align: left;
+}
+
+.perfiles h2 {
+    margin-bottom: 5px;
+}
+
+.item-perfil {
+    display: inline-block;
+    margin: 1px 20px;
+    font-size: 16px;
+}
+
+.item-perfil a {
+    text-decoration: none;
+    color: #0284c7;
+    background-color: #f9f9f9;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #0284c7;
+    display: inline-block;
+}
+
+.item-perfil a:hover {
+    background-color: #e8f4f8;
+}
+
+.item-perfil a img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Clases específicas requeridas por la premisa */
+.titulo-principal {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0284c7;
+    margin: 0;
+}
+
+.subtitulo {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+    margin: 5px 0;
+}
+
+.label-form {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.btn-enviar {
+    background-color: #0284c7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #026bb6;
+}

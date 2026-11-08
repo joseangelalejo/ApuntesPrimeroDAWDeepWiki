@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 13 José Ángel Alejo</title>
+    <!-- Enunciado/Premisa de profesor
+        Realizas los siguientes ejercicio mostrando el resultado en el documento web con  document.getElementById().
+        EJERCICIO 1. Introducir en un Text (Formulario) un valor y mostrar si es positivo o negativo. (if-else)
+        EJERCICIO 2. Introducir en un Text (Formulario) un número, y que muestre la pantalla de multiplicar de dicho número. (for)
+        EJERCICIO 3. Introducir en un Text (Formulario) un nombre, y al pulsar añadir (botón) que lo añada en el documento mostrándolo como una lista.
+        EJERCICIO 4. Crear un array e imprimir por pantalla los nombres.
+        EJERCICIO 4. Botón con color aleatorio.
+    -->
+    <style>
+        input, button, div {
+            padding: 2px;
+        }
+        #resultado1, #numero1 {
+            max-width: fit-content;
+            max-height: fit-content;
+        }
+        /* No funciona porque hay que agregarle un eventlistener(?) al JavaScript
+        #numero1:hover {
+            background-color: white;
+        }
+        */
+    </style>
+</head>
+<body>
+    <h1>Actividades JavaScript - Condicionales, Bucles, Arrays y DOM</h1>
+    <!-- EJERCICIO 1: Positivo o Negativo -->
+    <section>
+        <h2>Ejercicio 1: ¿Positivo o Negativo?</h2>
+        <input type="text" id="numero1" placeholder="Introduce un número">
+        <button id="btnVerificar" onclick="positivoOnegativo()">Verificar</button>
+        <div id="resultado1" style="max-width: fit-content;"></div>
+    </section>
+    <hr>
+    <!-- EJERCICIO 2: Tabla de Multiplicar -->
+    <section>
+        <h2>Ejercicio 2: Tabla de Multiplicar</h2>
+        <input type="text" id="numero2" placeholder="Introduce un número">
+        <button id="btnTabla" onclick="tablaMultiplicar()">Mostrar Tabla</button>
+        <button id="btnBorrarTabla" onclick="camposResultado2()">Borrar Tabla</button>
+        <div id="resultado2">Tabla de Multiplicar del </div>
+    </section>
+    <hr>
+    <!-- EJERCICIO 3: Lista de Nombres -->
+    <section>
+        <h2>Ejercicio 3: Agregar Nombres a la Lista</h2>
+        <input type="text" id="nombre" placeholder="Introduce un nombre">
+        <button id="btnAnadir" onclick="nombresLista()">Añadir</button>
+        <button id="btnBorrarLista" onclick="borrarLista()">Borrar Lista</button>
+        <ul id="listanombres"></ul>
+    </section>
+    <hr>
+    <!-- EJERCICIO 4: Imprimir Array de Nombres -->
+    <section>
+        <h2>Ejercicio 4: Array de Nombres</h2>
+        <button id="btnMostrarArray" onclick="mostrarArray()">Mostrar Array</button>
+        <div id="resultado4"></div>
+    </section>
+    <hr>
+    <!-- EJERCICIO 5: Botón con Color Aleatorio -->
+    <section>
+        <h2>Ejercicio 5: Botón con Color Aleatorio</h2>
+        <button id="btnColor" onclick="colorRandom()">Cambiar Color</button>
+    </section>
+
+    <script>
+        // Ejercicio 1
+        function positivoOnegativo () {
+            var num1 = document.getElementById('numero1').value;
+            // Los alert() se utilizan para pruebas durante el desarrollo, realmente es innecesario y podría borrarse sin ningún problema.
+            if (num1 == ""){
+                alert("El campo está vacio");
+                document.getElementById('resultado1').innerText = "El campo está vacio";
+                document.getElementById('numero1').style.backgroundColor = `rgb(${214}, ${126}, ${44})`;
+                document.getElementById('resultado1').style.backgroundColor = `gray`;
+            } else if(num1 >= 0) {
+                alert("El número " + num1 + " es positivo.");
+                document.getElementById('resultado1').innerText = "El número " + num1 + " es positivo.";
+                document.getElementById('numero1').style.backgroundColor = `rgb(${157}, ${188}, ${64})`;
+                document.getElementById('resultado1').style.backgroundColor = `gray`;
+            } else if (num1 < 0) {
+                alert("El número " + num1 + " es negativo.");
+                document.getElementById('resultado1').innerText = "El número " + num1 + " es negativo.";
+                document.getElementById('numero1').style.backgroundColor = `rgb(${193}, ${90}, ${99})`;
+                document.getElementById('resultado1').style.backgroundColor = `gray`;
+            }
+        }
+        // Ejercicio 2
+        function tablaMultiplicar() {
+            var num2 = document.getElementById(`numero2`).value;
+            document.getElementById(`resultado2`).innerHTML = "Tabla de Multiplicar del " + num2;
+            for (let i = 0; i <= 10; i++) {
+                document.getElementById(`resultado2`).innerHTML += "<p>" + num2 + " x " + i + " = " + (num2*i) + "</p>";
+            }
+        }
+        function camposResultado2() {
+            document.getElementById("resultado2").innerHTML = "Tabla de Multiplicar del ";
+        }
+        // Ejercicio 3
+        function nombresLista() {
+            var nombre = document.getElementById('nombre').value;
+            if (nombre !== "") {
+                document.getElementById('listanombres').innerHTML += '<li>' + nombre + '</li>';
+            } else {
+                alert("El campo está vacio");
+            }
+        }
+        function borrarLista() {
+            document.getElementById('listanombres').innerHTML = "";
+        }
+        // Ejercicio 4
+        function mostrarArray() {
+            var nombres = ['Juan', 'María', 'Pedro', 'Ana', 'Carlos'];
+            var resultado = '';
+            for (let i = 0; i < nombres.length; i++) {
+                resultado += '<p>' + nombres[i] + '</p>';
+            }
+            document.getElementById('resultado4').innerHTML = resultado;
+        }
+        // Ejercicio 5
+        function colorRandom() {
+            let r = Math.floor(Math.random() *  256);
+            let g = Math.floor(Math.random() *  256);
+            let b = Math.floor(Math.random() *  256);
+            document.getElementById('btnColor').style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+        /* Código propuesto por autocompletado para ejercicio 5:
+        document.getElementById('btnColor').addEventListener('click', function() {
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            this.style.backgroundColor = randomColor;
+        });
+        */ 
+    </script>
+</body>
+</html>

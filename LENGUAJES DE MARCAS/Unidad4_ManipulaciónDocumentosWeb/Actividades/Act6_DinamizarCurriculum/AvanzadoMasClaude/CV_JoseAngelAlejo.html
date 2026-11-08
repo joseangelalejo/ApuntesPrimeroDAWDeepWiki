@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CV - José Ángel Alejo Sillero</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Merriweather:wght@400;700&family=Nunito:wght@400;700&family=Raleway:wght@400;700&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+        <style>
+        /* ===========================
+           VARIABLES Y RESET
+        =========================== */
+        :root {
+            --accent: #0284c7;
+            --bg-cv: #f4f4f4;
+            --col-left-bg: #e8f4f8;
+            --col-right-bg: #ffffff;
+            --font-titles: 'Poppins', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+            --size-titles: 16px;
+            --size-body: 14px;
+            --color-titles: #0284c7;
+            --color-body: #333333;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--font-body);
+            font-size: var(--size-body);
+            color: var(--color-body);
+            background-color: var(--bg-cv);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* ===========================
+           BOTÓN FLOTANTE TEMA
+        =========================== */
+        #btn-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 18px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+        }
+        #btn-panel:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        #btn-panel .material-icons { font-size: 18px; }
+
+        /* ===========================
+           PANEL LATERAL
+        =========================== */
+        #panel {
+            position: fixed;
+            top: 0;
+            right: -380px;
+            width: 360px;
+            height: 100vh;
+            background: #1e293b;
+            color: #e2e8f0;
+            z-index: 999;
+            overflow-y: auto;
+            transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+            padding: 0 0 40px 0;
+        }
+        #panel.abierto { right: 0; }
+
+        .panel-header {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .panel-header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #7dd3fc;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        #btn-cerrar {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #94a3b8;
+            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+        }
+        #btn-cerrar:hover { background: rgba(255,255,255,0.2); color: #fff; }
+        #btn-cerrar .material-icons { font-size: 18px; }
+
+        .panel-seccion {
+            padding: 20px 24px 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .panel-seccion:last-child { border-bottom: none; }
+
+        .panel-seccion-titulo {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #7dd3fc;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .panel-seccion-titulo .material-icons { font-size: 14px; }
+
+        .control-grupo {
+            margin-bottom: 14px;
+        }
+        .control-grupo label {
+            display: block;
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        /* Selects */
+        .panel-select {
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px;
+            color: #e2e8f0;
+            font-size: 13px;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%2394a3b8'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            transition: border-color 0.2s;
+        }
+        .panel-select:focus { border-color: #7dd3fc; }
+        .panel-select option { background: #1e293b; }
+
+        /* Sliders */
+        .panel-range {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 4px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+        }
+        .panel-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #7dd3fc;
+            cursor: pointer;
+            box-shadow: 0 0 0 3px rgba(125,211,252,0.2);
+        }
+        .range-valor {
+            font-size: 11px;
+            color: #7dd3fc;
+            text-align: right;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        /* Color pickers */
+        .color-fila {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .panel-color {
+            width: 40px;
+            height: 36px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 2px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            flex-shrink: 0;
+        }
+        .color-hex {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px;
+            padding: 6px 10px;
+            color: #e2e8f0;
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            width: 100%;
+            outline: none;
+        }
+        .color-hex:focus { border-color: #7dd3fc; }
+
+        /* Toggle modo oscuro */
+        .toggle-fila {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+        }
+        .toggle-label {
+            font-size: 13px;
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+        .toggle {
+            position: relative;
+            width: 48px;
+            height: 26px;
+        }
+        .toggle input { opacity: 0; width: 0; height: 0; }
+        .toggle-slider {
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.15);
+            border-radius: 26px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .toggle-slider::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #94a3b8;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .toggle input:checked + .toggle-slider { background: rgba(125,211,252,0.3); }
+        .toggle input:checked + .toggle-slider::before {
+            transform: translateX(22px);
+            background: #7dd3fc;
+        }
+
+        /* Botón reset */
+        #btn-reset {
+            width: calc(100% - 48px);
+            margin: 16px 24px 0;
+            padding: 10px;
+            background: rgba(239,68,68,0.15);
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 8px;
+            color: #fca5a5;
+            font-size: 13px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        #btn-reset:hover { background: rgba(239,68,68,0.25); }
+        #btn-reset .material-icons { font-size: 16px; }
+
+        /* ===========================
+           CV LAYOUT
+        =========================== */
+        .contenedor-cv {
+            display: flex;
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 30px rgba(0,0,0,0.12);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .columna-izquierda {
+            flex: 1.2;
+            background-color: var(--col-left-bg);
+            padding: 30px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .columna-derecha {
+            flex: 1.8;
+            background-color: var(--col-right-bg);
+            padding: 30px 28px;
+            transition: background-color 0.3s;
+        }
+
+        /* Foto */
+        .foto { text-align: center; margin-bottom: 16px; }
+        .foto img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            transition: border-color 0.3s;
+            object-fit: cover;
+        }
+
+        /* Nombre */
+        .nombre { text-align: center; margin-bottom: 20px; }
+        .nombre h1 {
+            font-family: var(--font-titles);
+            font-size: calc(var(--size-titles) + 6px);
+            font-weight: 700;
+            color: var(--accent);
+            transition: font-family 0.3s, font-size 0.3s, color 0.3s;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+        .nombre h2 {
+            font-family: var(--font-body);
+            font-size: calc(var(--size-body) + 1px);
+            font-weight: 400;
+            color: #666;
+            transition: font-family 0.3s, font-size 0.3s, color 0.3s;
+        }
+
+        /* Contacto */
+        .item-contacto {
+            background-color: rgba(255,255,255,0.7);
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--accent);
+            margin: 5px 0;
+            font-size: calc(var(--size-body) - 1px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--color-body);
+            transition: background 0.2s, border-color 0.3s, color 0.3s, font-size 0.3s;
+        }
+        a.item-contacto:hover { background-color: rgba(2,132,199,0.1); }
+        .icono { color: var(--accent); font-size: 18px; transition: color 0.3s; }
+
+        /* Secciones */
+        h2.cv-titulo {
+            font-family: var(--font-titles);
+            font-size: var(--size-titles);
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+            margin: 24px 0 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            transition: font-family 0.3s, font-size 0.3s, color 0.3s, border-color 0.3s;
+        }
+        h2.cv-titulo:first-child { margin-top: 0; }
+
+        /* Perfiles */
+        .perfiles { margin-bottom: 4px; }
+        .item-perfil {
+            display: inline-block;
+            margin: 4px 6px 4px 0;
+        }
+        .item-perfil a {
+            text-decoration: none;
+            color: var(--accent);
+            background-color: rgba(255,255,255,0.7);
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s, color 0.3s, border-color 0.3s;
+        }
+        .item-perfil a:hover { background-color: rgba(2,132,199,0.1); }
+        .item-perfil a img { vertical-align: middle; }
+
+        /* Idiomas */
+        .item-idioma {
+            display: inline-block;
+            margin: 4px 8px 4px 0;
+            font-size: 12px;
+            background-color: rgba(255,255,255,0.7);
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+        .barrita-progreso {
+            display: flex;
+            gap: 3px;
+            margin-top: 5px;
+        }
+        .rectangulo-progreso {
+            width: 22px;
+            height: 5px;
+            background-color: #ddd;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        .rectangulo-progreso.lleno { background-color: var(--accent); }
+
+        /* Habilidades */
+        .grupo-habilidad h3 {
+            font-family: var(--font-titles);
+            font-size: calc(var(--size-titles) - 2px);
+            color: var(--accent);
+            margin: 14px 0 8px;
+            transition: font-family 0.3s, font-size 0.3s, color 0.3s;
+        }
+        .item-habilidad {
+            display: inline-block;
+            margin: 4px 6px 4px 0;
+            font-size: 11px;
+            background-color: rgba(255,255,255,0.7);
+            padding: 4px 9px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Columna derecha */
+        .perfil p,
+        .item-experiencia ul li,
+        .item-proyecto > p:not(.cv-meta),
+        .item-educacion p,
+        .item-formacion p {
+            font-family: var(--font-body);
+            font-size: var(--size-body);
+            color: var(--color-body);
+            line-height: 1.65;
+            transition: font-family 0.3s, font-size 0.3s, color 0.3s;
+        }
+
+        .item-experiencia, .item-educacion, .item-proyecto, .item-formacion {
+            margin-bottom: 16px;
+        }
+        .item-experiencia h3, .item-educacion h3, .item-proyecto h3, .item-formacion h3 {
+            font-family: var(--font-titles);
+            font-size: calc(var(--size-titles) + 1px);
+            color: var(--accent);
+            margin-bottom: 2px;
+            transition: font-family 0.3s, font-size 0.3s, color 0.3s;
+        }
+        .cv-meta {
+            font-family: var(--font-body);
+            font-size: calc(var(--size-body) - 1px);
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 4px;
+            transition: font-family 0.3s, font-size 0.3s;
+        }
+        .item-experiencia ul {
+            list-style: none;
+            padding: 0;
+        }
+        .item-experiencia ul li::before {
+            content: '▸ ';
+            color: var(--accent);
+            font-size: 10px;
+        }
+        .item-proyecto h3 a { color: var(--accent); text-decoration: none; transition: color 0.3s; }
+        .item-proyecto h3 a:hover { text-decoration: underline; }
+
+        /* Overlay al abrir panel */
+        #overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 998;
+            backdrop-filter: blur(2px);
+        }
+        #overlay.visible { display: block; }
+
+        /* Modo oscuro del CV */
+        body.modo-oscuro { background-color: #0f172a; }
+        body.modo-oscuro .contenedor-cv { box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+        body.modo-oscuro .columna-izquierda { background-color: #1e293b !important; }
+        body.modo-oscuro .columna-derecha { background-color: #162032 !important; }
+        body.modo-oscuro .nombre h2 { color: #94a3b8; }
+        body.modo-oscuro .item-contacto { background-color: rgba(255,255,255,0.05); color: #e2e8f0; }
+        body.modo-oscuro .item-idioma { background-color: rgba(255,255,255,0.05); border-color: #334155; color: #e2e8f0; }
+        body.modo-oscuro .item-habilidad { background-color: rgba(255,255,255,0.05); border-color: #334155; color: #e2e8f0; }
+        body.modo-oscuro .item-perfil a { background-color: rgba(255,255,255,0.05); }
+        body.modo-oscuro .rectangulo-progreso { background-color: #334155; }
+
+        /* Scrollbar del panel */
+        #panel::-webkit-scrollbar { width: 4px; }
+        #panel::-webkit-scrollbar-track { background: transparent; }
+        #panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+    </style>
+    </head>
+    <body>
+
+        <!-- BOTÓN FLOTANTE -->
+        <button id="btn-panel" onclick="togglePanel()">
+            <span class="material-icons">palette</span>
+            Personalizar
+        </button>
+
+        <!-- OVERLAY -->
+        <div id="overlay" onclick="togglePanel()"></div>
+
+        <!-- PANEL LATERAL -->
+        <div id="panel">
+            <div class="panel-header">
+                <h2>🎨 Panel de Tema</h2>
+                <button id="btn-cerrar" onclick="togglePanel()" title="Cerrar">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+
+            <!-- MODO OSCURO -->
+            <div class="panel-seccion">
+                <div class="panel-seccion-titulo">
+                    <span class="material-icons">dark_mode</span>
+                    Modo de Apariencia
+                </div>
+                <div class="toggle-fila">
+                    <span class="toggle-label">☀️ Modo oscuro</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="modo-oscuro"
+                            onchange="toggleModoOscuro(this)">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- COLOR PRINCIPAL -->
+            <div class="panel-seccion">
+                <div class="panel-seccion-titulo">
+                    <span class="material-icons">color_lens</span>
+                    Colores del Tema
+                </div>
+                <div class="control-grupo">
+                    <label>Color de acento (títulos, bordes, iconos)</label>
+                    <div class="color-fila">
+                        <input type="color" class="panel-color"
+                            id="color-acento" value="#0284c7"
+                            oninput="cambiarAcento(this.value)">
+                        <input type="text" class="color-hex" id="hex-acento"
+                            value="#0284c7"
+                            oninput="cambiarAcentoHex(this.value)" maxlength="7"
+                            placeholder="#0284c7">
+                    </div>
+                </div>
+                <div class="control-grupo">
+                    <label>Color de fondo del CV</label>
+                    <div class="color-fila">
+                        <input type="color" class="panel-color" id="color-fondo"
+                            value="#f4f4f4" oninput="cambiarFondo(this.value)">
+                        <input type="text" class="color-hex" id="hex-fondo"
+                            value="#f4f4f4"
+                            oninput="cambiarFondoHex(this.value)" maxlength="7"
+                            placeholder="#f4f4f4">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TÍTULOS -->
+            <div class="panel-seccion">
+                <div class="panel-seccion-titulo">
+                    <span class="material-icons">title</span>
+                    Títulos (h2 y h3)
+                </div>
+                <div class="control-grupo">
+                    <label>Fuente de los títulos</label>
+                    <select class="panel-select" id="fuente-titulos"
+                        onchange="cambiarFuenteTitulos(this.value)">
+                        <option value="'Poppins', sans-serif">Poppins (por
+                            defecto)</option>
+                        <option value="'Playfair Display', serif">Playfair
+                            Display</option>
+                        <option
+                            value="'Merriweather', serif">Merriweather</option>
+                        <option value="'Raleway', sans-serif">Raleway</option>
+                        <option value="'Nunito', sans-serif">Nunito</option>
+                        <option value="'JetBrains Mono', monospace">JetBrains
+                            Mono</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="'Courier New', monospace">Courier
+                            New</option>
+                    </select>
+                </div>
+                <div class="control-grupo">
+                    <label>Tamaño de los títulos</label>
+                    <input type="range" class="panel-range" id="size-titulos"
+                        min="11" max="24" value="16"
+                        oninput="cambiarSizeTitulos(this.value)">
+                    <div class="range-valor" id="val-titulos">16px</div>
+                </div>
+                <div class="control-grupo">
+                    <label>Color de los títulos</label>
+                    <div class="color-fila">
+                        <input type="color" class="panel-color"
+                            id="color-titulos" value="#0284c7"
+                            oninput="cambiarColorTitulos(this.value)">
+                        <input type="text" class="color-hex" id="hex-titulos"
+                            value="#0284c7"
+                            oninput="cambiarColorTitulosHex(this.value)"
+                            maxlength="7" placeholder="#0284c7">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PÁRRAFOS -->
+            <div class="panel-seccion">
+                <div class="panel-seccion-titulo">
+                    <span class="material-icons">text_fields</span>
+                    Párrafos y Texto General
+                </div>
+                <div class="control-grupo">
+                    <label>Fuente de los párrafos</label>
+                    <select class="panel-select" id="fuente-body"
+                        onchange="cambiarFuenteBody(this.value)">
+                        <option value="'Poppins', sans-serif">Poppins (por
+                            defecto)</option>
+                        <option value="'Nunito', sans-serif">Nunito</option>
+                        <option value="'Raleway', sans-serif">Raleway</option>
+                        <option
+                            value="'Merriweather', serif">Merriweather</option>
+                        <option value="'Playfair Display', serif">Playfair
+                            Display</option>
+                        <option value="'JetBrains Mono', monospace">JetBrains
+                            Mono</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="'Courier New', monospace">Courier
+                            New</option>
+                    </select>
+                </div>
+                <div class="control-grupo">
+                    <label>Tamaño del texto</label>
+                    <input type="range" class="panel-range" id="size-body"
+                        min="10" max="20" value="14"
+                        oninput="cambiarSizeBody(this.value)">
+                    <div class="range-valor" id="val-body">14px</div>
+                </div>
+                <div class="control-grupo">
+                    <label>Color del texto</label>
+                    <div class="color-fila">
+                        <input type="color" class="panel-color" id="color-body"
+                            value="#333333"
+                            oninput="cambiarColorBody(this.value)">
+                        <input type="text" class="color-hex" id="hex-body"
+                            value="#333333"
+                            oninput="cambiarColorBodyHex(this.value)"
+                            maxlength="7" placeholder="#333333">
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESET -->
+            <button id="btn-reset" onclick="resetear()">
+                <span class="material-icons">restart_alt</span>
+                Restaurar valores por defecto
+            </button>
+        </div>
+
+        <!-- CV -->
+        <div class="contenedor-cv">
+
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="columna-izquierda">
+                <div class="foto">
+                    <img src="https://github.com/joseangelalejo.png"
+                        alt="Foto de José Ángel Alejo">
+                </div>
+                <div class="nombre">
+                    <h1>José Ángel Alejo Sillero</h1>
+                    <h2>Estudiante de Desarrollo de Aplicaciones Web</h2>
+                </div>
+                <div class="contacto">
+                    <a class="item-contacto"
+                        href="mailto:joseangelcorptiv@gmail.com">
+                        <i class="material-icons icono">alternate_email</i>
+                        <span class="texto">joseangelcorptiv@gmail.com</span>
+                    </a>
+                    <div class="item-contacto">
+                        <i class="material-icons icono">phone</i>
+                        <span class="texto">+34 601 048 859</span>
+                    </div>
+                    <div class="item-contacto">
+                        <i class="material-icons icono">location_on</i>
+                        <span class="texto">Sevilla, España</span>
+                    </div>
+                    <div class="item-contacto">
+                        <i class="material-icons icono">drive_eta</i>
+                        <span class="texto">Permisos de conducción: B, A2</span>
+                    </div>
+                </div>
+
+                <div class="perfiles">
+                    <h2 class="cv-titulo">PERFILES PROFESIONALES</h2>
+                    <div class="item-perfil">
+                        <a
+                            href="https://www.linkedin.com/in/joseangelalejosillero/"
+                            target="_blank">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg"
+                                width="18" height="18" alt="LinkedIn">
+                            LinkedIn
+                        </a>
+                    </div>
+                    <div class="item-perfil">
+                        <a href="https://www.github.com/joseangelalejo"
+                            target="_blank">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/github.svg"
+                                width="18" height="18" alt="GitHub">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="idiomas">
+                    <h2 class="cv-titulo">IDIOMAS</h2>
+                    <div class="item-idioma">
+                        <strong>ESPAÑOL</strong><br>
+                        <strong>Nativo</strong>
+                        <div class="barrita-progreso">
+                            <div class="rectangulo-progreso lleno"></div><div
+                                class="rectangulo-progreso lleno"></div><div
+                                class="rectangulo-progreso lleno"></div><div
+                                class="rectangulo-progreso lleno"></div><div
+                                class="rectangulo-progreso lleno"></div>
+                        </div>
+                    </div>
+                    <div class="item-idioma" style="margin-top:6px;">
+                        <strong>INGLÉS</strong><br>
+                        <strong>Alto - B2</strong>
+                        <div class="barrita-progreso">
+                            <div class="rectangulo-progreso lleno"></div><div
+                                class="rectangulo-progreso lleno"></div><div
+                                class="rectangulo-progreso lleno"></div><div
+                                class="rectangulo-progreso"></div><div
+                                class="rectangulo-progreso"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="habilidades">
+                <h2>COMPETENCIAS DIGITALES</h2>
+                <div class="grupo-habilidad">
+                    <h3>Control de Versiones y Colaboración</h3>
+                    <div class="item-habilidad"><strong>Git</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>GitHub</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>GitOps</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Desarrollo Web</h3>
+                    <div class="item-habilidad"><strong>HTML</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>CSS</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Bootstrap</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Tailwind CSS</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Angular</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>React</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Next.js</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>WordPress</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Lenguajes de Programación</h3>
+                    <div class="item-habilidad"><strong>Java</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>JavaScript</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>TypeScript</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>C#</strong><div class="barrita-progreso"><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>PHP</strong><div class="barrita-progreso"><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Lenguajes de Marcado</h3>
+                    <div class="item-habilidad"><strong>Markdown</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>JSON</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>XML/XSD</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Bases de Datos</h3>
+                    <div class="item-habilidad"><strong>MySQL</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>MariaDB</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>PostgreSQL</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>MongoDB</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>SQLite</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Oracle SQL</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>DevOps e Infraestructura</h3>
+                    <div class="item-habilidad"><strong>Docker</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>nginx</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Proxmox VE</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Linux</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Shell Script</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Entornos de Desarrollo</h3>
+                    <div class="item-habilidad"><strong>VS Code</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>NetBeans</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>IntelliJ IDEA</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Eclipse</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Soft Skills</h3>
+                    <div class="item-habilidad"><strong>Trabajo en equipo</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Resolución de problemas</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Adaptabilidad</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Gestión del tiempo</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Pensamiento crítico</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Proactividad</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Empatía</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Creatividad</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                </div>
+            </div>
+        </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="columna-derecha">
+
+                <div class="perfil">
+                    <h2 class="cv-titulo">SOBRE MÍ</h2>
+                    <p>Estudiante de <strong>Desarrollo de Aplicaciones
+                            Web</strong> con experiencia práctica en desarrollo
+                        <strong>frontend y backend</strong>. Entusiasta de Linux
+                        como sistema principal con <strong>homelab</strong> con
+                        Proxmox VE. Apasionado por <strong>DevOps,
+                            GitOps</strong> y la automatización de
+                        infraestructura. Busco oportunidades para crecer
+                        profesionalmente y aplicar mis conocimientos en un
+                        entorno real de desarrollo.</p>
+
+                </div>
+
+                <div class="educacion">
+                    <h2 class="cv-titulo">EDUCACIÓN</h2>
+                    <div class="item-educacion">
+                        <h3>Técnico Superior · Desarrollo de Aplicaciones
+                            Web</h3>
+                        <p class="cv-meta">Instituto Tecnológico Pablo de la
+                            Torre · Sep 2025 – Jun 2027</p>
+                    </div>
+                    <div class="item-educacion">
+                        <h3>Técnico Superior · Enseñanza y Animación
+                            Sociodeportiva</h3>
+                        <p class="cv-meta">IES Virgen de Valme · Sep 2020 – Jun
+                            2022</p>
+                    </div>
+                    <div class="item-educacion">
+                        <h3>Técnico · Conducción de Actividades
+                            Físico-Deportivas en el Medio Natural</h3>
+                        <p class="cv-meta">IES Hermanos Machado · Sep 2018 – Dic
+                            2019</p>
+                    </div>
+                </div>
+
+                <div class="proyectos">
+                    <h2 class="cv-titulo">PROYECTOS</h2>
+                    <div class="item-proyecto">
+                        <h3><a
+                                href="https://github.com/joseangelalejo/json-csv-visualizerv1"
+                                target="_blank">Data Explorer &amp; Web
+                                IDE</a></h3>
+                        <p class="cv-meta">Next.js · React · TypeScript ·
+                            Tailwind CSS · Docker · nginx</p>
+                        <p style="color:#333;font-weight:normal;">Aplicación web
+                            full-stack para explorar archivos
+                            <strong>JSON/CSV</strong> y conectar con servidores
+                            de bases de datos (SQLite, PostgreSQL, MySQL,
+                            MongoDB). Incluye editor de consultas SQL con Monaco
+                            Editor, generación de gráficos dinámicos, diagramas
+                            ER y exportación a CSV. Desplegada con
+                            <strong>Docker y nginx</strong>; implementa
+                            seguridad avanzada (JWT, rate limiting, CSP
+                            headers).</p>
+                        <p style="color:#333;font-weight:normal;"><b>Disponible
+                                en mi perfíl de GitHub Desplegado con
+                                Vercel.</b></p>
+                    </div>
+                    <div class="item-proyecto">
+                        <h3>CS2-SVSS Fragify</h3>
+                        <p class="cv-meta">MySQL · Steam API · Proxmox VE ·
+                            RGPD</p>
+                        <p>Sistema backend para recopilar y visualizar
+                            estadísticas de jugadores de <strong>Counter-Strike
+                                2</strong> mediante integración con la Steam
+                            API. Incluye gestión de rankings ELO, histórico de
+                            partidas, estadísticas detalladas y sistema de
+                            reportes. Desplegado en homelab propio con
+                            <strong>Proxmox VE</strong>. Frontend en
+                            desarrollo.</p>
+                    </div>
+                    <div class="item-proyecto">
+                        <h3><a
+                                href="https://github.com/joseangelalejo/MisApuntesITPDAW"
+                                target="_blank">MisApuntesITPDAW</a></h3>
+                        <p class="cv-meta">Markdown · Java · Git · HTML5 ·
+                            CSS3</p>
+                        <p style="color:#333;font-weight:normal;">Repositorio
+                            personal con más de <strong>123 archivos</strong>
+                            que documenta el ciclo formativo DAW. Incluye
+                            apuntes, ejercicios prácticos, entregables y
+                            simulacros de todos los módulos.</p>
+                    </div>
+                </div>
+
+                <div class="experiencia">
+                    <h2 class="cv-titulo">EXPERIENCIA LABORAL</h2>
+                    <div class="item-experiencia">
+                        <h3>Carretillero Retráctil</h3>
+                        <p class="cv-meta">Factor 5 Carrefour | Ybarra | Acesur
+                            | Nov 2024 – May 2025 · Dos Hermanas</p>
+                        <ul><li>Recepción y expedición de mercancía, solución de
+                                incidencias, ubicación, carga y descarga de
+                                camiones, uso de PDA y sistemas
+                                relacionados.</li></ul>
+                    </div>
+                    <div class="item-experiencia">
+                        <h3>Recepción de Mercancía · Carretillero Retráctil</h3>
+                        <p class="cv-meta">Corporación Jiménez Maña · Feb 2024 –
+                            Nov 2024 · Dos Hermanas</p>
+                        <ul>
+                            <li>Recepción de mercancía en almacén y sistema.
+                                Solución de incidencias. Asignación a pulmón y
+                                picking. Ubicación con carretilla retráctil.
+                                Carga y descarga de camiones con todo tipo de
+                                carretilla y transpaleta eléctrica. Uso de
+                                PDA.</li>
+                        </ul>
+                    </div>
+                    <div class="item-experiencia">
+                        <h3>Carretillero / Técnico de Taller</h3>
+                        <p class="cv-meta">Iris Elegance / Decoplat · Abr 2023 –
+                            Ene 2024 · Alcalá de Guadaíra</p>
+                        <ul>
+                            <li>Recepción y ubicación de mercancía. Fabricación
+                                de moldes y platos de ducha. Preparación de
+                                productos para envío al cliente. Carga y
+                                descarga de camiones. Atención al cliente.</li>
+                        </ul>
+                    </div>
+                    <div class="item-experiencia">
+                        <h3>Monitor Deportivo Multidisciplinar</h3>
+                        <p class="cv-meta">Excmo. Ayto. Dos Hermanas · Feb 2022
+                            – Jun 2022</p>
+                        <ul><li>Técnico deportivo, salvamento acuático,
+                                natación, actividades acuáticas, fitness. Total:
+                                370 horas.</li></ul>
+                    </div>
+                </div>
+
+                <div class="formacion-complementaria">
+                    <h2 class="cv-titulo">FORMACIÓN COMPLEMENTARIA</h2>
+                    <div class="item-formacion">
+                        <h3>Introduction to GitOps (LFS169)</h3>
+                        <p class="cv-meta">Linux Foundation · 2025 · Finalizado</p>
+                    </div>
+                    <div class="item-formacion">
+                        <h3>Introduction to DevOps and Site Reliability
+                            Engineering (LFS162)</h3>
+                        <p class="cv-meta">Linux Foundation · 2025 · En
+                            curso (70%)</p>
+                    </div>
+                    <div class="item-formacion">
+                        <h3>Prevención de Riesgos Laborales</h3>
+                        <p class="cv-meta">Formación oficial · 2022</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script data-cfasync="false"
+            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // PANEL: ABRIR / CERRAR
+        function togglePanel() {
+            var panel = document.getElementById('panel');
+            var overlay = document.getElementById('overlay');
+            var btn = document.getElementById('btn-panel');
+
+            if (panel.classList.contains('abierto')) {
+                panel.classList.remove('abierto');
+                overlay.classList.remove('visible');
+                btn.innerHTML = '<span class="material-icons">palette</span> Personalizar';
+            } else {
+                panel.classList.add('abierto');
+                overlay.classList.add('visible');
+                btn.innerHTML = '<span class="material-icons">close</span> Cerrar';
+            }
+        }
+
+        // MODO OSCURO
+        function toggleModoOscuro(checkbox) {
+            if (checkbox.checked) {
+                document.body.classList.add('modo-oscuro');
+            } else {
+                document.body.classList.remove('modo-oscuro');
+            }
+        }
+
+        // ACENTO (color principal)
+        function cambiarAcento(valor) {
+            document.documentElement.style.setProperty('--accent', valor);
+            document.documentElement.style.setProperty('--color-titles', valor);
+            document.getElementById('hex-acento').value = valor;
+            document.getElementById('color-titulos').value = valor;
+            document.getElementById('hex-titulos').value = valor;
+        }
+
+        function cambiarAcentoHex(valor) {
+            if (/^#[0-9A-Fa-f]{6}$/.test(valor)) {
+                document.getElementById('color-acento').value = valor;
+                cambiarAcento(valor);
+            }
+        }
+
+        // FONDO DEL CV
+        function cambiarFondo(valor) {
+            document.body.style.backgroundColor = valor;
+            document.getElementById('hex-fondo').value = valor;
+        }
+
+        function cambiarFondoHex(valor) {
+            if (/^#[0-9A-Fa-f]{6}$/.test(valor)) {
+                document.getElementById('color-fondo').value = valor;
+                cambiarFondo(valor);
+            }
+        }
+
+        // FUENTE TÍTULOS
+        function cambiarFuenteTitulos(fuente) {
+            document.documentElement.style.setProperty('--font-titles', fuente);
+        }
+
+        // TAMAÑO TÍTULOS
+        function cambiarSizeTitulos(valor) {
+            document.documentElement.style.setProperty('--size-titles', valor + 'px');
+            document.getElementById('val-titulos').textContent = valor + 'px';
+        }
+
+        // COLOR TÍTULOS
+        function cambiarColorTitulos(valor) {
+            document.documentElement.style.setProperty('--color-titles', valor);
+            document.getElementById('hex-titulos').value = valor;
+        }
+
+        function cambiarColorTitulosHex(valor) {
+            if (/^#[0-9A-Fa-f]{6}$/.test(valor)) {
+                document.getElementById('color-titulos').value = valor;
+                cambiarColorTitulos(valor);
+            }
+        }
+
+        // FUENTE PÁRRAFOS
+        function cambiarFuenteBody(fuente) {
+            document.documentElement.style.setProperty('--font-body', fuente);
+        }
+
+        // TAMAÑO PÁRRAFOS
+        function cambiarSizeBody(valor) {
+            document.documentElement.style.setProperty('--size-body', valor + 'px');
+            document.getElementById('val-body').textContent = valor + 'px';
+        }
+
+        // COLOR PÁRRAFOS
+        function cambiarColorBody(valor) {
+            document.documentElement.style.setProperty('--color-body', valor);
+            document.getElementById('hex-body').value = valor;
+        }
+
+        function cambiarColorBodyHex(valor) {
+            if (/^#[0-9A-Fa-f]{6}$/.test(valor)) {
+                document.getElementById('color-body').value = valor;
+                cambiarColorBody(valor);
+            }
+        }
+
+        // RESET
+        function resetear() {
+            var defaults = {
+                '--accent': '#0284c7',
+                '--color-titles': '#0284c7',
+                '--color-body': '#333333',
+                '--font-titles': "'Poppins', sans-serif",
+                '--font-body': "'Poppins', sans-serif",
+                '--size-titles': '16px',
+                '--size-body': '14px'
+            };
+
+            for (var prop in defaults) {
+                document.documentElement.style.setProperty(prop, defaults[prop]);
+            }
+
+            // Restaurar controles
+            document.getElementById('color-acento').value = '#0284c7';
+            document.getElementById('hex-acento').value = '#0284c7';
+            document.getElementById('color-fondo').value = '#f4f4f4';
+            document.getElementById('hex-fondo').value = '#f4f4f4';
+            document.getElementById('color-titulos').value = '#0284c7';
+            document.getElementById('hex-titulos').value = '#0284c7';
+            document.getElementById('color-body').value = '#333333';
+            document.getElementById('hex-body').value = '#333333';
+            document.getElementById('fuente-titulos').value = "'Poppins', sans-serif";
+            document.getElementById('fuente-body').value = "'Poppins', sans-serif";
+            document.getElementById('size-titulos').value = 16;
+            document.getElementById('val-titulos').textContent = '16px';
+            document.getElementById('size-body').value = 14;
+            document.getElementById('val-body').textContent = '14px';
+            document.getElementById('modo-oscuro').checked = false;
+
+            // Restaurar fondo del body y modo oscuro
+            document.body.style.backgroundColor = '#f4f4f4';
+            document.body.classList.remove('modo-oscuro');
+        }
+    </script>
+    </body>
+</html>

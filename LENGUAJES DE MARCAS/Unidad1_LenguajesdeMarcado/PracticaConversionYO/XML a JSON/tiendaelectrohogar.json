@@ -1,0 +1,21 @@
+{
+    "nombre": "Electrohogar",
+    "ubicacion": {
+        "pais": "España",
+        "ciudad": "Sevilla"
+    },
+    "productos": [
+        {
+            "nombre": "Televisor Samsung 55\"", 
+            "categoria": "Electrónica",
+            "precio": 699.99,
+            "disponible": true
+        },
+        {
+            "nombre": "Aspiradora Dyson V15",
+            "categoria": "Hogar",
+            "precio": 499.99,
+            "disponible": false
+        }
+    ]
+}

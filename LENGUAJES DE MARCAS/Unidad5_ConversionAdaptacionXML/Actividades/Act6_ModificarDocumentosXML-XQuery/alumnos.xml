@@ -1,0 +1,22 @@
+<alumnos>
+    <alumno id="1">
+        <nombre>Juan</nombre>
+        <edad>20</edad>
+        <curso>SMR</curso>
+        <email>juan@email.com</email>
+    </alumno>
+
+    <alumno id="2">
+        <nombre>Ana</nombre>
+        <edad>22</edad>
+        <curso>DAM</curso>
+        <email>ana@email.com</email>
+    </alumno>
+
+    <alumno id="3">
+        <nombre>Luis</nombre>
+        <edad>19</edad>
+        <curso>DAW</curso>
+        <email>luis@email.com</email>
+    </alumno>
+</alumnos> 

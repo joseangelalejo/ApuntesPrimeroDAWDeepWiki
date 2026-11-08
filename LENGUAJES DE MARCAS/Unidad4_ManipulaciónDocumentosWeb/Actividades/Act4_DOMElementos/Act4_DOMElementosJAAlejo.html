@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--    PREMISA
+        1. Crea una aplicación sencilla que pida al usuario su nombre mediante prompt() y muestre un saludo personalizado usando alert().
+        2. Implementa un script que utilice prompt() para pedir una contraseña y compruebe si coincide con una contraseña predefinida, mostrando un mensaje de acceso permitido o denegado.
+        3. Realiza un programa que pida un color mediante prompt() y cambie el color de fondo de la página según el valor introducido.
+        4. Selecciona el primer párrafo de la página usando document.querySelector() y cambia su color de texto a azul.
+        5. Utiliza document.querySelector() para seleccionar un elemento con una clase concreta y cambia su tamaño de letra.
+        6. Selecciona un botón mediante document.querySelector() y, al hacer clic, cambia el color de fondo del body.
+        7. Selecciona todos los botones de la página con document.querySelectorAll() y desactiva únicamente el último botón.
+        8. Al pulsar un botón que me elimine un elemento del documento.
+        9. Crea un párrafo nuevo con document.createElement("p"), cambia su color de texto a rojo y añádelo dentro de un div existente.
+        -->
+        <style>
+            .estilo1 {
+                color: red;
+                font-size: 15px;
+            }
+        </style>
+</head>
+<body>
+    <!-- Actividad 4: PRIMER <p> — document.querySelector('p') cambia su color a azul -->
+    <p class="estilo1"> Párrafo para actividad 4. Modificación de color</p>
+
+    <p class="estilo1" id="1"> Lenguaje de Marcas</p>
+
+    <p class="estilo1"> Sistemas Informáticos</p>
+
+    <p class="estilo1"> Entornos de Desarrollo</p>
+
+    <!-- Actividad 3: pide color por prompt() y cambia el fondo (btnColor) -->
+    <button onclick="btnColor()">Cambiar color</button>
+
+    <!-- Actividad 6: botón que cambia color de los párrafos usando querySelector (btnColor2) -->
+    <button onclick="btnColor2()">Cambiar color query</button>
+    <!-- Extra / Ejemplo RGB relacionado con la actividad 6 -->
+    <button onclick="btnRGB()">Cambiar color con RGB</button>
+    <br><br>
+    <!-- Actividad 7: desactiva (disabled) el último botón con querySelectorAll (btnOFF / btnON) -->
+    <button onclick="btnOFF()">Desactivar botón de RGB</button>
+    <button onclick="btnON()">Activar botón de RGB</button>
+    <br><br>
+    <!-- Actividad 8: botones para eliminar párrafos -->
+    <button onclick="eliminarPrimerParrafo()">Eliminar primer párrafo</button>
+    <button onclick="eliminarParrafoPorIndice()">Eliminar párrafo por índice</button>
+    <!-- Actividad 9: crear párrafo nuevo en el div (crearParrafo) -->
+    <button onclick="crearParrafo()">Crear nuevo párrafo</button>
+    <br><br>
+    <div id="contenedorpruebas"></div>
+    <script>
+        
+        // El prompt se comporta como un alert, se muestra en pantalla, y necesita ser almacenado en una variable
+        // Actividad 1
+        let nombre =  prompt("Introduce tu nombre");
+        alert("Hola que tal " + nombre);
+
+        // Actividad 2
+        let contrasenaPredefinida = "12345";
+        let contrasenaUser = prompt("Introduce tu contraseña");
+        if (contrasenaPredefinida === contrasenaUser) {
+            alert ("Contraseña correcta");
+        } else {
+            alert("Contraseña incorrecta");
+        }
+
+        // Actividad 3
+        function btnColor() {
+        let colorUsuario = prompt("Introduce un color.\n O en inglés(red, yellow, blue, etc).\n O como RGB → rgb(rojo, verde azul)\n   Por ejemplo para rojo → rgb(255, 0 ,0)");
+            // Cuando queremos acceder a propiedades del propio body.
+            // En el caso del backgroundColor, solo admite indicaciones de color simple en inglés o el RGB
+        document.body.style.backgroundColor = colorUsuario;
+        }
+
+        // El resto de actividades se desarrollan en clase cuando se explique como usar querySelector
+        // El querySelector es un método que nos permite seleccionar elementos del DOM utilizando selectores CSS y modificar sus propiedades o contenido.
+            // El querySelector solo funciona para la primera etiquete con las especificaciones indicadas.
+            // Si queremos que afecte a todas las etiquetas con dichas especificaciones, usamos 
+        // Actividad 4: seleccionar el PRIMER párrafo y cambiar su color a azul
+        document.querySelector("p").style.color = "blue";
+
+        // Actividad 5: seleccionar (ej.) un elemento y cambiar su tamaño de letra — aquí se usa querySelectorAll + índice
+        document.querySelectorAll("p")[2].style.fontSize = "60px";
+
+        // Actividad 6 - Cambiar color con botón y querySelector
+        function btnColor2() {
+            let _color = prompt("Introduce un color: ");
+            for (let i = 0; i < document.querySelectorAll("p").length; i++) {
+                document.querySelectorAll("p")[i].style.color = _color;
+            }
+        }
+        // También podemos hacer concatenando variables R G B para cambiar el color mediante RGB
+        function btnRGB() {
+            let r = prompt("Introduce el valor de rojo (0-255): ");
+            let g = prompt("Introduce el valor de verde (0-255): ");
+            let b = prompt("Introduce el valor de azul (0-255): ");
+            let colorRGB = "rgb(" + r + ", " + g + ", " + b + ")"; // Variable para pruebas
+            for (let i = 0; i < document.querySelectorAll("p").length; i++) {
+                //document.querySelectorAll("p")[i].style.color = colorRGB;
+                document.querySelectorAll("p")[i].style.color = `rgb(${r}, ${g}, ${b})`;
+            }
+        }
+        // Actividad 7: podemos desactivar un botón cambiando su propiedad disabled a true
+            // En este caso vamos a probar a desactivar el botón de RGB, que es el último botón de la página, por lo que accedemos a él mediante su posición en el array resultante del querySelectorAll
+        function btnOFF() {
+            document.querySelectorAll("button")[2].disabled = true;
+        }
+            // De la misma manera podemos activar el botón cambiando su propiedad disabled a false
+            function btnON() {
+                document.querySelectorAll("button")[2].disabled = false;
+            }
+        // Actividad 8: además, podemos eliminar elementos del DOM utilizando el método remove() sobre el elemento que queremos eliminar.
+        // Ejemplos implementados: eliminar primer párrafo y eliminar por índice
+        function eliminarPrimerParrafo() {
+            document.querySelector("p").remove();
+        }
+        // Actividad 8 (variante): Eliminar párrafo por índice, pidiendo al usuario el índice del párrafo a eliminar
+        function eliminarParrafoPorIndice() {
+            let parrafos = document.querySelectorAll("p");
+            let indice = prompt("¿Qué párrafo quieres borrar? Indica → 0 para el primero, 1 para el segundo, etc.)");
+            indice = parseInt(indice);
+            if (!isNaN(indice) && indice >= 0 && indice < parrafos.length) {
+                parrafos[indice].remove();
+            } else {
+                alert("Índice no válido.");
+            }
+        }
+        // Actividad 9: crear nuevos elementos con document.createElement() y añadirlos al DOM (nuevo párrafo en rojo)
+        function crearParrafo() {
+            let nuevoParrafo = document.createElement("p");
+            nuevoParrafo.textContent = prompt("Introduce el texto deseado para el nuevo párrafo:");
+            nuevoParrafo.style.color = "red";
+            document.querySelector("div").appendChild(nuevoParrafo);
+        }
+    </script>
+    
+    
+</body>
+</html>

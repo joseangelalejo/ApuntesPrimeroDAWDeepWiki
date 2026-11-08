@@ -1,0 +1,26 @@
+<!ELEMENT empresa (empleado+, proyecto+, tarea+)>
+
+<!ELEMENT empleado (nombre, edad)>
+<!ATTLIST empleado
+    id ID #REQUIRED
+    contrato (fijo|temporal|practicas) #REQUIRED
+    puesto CDATA #IMPLIED>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+
+<!ELEMENT proyecto (titulo)>
+<!ATTLIST proyecto
+    id ID #REQUIRED
+    lider IDREF #REQUIRED       <!--referencia a empleadi.id-->
+    miembros IDREFS #IMPLIED    <!--lista de empleados por id-->   
+>
+<!ELEMENT titulo (#PCDATA)>
+
+<!ELEMENT tarea (descripcion)>
+<!ATTLIST tarea
+    id ID #REQUIRED
+    asignadoA IDREF #REQUIRED   <!--empleado.id-->
+    estado (en_progreso|pendiente|completado) #IMPLIED
+    prioridad (alta|media|baja) #IMPLIED>
+<!ELEMENT descripcion (#PCDATA)>

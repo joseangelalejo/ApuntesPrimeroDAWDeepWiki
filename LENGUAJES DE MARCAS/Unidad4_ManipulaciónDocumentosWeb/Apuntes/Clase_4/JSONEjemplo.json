@@ -1,0 +1,23 @@
+[
+    {
+        "titulo": "La vida es bella",
+        "año": 1997,
+        "autor": "Roberto Benigni",
+        "visto": true
+    },
+    {
+        "titulo": "El Padrino",
+        "año": 1972,
+        "autor": {
+            "nombre": "Francis",
+            "apellido": "Coppola"
+        },
+        "visto": false
+    },
+    {
+        "titulo": "Pulp Fiction",
+        "año": 1994,
+        "autor": "Quentin Tarantino",
+        "visto": true
+    }
+]

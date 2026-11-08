@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recopilación CSS Interno | José Ángel Alejo</title>
+    <style>
+        /* ============================================ */
+        /*              ESTILOS GLOBALES                */
+        /* ============================================ */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        /* Separadores de secciones */
+        .section-divider {
+            margin: 40px 0;
+            border: 3px dashed #333;
+            background-color: #333;
+        }
+
+        .section-title {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            margin: 30px 0 20px 0;
+            text-align: center;
+            font-size: 24px;
+            text-transform: uppercase;
+            border-radius: 8px;
+        }
+
+        /* ============================================ */
+        /* ACTIVIDAD 2: PSEUDOCLASES Y PSEUDOELEMENTOS  */
+        /* ============================================ */
+        
+        /* Contenedor para Actividad 2 */
+        #act2-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Estilo global para Act2 */
+        #act2-container * {
+            font-family: Miracode, monospace;
+            color: black;
+        }
+
+        /* Estilos generales para inputs de Act2 */
+        #act2-container input {
+            border: 2px solid gray;
+            margin: 2px;
+            font-size: 14px;
+            border-color: blue;
+            background-color: turquoise;
+        }
+
+        /* Estilos para p y hover de Act2 */
+        #act2-container p {
+            color: blue;
+            font-size: 15px;
+            width: fit-content;
+        }
+
+        #act2-container #ejemplohover:hover {
+            color: red;
+            font-size: 15px;
+            font-family: 'David Libre', sans-serif;
+            font-weight: bold;
+        }
+
+        /* Estilos para hr de Act2 */
+        #act2-container hr {
+            border: 2px solid black;
+        }
+
+        /* Estilos para checkbox de Act2 */
+        #act2-container input[type="checkbox"]:checked + label {
+            accent-color: yellow;
+            text-transform: uppercase;
+        }
+
+        /* Estilos para email de Act2 */
+        #act2-container input[type="email"]:valid {
+            border-color: darkgreen;
+            background-color: lightgreen;
+        }
+
+        #act2-container input[type="email"]:invalid {
+            border-color: red;
+            background-color: lightcoral;
+        }
+
+        /* Estilos para text (nombre y apellido) de Act2 */
+        #act2-container input[type="text"]:focus {
+            background-color: violet;
+        }
+
+        /* Estilos para number de Act2 */
+        #act2-container input[type="number"]:out-of-range {
+            border-color: red;
+            background-color: lightcoral;
+            min-width: 200px;
+        }
+
+        #act2-container input[type="number"]:in-range {
+            border-color: darkgreen;
+            background-color: lightgreen;
+            min-width: 200px;
+        }
+
+        /* Estilos para enlaces de Act2 */
+        #act2-container a:link {
+            color: lightblue;
+        }
+
+        #act2-container a:visited {
+            color: purple;
+        }
+
+        /* Estilos para OPTIONAL y REQUIRED de Act2 */
+        #act2-container input:optional {
+            border-color: orange;
+            background-color: lightyellow;
+        }
+
+        #act2-container input:required {
+            border-color: red;
+            background-color: lightpink;
+        }
+
+        /* Estilo para atributo type="text" con id "nick" de Act2 */
+        #act2-container #nick[type="text"] {
+            width: 215px;
+        }
+
+        /* Selectores de hijos para elementos p y h2 hijos de elemento div de Act2 */
+        #act2-container div p {
+            color: black;
+        }
+
+        /* Selectores para elementos con id p1 y p2 de Act2 */
+        #act2-container #p1, #act2-container #p2::first-letter {
+            font-size: 18px;
+        }
+
+        #act2-container #p2::first-line {
+            text-transform: capitalize;
+        }
+
+        #act2-container #p1::before {
+            Content:"Inputs OPTIONAL: ";
+            color: green;
+            font-weight: bold;
+        }
+
+        #act2-container #p2::after {
+            Content:" Nombre y apellido";
+            color: green;
+            font-weight: bold;
+        }
+
+        #act2-container *::selection {
+            background-color: lightgray;
+            color: red;
+            text-shadow: 0 0 10px darkorange;
+        }
+
+        /* ============================================ */
+        /*    ACTIVIDAD 3: TARJETA DE PRESENTACIÓN      */
+        /* ============================================ */
+
+        /* Contenedor para Actividad 3 */
+        #act3-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 800px;
+            background-color: #201e1e;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para #principal de Act3 */
+        #act3-container #principal {
+            border: 5px dotted #3b82f6;
+            border-radius: 22px;
+            box-shadow: 10px 5px 15px #2e64bd;
+            padding: 20px;
+            font-family: Miracode, monospace;
+            font-weight: bold;
+            background-color: #1a1a1a;
+            min-width: fit-content;
+        }
+
+        /* Estilos para #imagen de Act3 */
+        #act3-container #imagen {
+            position: relative;
+            background-image: url('Fondo3.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 400px;
+            min-height: 650px;
+            padding: 35px;
+            border: 5px solid #6b7280;
+            border-radius: 22px;
+            outline: 2px solid #6b7280;
+            outline-offset: 5px;
+            box-shadow: 10px 5px 10px rgba(240, 178, 86, 0.5);
+        }
+
+        /* Pseudo-elemento ::before de #imagen de Act3 */
+        #act3-container #imagen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Fondo3.jpg');
+            background-size: contain;
+            background-position: center;
+            opacity: 0.5;
+            z-index: -1;
+            border-radius: 22px;
+        }
+
+        /* Estilos para #texto de Act3 */
+        #act3-container #texto {
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Estilos para #info-estudiante de Act3 */
+        #act3-container #info-estudiante {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            border: 4px solid #6b7280;
+            border-radius: 15px;
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para #competenciasdigitales de Act3 */
+        #act3-container #competenciasdigitales {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            margin-top: 20px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        /* Estilos para los divs dentro de #competenciasdigitales de Act3 */
+        #act3-container #competenciasdigitales>div {
+            width: 140px;
+            height: 160px;
+            text-align: left;
+            border: 1px solid #6b7280;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 15px 15px 5px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover para divs de competencias de Act3 */
+        #act3-container #competenciasdigitales>div:hover {
+            background-color: rgba(240, 178, 86, 0.5);
+        }
+
+        /* Estilos para h4 en #competenciasdigitales de Act3 */
+        #act3-container #competenciasdigitales h4 {
+            text-align: center;
+            margin: 5px 0 5px 0;
+        }
+
+        /* Estilos globales para h1, h2, h3, h4 de Act3 */
+        #act3-container h1, #act3-container h2, #act3-container h3, #act3-container h4 {
+            text-transform: uppercase;
+        }
+
+        /* Estilos para #contenedor-competencias de Act3 */
+        #act3-container #contenedor-competencias {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            border: 3px solid #6b7280;
+            border-radius: 15px;
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para #contenedor-soft-skills de Act3 */
+        #act3-container #contenedor-soft-skills {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px 0;
+            border: 3px solid #6b7280;
+            border-radius: 15px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        /* Estilos para #soft-skills de Act3 */
+        #act3-container #soft-skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin-top: 10px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        /* Estilos para los divs dentro de #soft-skills de Act3 */
+        #act3-container #soft-skills > div {
+            width: auto;
+            height: 50px;
+            text-align: center;
+            border: 1px solid #6b7280;
+            border-radius: 15px;
+            margin: 5px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover para divs de soft skills de Act3 */
+        #act3-container #soft-skills > div:hover {
+            background-color: rgba(240, 178, 86, 0.5);
+        }
+
+        /* Estilos para h4 en #soft-skills de Act3 */
+        #act3-container #soft-skills h4 {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        /* Mostrar #desplegable cuando #toggleDesplegable está checked de Act3 */
+        #act3-container #toggleDesplegable:checked ~ #desplegable {
+            display: block;
+        }
+
+        /* Ocultar #desplegable por defecto de Act3 */
+        #act3-container #desplegable {
+            display: none;
+        }
+
+        /* Estilos para botones de Act3 */
+        #act3-container button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 1px solid #6b7280;
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover para botones de Act3 */
+        #act3-container button:hover {
+            background-color: rgba(240, 178, 86, 0.5);
+        }
+
+        /* Estilos para label de toggleDesplegable de Act3 */
+        #act3-container label[for="toggleDesplegable"] {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 1px solid #6b7280;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-size: 16px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover para label de toggleDesplegable de Act3 */
+        #act3-container label[for="toggleDesplegable"]:hover {
+            background-color: rgba(240, 178, 86, 0.5);
+        }
+
+        /* ============================================ */
+        /*         ACTIVIDAD 4: APLICAR FLEX            */
+        /* ============================================ */
+
+        /* Contenedor para Actividad 4 */
+        #act4-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        #act4-container * {
+            font-family: Miracode, monospace;
+            font-weight: bold;
+        }
+
+        /* Selectores para hr de Act4 */
+        #act4-container hr {
+            width: 80%;
+            height: 5px;
+            background-color: black;
+        }
+
+        #act4-container #hr2 {
+            width: 40%;
+            height: 5px;
+            background-color: black;
+        }
+
+        /* Selector para h2 y h3 de Act4 */
+        #act4-container h2, #act4-container h3 {
+            text-transform: uppercase;
+        }
+
+        /* Selector para contenedores padre de Act4 */
+        #act4-container .contenedor {
+            display: flex;
+            border: 2px solid black;
+            margin-bottom: 20px;
+            height: fit-content;
+            align-items: center;
+            max-width: 1000px;
+            width: 800px;
+        }
+
+        /* Selector para cajas de Act4 */
+        #act4-container .caja {
+            width: 80px;
+            height: 80px;
+            background-color: rgb(145, 238, 145);
+            margin: 5px;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        /* Selector para row de Act4 */
+        #act4-container .row {
+            flex-direction: row;
+        }
+
+        /* Selector para row-reverse de Act4 */
+        #act4-container .row_reverse {
+            flex-direction: row-reverse;
+        }
+
+        #act4-container .row_reverse>.caja {
+            background-color: rgb(110, 17, 110);
+        }
+
+        /* Selector para column de Act4 */
+        #act4-container .column {
+            flex-direction: column;
+            height: fit-content;
+        }
+
+        #act4-container .column>.caja {
+            background-color: rgb(173, 216, 230);
+        }
+
+        /* Selector para column-reverse de Act4 */
+        #act4-container .column_reverse {
+            flex-direction: column-reverse;
+            height: fit-content;
+        }
+
+        #act4-container .column_reverse>.caja {
+            background-color: rgb(82, 39, 25);
+            opacity: 0.90;
+        }
+
+        /* Selector para nowrap de Act4 */
+        #act4-container .no_wrap {
+            flex-wrap: nowrap;
+        }
+
+        #act4-container .no_wrap>.caja {
+            background-color: rgb(255, 105, 180);
+        }
+
+        /* Selector para wrap de Act4 */
+        #act4-container .wrap {
+            flex-wrap: wrap;
+            width: 400px;
+            height: fit-content;
+        }
+
+        #act4-container .wrap>.caja {
+            background-color: rgb(105, 180, 255);
+        }
+
+        /* Selector para wrap-reverse de Act4 */
+        #act4-container .wrap_reverse {
+            flex-wrap: wrap-reverse;
+            width: 400px;
+            height: fit-content;
+        }
+
+        #act4-container .wrap_reverse>.caja {
+            background-color: rgb(180, 255, 105);
+        }
+
+        /* Estilos con JUSTIFY-CONTENT de Act4 */
+        #act4-container .flex_start {
+            justify-content: flex-start;
+        }
+
+        #act4-container .flex_start>.caja {
+            background-color: rgb(255, 200, 200);
+        }
+
+        #act4-container .flex_end {
+            justify-content: flex-end;
+        }
+
+        #act4-container .flex_end>.caja {
+            background-color: rgb(200, 255, 200);
+        }
+
+        #act4-container .justify_center {
+            justify-content: center;
+        }
+
+        #act4-container .justify_center>.caja {
+            background-color: rgb(200, 200, 255);
+        }
+
+        #act4-container .justify_spacebetween {
+            justify-content: space-between;
+        }
+
+        #act4-container .justify_spacebetween>.caja {
+            background-color: rgb(255, 255, 200);
+        }
+
+        #act4-container .justify_spacearound {
+            justify-content: space-around;
+        }
+
+        #act4-container .justify_spacearound>.caja {
+            background-color: rgb(255, 200, 255);
+        }
+
+        /* Estilos con ALIGN-ITEMS de Act4 */
+        #act4-container .align_flexstart {
+            align-items: flex-start;
+        }
+
+        #act4-container .align_flexstart>.caja {
+            background-color: rgb(200, 255, 255);
+        }
+
+        #act4-container .align_flexend {
+            align-items: flex-end;
+        }
+
+        #act4-container .align_flexend>.caja {
+            background-color: rgb(255, 220, 180);
+        }
+
+        #act4-container .align_center {
+            align-items: center;
+        }
+
+        #act4-container .align_center>.caja {
+            background-color: rgb(220, 255, 220);
+        }
+
+        #act4-container .align_stretch {
+            align-items: stretch;
+        }
+
+        #act4-container .align_stretch>.caja {
+            background-color: rgb(255, 240, 200);
+        }
+
+        /* Estilos con FLEX-GROW, FLEX-SHRINK y FLEX-BASIS de Act4 */
+        #act4-container .flex_grow {
+            width: 1200px;
+            height: fit-content;
+        }
+
+        #act4-container .flex_basis {
+            width: 1200px;
+            height: fit-content;
+        }
+
+        #act4-container .flex_shrink {
+            width: 600px;
+            height: fit-content;
+        }
+
+        #act4-container .flex_grow>.caja {
+            background-color: rgb(182, 208, 111);
+        }
+
+        #act4-container .flex_grow .caja:nth-child(1) {
+            flex-grow: 1;
+        }
+
+        #act4-container .flex_grow .caja:nth-child(2) {
+            flex-grow: 2;
+        }
+
+        #act4-container .flex_grow .caja:nth-child(3) {
+            flex-grow: 1;
+        }
+
+        #act4-container .flex_shrink>.caja {
+            background-color: rgb(200, 240, 255);
+            flex-basis: 300px;
+        }
+
+        #act4-container .flex_shrink .caja:nth-child(1) {
+            flex-shrink: 1;
+        }
+
+        #act4-container .flex_shrink .caja:nth-child(2) {
+            flex-shrink: 0;
+        }
+
+        #act4-container .flex_shrink .caja:nth-child(3) {
+            flex-shrink: 2;
+        }
+
+        #act4-container .flex_basis>.caja {
+            background-color: rgb(255, 200, 220);
+            flex-grow: 1;
+        }
+
+        #act4-container .flex_basis .caja:nth-child(1) {
+            flex-basis: 100px;
+        }
+
+        #act4-container .flex_basis .caja:nth-child(2) {
+            flex-basis: 200px;
+        }
+
+        #act4-container .flex_basis .caja:nth-child(3) {
+            flex-basis: 300px;
+        }
+
+        /* ============================================ */
+        /*      ACTIVIDAD 5: CALCULADORA SIMULACRO      */
+        /* ============================================ */
+
+        /* Contenedor para Actividad 5 */
+        #act5-container {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para el div principal de Act5 */
+        #act5-container .calculadora-contenedor {
+            background-color: rgb(100, 99, 99);
+            opacity: 0.98;
+            padding: 20px;
+            box-shadow: 0 0 10px lightblue;
+            border: 3px solid black;
+            border-radius: 10px;
+            flex-basis: 300px;
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+
+        /* Estilos para el título de Act5 */
+        #act5-container h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para el campo de texto de Act5 */
+        #act5-container input[type="text"] {
+            width: 100%;
+            height: 40px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 20px;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 3px solid #000000e5;
+            border-radius: 7px;
+        }
+
+        #act5-container input[type="text"]:focus {
+            background-color: rgb(127, 241, 222);
+        }
+
+        /* Estilos para el div del teclado de Act5 */
+        #act5-container .teclado {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px 10px;
+            flex-basis: auto;
+            flex-grow: 1;
+            flex-shrink: 1;
+            background-color: rgb(128, 128, 128);
+            opacity: inherit;
+        }
+
+        /* Estilos para los botones (general) de Act5 */
+        #act5-container button {
+            height: 50px;
+            cursor: pointer;
+            border-radius: 5px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            font-size: 18px;
+            color: white;
+            background-color: #007BFF;
+        }
+
+        #act5-container button:hover {
+            background-color: #00b3aa;
+            font-size: 22px;
+            text-decoration-line: underline;
+        }
+
+        #act5-container button:focus {
+            background-color: #1ffc56;
+        }
+
+        /* Estilos para los botones de operaciones de Act5 */
+        #act5-container .teclado button:nth-child(4n) {
+            background-color: #d8b43e;
+        }
+
+        #act5-container .teclado button:nth-child(4n):hover {
+            background-color: #e6937a;
+        }
+
+        #act5-container .teclado button:nth-child(4n):focus {
+            background-color: #ff5100;
+        }
+
+        /* Estilo especial para el botón "=" de Act5 */
+        #act5-container .teclado button:nth-child(16) {
+            background-color: #ff8800;
+            grid-column: 3/5;
+            height: 35px;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 32px; color: #333; margin-bottom: 30px;">
+        Recopilación de Actividades CSS Interno - José Ángel Alejo
+    </h1>
+
+    <!-- ============================================ -->
+    <!-- ACTIVIDAD 2: PSEUDOCLASES Y PSEUDOELEMENTOS  -->
+    <!-- ============================================ -->
+    <div class="section-title">Actividad 2: Pseudoclases y Pseudoelementos</div>
+    <div id="act2-container">
+        <!-- Pseudoclases a usar: HOVER, FOCUS, CHECKED, VALID, INVALID, OUT-OF-RANGE, IN-RANGE, LINK, VISITED, OPTIONAL, REQUIRED -->
+        <!-- Pseudoelementos a usar: FIRST-LETTER, FIRST-LINE, SELECTION, AFTER, BEFORE-->
+        
+        <p id="ejemplohover">Ejemplo de hover</p>
+        <hr>
+        <input type="checkbox"><label>Ejemplo de checkbox</label>
+        <hr>
+        <input type="email" placeholder="Introduce tu email">
+        <hr>
+        <input type="text" placeholder="Introduce tu nombre" required><br>
+        <input type="text" placeholder="Introduce tu apellido" required><br>
+        <input id="nick" type="text" placeholder="Introduce tu nick/alias" optional><br>
+        <hr>
+        <input type="number" min="1" max="10" placeholder="Número entre 1 y 10">
+        <hr>
+        <a href="https://github.com/joseangelalejo" target="_blank">Enlace GitHub de Jose Angel Alejo</a>
+        <hr>
+        <div>
+            <h2>Aplicando pseudoelementos</h2>
+            <p id="p1">Nick/Alias</p>
+            <p id="p2">Inputs REQUIRED:</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ============================================ -->
+    <!--    ACTIVIDAD 3: TARJETA DE PRESENTACIÓN      -->
+    <!-- ============================================ -->
+    <div class="section-title">Actividad 3: Tarjeta de Presentación</div>
+    <div id="act3-container">
+        <!-- Div principal | Borde azul solido, punteado y redondeado |Box-shadow externo | Padding -->
+        <div id="principal">
+            <!-- Div para imagen-->
+            <div id="imagen">
+                <!-- Div para texto-->
+                <div id="texto">
+                    <div id="info-estudiante">
+                        <h1>José Ángel<br>Alejo Sillero</h1>
+                        <h2>ALUMNO DE 1º DAW</h2>
+                    </div>
+                    <div id="contenedor-competencias">
+                        <h2>Competencias Digitales</h2>
+                        <!-- Div para Competencias Digitales | Ordenar-->
+                        <div id="competenciasdigitales">
+                            <!-- Div para Tecnologías-->
+                            <div>
+                                <h4>Tecnologías</h4>
+                                <ul>
+                                    <li>Github / Git</li>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>JavaScript</li>
+                                    <li>MySQL</li>
+                                </ul>
+                            </div>
+                            <!--Div para lenguajes de programación-->
+                            <div>
+                                <h4>Lenguajes de Programación</h4>
+                                <ul>
+                                    <li>Java</li>
+                                    <li>JavaScript</li>
+                                    <li>C#</li>
+                                </ul>
+                            </div>
+                            <!-- Div para otros lenguajes-->
+                            <div>
+                                <h4>Lenguajes de Marcado y Otros</h4>
+                                <ul>
+                                    <li>Markdown</li>
+                                    <li>JSON</li>
+                                    <li>XML/XSD</li>
+                                </ul>
+                            </div>
+                            <!-- Div para Entornos de Desarrollo-->
+                            <div>
+                                <h4>Entornos de Desarrollo</h4>
+                                <ul>
+                                    <li>VS Code</li>
+                                    <li>NetBeans</li>
+                                    <li>IntelliJ IDEA</li>
+                                    <li>Eclipse</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="contenedor-soft-skills">
+                        <h3>Soft Skills</h3>
+                        <!-- Div para Soft Skills -->
+                        <div id="soft-skills">
+                            <!-- Trabajo en equipo -->
+                            <div>
+                                <h4>Trabajo en equipo</h4>
+                            </div>
+                            <!-- Resolución de problemas -->
+                            <div>
+                                <h4>Resolución de problemas</h4>
+                            </div>
+                            <!-- Adaptabilidad -->
+                            <div>
+                                <h4>Adaptabilidad</h4>
+                            </div>
+                            <!-- Gestión del tiempo -->
+                            <div>
+                                <h4>Gestión del tiempo</h4>
+                            </div>
+                            <!-- Pensamiento crítico -->
+                            <div>
+                                <h4>Pensamiento crítico</h4>
+                            </div>
+                            <!-- Proactividad -->
+                            <div>
+                                <h4>Proactividad</h4>
+                            </div>
+                            <!-- Empatía -->
+                            <div>
+                                <h4>Empatía</h4>
+                            </div>
+                            <!-- Creatividad -->
+                            <div>
+                                <h4>Creatividad</h4>
+                            </div>
+                            <!-- Aprendizaje continuo -->
+                            <div>
+                                <h4>Aprendizaje continuo</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="toggleDesplegable" style="display: none;">
+                    <label for="toggleDesplegable">Ver más</label>
+                    <!-- Desplegable oculto -->
+                    <div id="desplegable" style="text-align: center; margin-top: 10px;">
+                        <button onclick="window.open('https://github.com/joseangelalejo', '_blank')">GitHub</button>
+                        <button onclick="window.open('https://www.linkedin.com/in/joseangelalejosillero/', '_blank')">LinkedIn</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ============================================ -->
+    <!--         ACTIVIDAD 4: APLICAR FLEX            -->
+    <!-- ============================================ -->
+    <div class="section-title">Actividad 4: Aplicar Flex</div>
+    <div id="act4-container">
+        <h1>Aplicación de propiedades flex en estilo CSS interno<br>José Ángel Alejo Sillero</h1>
+        <hr>
+        <h2>Aplicación de ROW</h2>
+        <!--Div contenedor para aplicar row-->
+        <div class="contenedor row">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+        </div>
+        <h2>Aplicación de ROW-REVERSE</h2>
+        <!--Div contenedor para aplicar row-reverse-->
+        <div class="contenedor row_reverse">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+        </div>
+        <hr>
+        <h2>Aplicación de COLUMN</h2>
+        <!--Div contenedor para aplicar column-->
+        <div class="contenedor column">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+        </div>
+        <h2>Aplicación de COLUMN-REVERSE</h2>
+        <!--Div contenedor para aplicar column-reverse-->
+        <div class="contenedor column_reverse">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+        </div>
+        <hr>
+        <h2>Aplicación de "flex-wrap: nowrap"</h2>
+        <div class="contenedor no_wrap">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+            <div class="caja">5</div>
+            <div class="caja">6</div>
+            <div class="caja">7</div>
+            <div class="caja">8</div>
+        </div>
+        <hr>
+        <h2>Aplicación de "flex-wrap: wrap"</h2>
+        <div class="contenedor wrap">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+            <div class="caja">5</div>
+            <div class="caja">6</div>
+            <div class="caja">7</div>
+            <div class="caja">8</div>
+        </div>
+        <hr>
+        <h2>Aplicación de "flex-wrap: wrap-reverse"</h2>
+        <div class="contenedor wrap_reverse">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+            <div class="caja">5</div>
+            <div class="caja">6</div>
+            <div class="caja">7</div>
+            <div class="caja">8</div>
+        </div>
+        <hr>
+        <h2>Aplicación de "justify-content"</h2>
+        <hr id="hr2">
+        <h3>"justify-content: flex-start"</h3>
+        <div class="contenedor flex_start">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+            <div class="caja">5</div>
+        </div>
+        <hr id="hr2">
+        <h3>"justify-content: flex-end"</h3>
+        <div class="contenedor flex_end">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+            <div class="caja">5</div>
+        </div>
+        <hr id="hr2">
+        <h3>"justify-content: center"</h3>
+        <div class="contenedor justify_center">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+            <div class="caja">5</div>
+        </div>
+        <hr id="hr2">
+        <h3>"justify-content: space-between"</h3>
+        <div class="contenedor justify_spacebetween">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+            <div class="caja">5</div>
+        </div>
+        <hr id="hr2">
+        <h3>"justify-content: space-around"</h3>
+        <div class="contenedor justify_spacearound">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+            <div class="caja">4</div>
+            <div class="caja">5</div>
+        </div>
+        <hr>
+        <h2>Aplicación de "align-items"</h2>
+        <hr id="hr2">
+        <h3>"align-items: flex-start"</h3>
+        <div class="contenedor align_flexstart">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+        </div>
+        <hr id="hr2">
+        <h3>"align-items: flex-end"</h3>
+        <div class="contenedor align_flexend">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+        </div>
+        <hr id="hr2">
+        <h3>"align-items: center"</h3>
+        <div class="contenedor align_center">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+        </div>
+        <hr id="hr2">
+        <h3>"align-items: stretch"</h3>
+        <div class="contenedor align_stretch">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+        </div>
+        <hr>
+        <h2>Aplicación de estilos con "FLEX-GROW", "FLEX-SHRINK" y "FLEX-BASIS"</h2>
+        <hr id="hr2">
+        <h3>"flex-grow"</h3>
+        <!-- Las cajas crecen proporcionalmente: la segunda (flex-grow: 2) ocupa el doble de espacio extra que las otras. -->
+        <div class="contenedor flex_grow">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+        </div>
+        <hr id="hr2">
+        <h3>"flex-shrink"</h3>
+        <!-- Las cajas se reducen según flex-shrink: la tercera (2) se reduce más, la segunda (0) no se reduce. -->
+        <div class="contenedor flex_shrink">
+            <div class="caja">1</div>
+            <div class="caja">2</div>
+            <div class="caja">3</div>
+        </div>
+        <hr id="hr2">
+        <h3>"flex-basis"</h3>
+        <!-- Las cajas tienen bases fijas (100px, 200px, 300px) y crecen para ocupar el espacio restante. -->
+        <div class="contenedor flex_basis">
+            <div class="caja">Base 100px</div>
+            <div class="caja">Base 200px</div>
+            <div class="caja">Base 300px</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ============================================ -->
+    <!--      ACTIVIDAD 5: CALCULADORA SIMULACRO      -->
+    <!-- ============================================ -->
+    <div class="section-title">Actividad 5: Calculadora Simulacro</div>
+    <div id="act5-container">
+        <div class="calculadora-contenedor">
+            <h1>Calculadora</h1>
+            <input type="text" placeholder="0">
+            <div class="teclado">
+                <button>7</button> <button>8</button> <button>9</button> <button>/</button>
+                <button>4</button> <button>5</button> <button>6</button> <button>*</button>
+                <button>1</button> <button>2</button> <button>3</button> <button>-</button>
+                <button>0</button> <button>C</button> <button>+</button> <button>=</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #333; color: white; border-radius: 10px;">
+        <p style="margin: 0; font-size: 14px;">Fin de la Recopilación - José Ángel Alejo Sillero - 2025</p>
+    </div>
+</body>
+</html>

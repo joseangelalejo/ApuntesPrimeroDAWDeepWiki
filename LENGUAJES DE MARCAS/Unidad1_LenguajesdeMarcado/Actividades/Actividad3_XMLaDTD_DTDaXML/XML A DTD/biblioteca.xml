@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "libro.dtd">
+<biblioteca>
+    <libro id="l1" genero="novela">
+        <titulo>El Quijote</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <anio>1605</anio>
+    </libro>
+    <libro id="l2" genero="fantasia">
+        <titulo>El Hobbit</titulo>
+        <autor>J. R.R Tolkien</autor>
+        <anio>1937</anio>
+    </libro>
+
+    <prestamo id="p1" libroId="l2" usuario="u1" estado="activo">
+        <fecha>2025-09-01</fecha>
+    </prestamo>
+
+    <prestamo id="p2" libroId="l1" usuario="u2" estado="devuelto">
+        <fecha>2025-09-10</fecha>
+    </prestamo>
+</biblioteca>

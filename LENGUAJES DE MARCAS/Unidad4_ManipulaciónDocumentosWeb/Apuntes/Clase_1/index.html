@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ejemplo.js" defer></script>
+</head>
+<body>
+    <h1>El resultado es: </h1>
+    <h1 id="h1">Hola mundo</h1>
+    <!-- Lista Ordenada -->
+    <ol id="ol">
+        <li>Variable global: Se define fuera de cualquier función y es accesible desde cualquier parte del código.</li>
+        <li>Variable local: Se define dentro de una función y solo es accesible dentro de esa función.</li>
+    </ol>
+    <!-- Formulario de pruebas -->
+    <form>
+        <input id="usuario1" type="text" placeholder="Introduce tu usuario"> <br> <br>
+        <input id="password1" type="password" placeholder="Introduce tu contraseña"> <br> <br>
+        <input type="button" value="Enviar" width="100px" height="60px" onclick="btnform()">
+        <br> <br>
+        <input type="button" value="Añadir elemento a lista" width="200px" height="60px" onclick="btnlista()">
+        <input type="button" value="Quitar último elemento de lista" width="250px" height="60px" onclick="btnmenoslista()">
+        <br> <br>
+        <input type="button" value="Ejemplo If" width="100px" height="60px" onclick="ejemploIf()">
+        <input type="button" value="Ejemplo Switch" width="150px" height="60px" onclick="ejemploSwitch()">
+        <input type="button" value="Ejemplo For" width="100px" height="60px" onclick="ejemploFor()">
+        <br> <br>
+        <input type="button" value="Eliminar campos de ejemplos" width="250px" height="60px" onclick="camposEjemplos()">
+    </form>
+    <h2 id="ejemplos">Campo de ejemplos</h2>
+    <script>
+        let num1 = 1;
+        let num2 = 5;
+
+        function suma(num1, num2) {
+            var resultado = num1 + num2;    // Variable global (local)
+            return resultado;
+        }
+        console.log("El resultado es: " + suma(num1, num2));
+        document.getElementById("h1").innerText += " " + suma(num1, num2);
+        // También podemos usar innerHTML para insertar contenido HTML mediante etiquetas
+            // Por ejemplo, añadimos un nuevo elemento a la lista ordenada, poniendo entre comillas tanto las etiquetas como el contenido
+            // Para indicar a partir de dónde queremos insertar el nuevo contenido, usamos (por ejemplo)el id del elemento
+            // Usamos "+=" para añadir contenido sin borrar el existente
+        document.getElementById("ol").innerHTML += "<li>" + "Tercer elemento en lista" + "</li>";
+        // Para conectar funciones a elementos HTML como botones, usamos el atributo "onclick" dentro de la etiqueta del botón, e indicamos el nombre de la función con paréntesis
+        function btnform() {
+            var usuario1 = document.getElementById("usuario1").value;
+            var password1 = document.getElementById("password1").value;
+            document.getElementById("usuario1").value = password1;
+            alert("Formulario enviado");
+        }
+        // También podemos crear arrays y objetos
+        let array1 = ["Elemento1", "Elemento2", "Elemento3"];
+        let objeto1 = {clave1: "Valor1", clave2: "Valor2", clave3: "Valor3"};
+        //alert(objeto1.clave2);
+        // Podemos usar estos arrays y objetos para añadir o modificar contenido en la página
+            function btnlista() {
+                document.getElementById("ol").innerHTML += "<li>" + array1[0] + "</li>";
+            } // Añade el primer elemento del array a la lista ordenada
+            function btnmenoslista() {
+                document.getElementById("ol").removeChild(document.getElementById("ol").lastChild);
+            } // removeChild elimina un elemento hijo del elemento indicado, en este caso el último hijo (lastChild) de la lista ordenada (ol)
+        // También podemos usar condicionales if, else, switch, bucles for, while, do while, etc.
+            function ejemploIf() { 
+                if (num1 < num2) {
+                    document.getElementById("ejemplos").innerHTML += "<p>num1 es menor que num2</p>";
+
+                } else {
+                    document.getElementById("ejemplos").innerHTML += "<p>num1 no es menor que num2</p>";
+
+                }
+            }
+            function ejemploSwitch() {
+                switch (num1) {
+                    case 1:
+                        document.getElementById("ejemplos").innerHTML += "<p>num1 es 1</p>";
+                        break;
+                    case 2:
+                        document.getElementById("ejemplos").innerHTML += "<p>num1 es 2</p>";
+                        break;
+                    default:
+                        document.getElementById("ejemplos").innerHTML += "<p>num1 no es ni 1 ni 2</p>";
+                }
+            }
+            function ejemploFor() {
+                for (let i = 0; i < 5; i++) {
+                    document.getElementById("ejemplos").innerHTML += "<p>El valor de i es: " + i + "</p>";
+                }
+            }
+            function camposEjemplos() {
+                const ejemplos = document.getElementById("ejemplos");
+                const parrafos = ejemplos.querySelectorAll("p");
+                if (parrafos.length === 0) {
+                    alert("No hay campos p que eliminar");
+                } else {
+                    parrafos.forEach(p => p.remove());
+                }
+            }
+        // Existe otra estructura para las funciones llamada "función flecha" (arrow function)
+            const sumaFlecha = (a, b) => {
+                return a + b;
+            }
+            console.log("El resultado de la suma con función flecha es: " + sumaFlecha(10, 20));
+            // Las funciones flecha son más concisas y no tienen su propio contexto "this"
+            // En su estructura básica, se definen con "const" o "let", seguido del nombre de la función, el operador "=>" y el cuerpo de la función entre llaves
+    </script>
+    
+</body>
+</html>

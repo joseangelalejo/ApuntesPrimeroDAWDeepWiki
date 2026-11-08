@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tienda>
+    <producto id="1">
+        <nombre>Monitor LG 27"</nombre>
+        <precio>299.99</precio>
+        <categoria>Informática</categoria>
+    </producto>
+    <producto id="2">
+        <nombre>Teclado Mecánico</nombre>
+        <precio>89.50</precio>
+        <categoria>Informática</categoria>
+    </producto>
+    <producto id="3">
+        <nombre>Ratón Inalámbrico</nombre>
+        <precio>25.00</precio>
+        <categoria>Informática</categoria>
+    </producto>
+    <producto id="4">
+        <nombre>Lámpara LED</nombre>
+        <precio>45.99</precio>
+        <categoria>Hogar</categoria>
+    </producto>
+    <producto id="5">
+        <nombre>Auriculares Bluetooth</nombre>
+        <precio>150.00</precio>
+        <categoria>Audio</categoria>
+    </producto>
+    <producto id="6">
+        <nombre>Webcam Full HD</nombre>
+        <precio>79.99</precio>
+        <categoria>Informática</categoria>
+    </producto>
+</tienda>

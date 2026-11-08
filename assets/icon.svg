@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7768e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0605a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#cdd6f4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a6adc8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a6e3a1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#94e2d5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tagGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#89b4fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b4befe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="bookShadow">
+      <feDropShadow dx="4" dy="6" stdDeviation="8" flood-color="#f7768e" flood-opacity="0.25"/>
+    </filter>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" ry="96" fill="url(#bg2)"/>
+
+  <!-- Subtle dot grid pattern -->
+  <g opacity="0.08" fill="#89b4fa">
+    <circle cx="80" cy="80" r="2"/><circle cx="160" cy="80" r="2"/><circle cx="240" cy="80" r="2"/><circle cx="320" cy="80" r="2"/><circle cx="400" cy="80" r="2"/><circle cx="480" cy="80" r="2"/>
+    <circle cx="80" cy="160" r="2"/><circle cx="160" cy="160" r="2"/><circle cx="240" cy="160" r="2"/><circle cx="320" cy="160" r="2"/><circle cx="400" cy="160" r="2"/><circle cx="480" cy="160" r="2"/>
+    <circle cx="80" cy="240" r="2"/><circle cx="160" cy="240" r="2"/><circle cx="240" cy="240" r="2"/><circle cx="320" cy="240" r="2"/><circle cx="400" cy="240" r="2"/><circle cx="480" cy="240" r="2"/>
+    <circle cx="80" cy="320" r="2"/><circle cx="160" cy="320" r="2"/><circle cx="240" cy="320" r="2"/><circle cx="320" cy="320" r="2"/><circle cx="400" cy="320" r="2"/><circle cx="480" cy="320" r="2"/>
+    <circle cx="80" cy="400" r="2"/><circle cx="160" cy="400" r="2"/><circle cx="240" cy="400" r="2"/><circle cx="320" cy="400" r="2"/><circle cx="400" cy="400" r="2"/><circle cx="480" cy="400" r="2"/>
+    <circle cx="80" cy="480" r="2"/><circle cx="160" cy="480" r="2"/><circle cx="240" cy="480" r="2"/><circle cx="320" cy="480" r="2"/><circle cx="400" cy="480" r="2"/><circle cx="480" cy="480" r="2"/>
+  </g>
+
+  <!-- === MAIN BOOK STACK === -->
+  <!-- Bottom book (shadow book) -->
+  <rect x="128" y="310" width="256" height="28" rx="6" fill="#2a2a4a" opacity="0.7"/>
+
+  <!-- Back book (blue) -->
+  <rect x="134" y="180" width="244" height="148" rx="8" fill="#1e3a5f"/>
+  <rect x="134" y="180" width="22" height="148" rx="4" fill="#2563eb" opacity="0.9"/>
+
+  <!-- Middle book (purple) -->
+  <rect x="128" y="168" width="248" height="150" rx="8" fill="#2d1b69"/>
+  <rect x="128" y="168" width="20" height="150" rx="4" fill="#7c3aed" opacity="0.9"/>
+
+  <!-- Main front book (red) with shadow -->
+  <rect x="122" y="155" width="252" height="158" rx="10" fill="url(#bookGrad)" filter="url(#bookShadow)"/>
+
+  <!-- Book spine -->
+  <rect x="122" y="155" width="24" height="158" rx="6" fill="#e05068"/>
+  <line x1="134" y1="165" x2="134" y2="303" stroke="#f7768e" stroke-width="2" opacity="0.4"/>
+
+  <!-- Page area (white pages) -->
+  <rect x="146" y="155" width="228" height="158" rx="0" fill="url(#pageGrad)" opacity="0.08"/>
+
+  <!-- === CODE LINES ON BOOK === -->
+  <!-- Line 1: import statement -->
+  <rect x="158" y="178" width="55" height="8" rx="3" fill="url(#tagGrad)" opacity="0.9"/>
+  <rect x="218" y="178" width="90" height="8" rx="3" fill="#cdd6f4" opacity="0.5"/>
+
+  <!-- Line 2: class definition -->
+  <rect x="158" y="198" width="40" height="8" rx="3" fill="#f7768e" opacity="0.9"/>
+  <rect x="203" y="198" width="70" height="8" rx="3" fill="#cdd6f4" opacity="0.6"/>
+  <rect x="278" y="198" width="30" height="8" rx="3" fill="#fab387" opacity="0.8"/>
+
+  <!-- Line 3: indented code -->
+  <rect x="172" y="218" width="50" height="8" rx="3" fill="url(#codeGrad)" opacity="0.9"/>
+  <rect x="227" y="218" width="18" height="8" rx="3" fill="#cdd6f4" opacity="0.4"/>
+  <rect x="250" y="218" width="60" height="8" rx="3" fill="#fab387" opacity="0.7"/>
+
+  <!-- Line 4: more code -->
+  <rect x="172" y="236" width="30" height="8" rx="3" fill="url(#codeGrad)" opacity="0.7"/>
+  <rect x="207" y="236" width="55" height="8" rx="3" fill="#cdd6f4" opacity="0.4"/>
+
+  <!-- Line 5: comment -->
+  <rect x="172" y="254" width="100" height="8" rx="3" fill="#585b70" opacity="0.8"/>
+
+  <!-- Line 6: closing -->
+  <rect x="172" y="272" width="20" height="8" rx="3" fill="#cdd6f4" opacity="0.4"/>
+
+  <!-- Closing bracket -->
+  <rect x="158" y="288" width="12" height="8" rx="2" fill="#cdd6f4" opacity="0.5"/>
+
+  <!-- === FLOATING BADGES (module tags) === -->
+  <!-- Java badge - top right -->
+  <rect x="356" y="110" width="72" height="28" rx="8" fill="#1e1e2e" stroke="#f7768e" stroke-width="1.5" filter="url(#glow2)"/>
+  <text x="392" y="129" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#f7768e" text-anchor="middle">.java</text>
+  <line x1="374" y1="138" x2="392" y2="155" stroke="#f7768e" stroke-width="1" opacity="0.5" stroke-dasharray="2,3"/>
+
+  <!-- SQL badge - top left -->
+  <rect x="84" y="98" width="66" height="28" rx="8" fill="#1e1e2e" stroke="#89b4fa" stroke-width="1.5" filter="url(#glow2)"/>
+  <text x="117" y="117" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#89b4fa" text-anchor="middle">.sql</text>
+  <line x1="135" y1="126" x2="155" y2="155" stroke="#89b4fa" stroke-width="1" opacity="0.5" stroke-dasharray="2,3"/>
+
+  <!-- MD badge - right -->
+  <rect x="366" y="240" width="66" height="28" rx="8" fill="#1e1e2e" stroke="#a6e3a1" stroke-width="1.5" filter="url(#glow2)"/>
+  <text x="399" y="259" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#a6e3a1" text-anchor="middle">.md</text>
+  <line x1="374" y1="254" x2="374" y2="254" stroke="#a6e3a1" stroke-width="1" opacity="0.5"/>
+
+  <!-- Bash badge - left -->
+  <rect x="70" y="235" width="72" height="28" rx="8" fill="#1e1e2e" stroke="#fab387" stroke-width="1.5" filter="url(#glow2)"/>
+  <text x="106" y="254" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#fab387" text-anchor="middle">.sh</text>
+
+  <!-- === BOTTOM FOLDER TABS === -->
+  <!-- Tab 1 -->
+  <rect x="124" y="328" width="58" height="20" rx="4" fill="#2563eb" opacity="0.85"/>
+  <text x="153" y="342" font-family="'SF Mono', 'Fira Code', monospace" font-size="9" font-weight="600" fill="#cdd6f4" text-anchor="middle">BD</text>
+  <!-- Tab 2 -->
+  <rect x="188" y="328" width="58" height="20" rx="4" fill="#7c3aed" opacity="0.85"/>
+  <text x="217" y="342" font-family="'SF Mono', 'Fira Code', monospace" font-size="9" font-weight="600" fill="#cdd6f4" text-anchor="middle">PROG</text>
+  <!-- Tab 3 -->
+  <rect x="252" y="328" width="58" height="20" rx="4" fill="#e05068" opacity="0.85"/>
+  <text x="281" y="342" font-family="'SF Mono', 'Fira Code', monospace" font-size="9" font-weight="600" fill="#cdd6f4" text-anchor="middle">LM</text>
+  <!-- Tab 4 -->
+  <rect x="316" y="328" width="58" height="20" rx="4" fill="#2d7a4f" opacity="0.85"/>
+  <text x="345" y="342" font-family="'SF Mono', 'Fira Code', monospace" font-size="9" font-weight="600" fill="#cdd6f4" text-anchor="middle">SI</text>
+
+  <!-- Bottom shelf line -->
+  <rect x="110" y="348" width="292" height="4" rx="2" fill="#313244" opacity="0.8"/>
+
+  <!-- Label -->
+  <text x="256" y="400" font-family="'SF Mono', 'Fira Code', monospace" font-size="11" font-weight="600" fill="#585b70" text-anchor="middle" letter-spacing="1">MisApuntes</text>
+  <text x="256" y="420" font-family="'SF Mono', 'Fira Code', monospace" font-size="14" font-weight="700" fill="#89b4fa" text-anchor="middle" letter-spacing="2">ITP DAW</text>
+
+  <!-- Small decorative stars/pixels -->
+  <rect x="90" y="360" width="3" height="3" rx="1" fill="#f7768e" opacity="0.5"/>
+  <rect x="420" y="370" width="3" height="3" rx="1" fill="#a6e3a1" opacity="0.5"/>
+  <rect x="76" y="310" width="2" height="2" rx="1" fill="#89b4fa" opacity="0.6"/>
+  <rect x="434" y="305" width="2" height="2" rx="1" fill="#fab387" opacity="0.6"/>
+</svg>

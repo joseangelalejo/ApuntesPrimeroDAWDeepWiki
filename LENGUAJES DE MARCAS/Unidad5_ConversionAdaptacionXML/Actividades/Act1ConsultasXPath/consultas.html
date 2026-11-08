@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+        <!--
+    # 1. Expresiones XPath básicas
+    /peliculas/pelicula/titulo
+    /peliculas/pelicula/genero
+    /peliculas/pelicula/director
+    
+    # 2. Expresiones XPath avanzadas
+    /peliculas/pelicula[anio > 2010]/titulo
+    /peliculas/pelicula[titulo='Titanic']/protagonistas/actor
+    /peliculas/pelicula[genero='Ciencia Ficcion']/titulo | /peliculas/pelicula[genero='Ciencia Ficcion']/director
+    # o separado en XPath 1.0:
+    # /peliculas/pelicula[genero='Ciencia Ficcion']/titulo
+    # /peliculas/pelicula[genero='Ciencia Ficcion']/director
+    
+    # 3. Uso de predicados
+    /peliculas/pelicula[@id='p3']/titulo
+    /peliculas/pelicula[precio > 10.00]
+    /peliculas/pelicula[anio=1999]/protagonistas/actor
+    
+    # 4. Uso de funciones XPath
+    count(/peliculas/pelicula)
+    # promedio en XPath 1.0:
+    sum(/peliculas/pelicula/precio) div count(/peliculas/pelicula)
+    # promedio en XPath 2.0:
+    avg(/peliculas/pelicula/precio)
+    /peliculas/pelicula[contains(titulo, 'The')]
+    /peliculas/pelicula[starts-with(titulo, 'E')]
+    
+    # 5. Uso de atributos
+    /peliculas/pelicula[@id='p5']
+    /peliculas/pelicula/@id
+    /peliculas/pelicula[@id='p1']/titulo
+    
+    # 6. Uso de posición
+    /peliculas/pelicula[1]/titulo
+    /peliculas/pelicula[last()]/titulo
+    /peliculas/pelicula[last()-1]/titulo
+    -->
+
+    </head>
+    <body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Editorial</th>
+                    <th>Fecha publicación</th>
+                    <th>ISBN</th>
+                    <th>Precio</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="tabla">
+
+            </tbody>
+        </table>
+
+        <script> function cargarXML() {
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "libros.xml", false);
+            xhr.send();
+
+            if (xhr.status === 200) {
+                let xmlDoc = xhr.responseXML;
+                let libros = xmlDoc.getElementsByTagName("libro");
+                let tabla = document.getElementById("tabla");
+                for (let i = 0; i < libros.length; i++) {
+                    let libro = libros[i];
+                    let titulo = libro.querySelector("titulo").textContent;
+                    let autor = libro.querySelector("autor").textContent;
+                    let Editorial = libro.querySelector("editorial").textContent;
+
+                    let fila = "<tr><td>" + titulo + "</td><td>" + autor + "</td><td>" + Editorial + "</td></tr>";
+                    tabla.innerHTML += fila;
+                }
+            } else {
+                console.error("No se pudo cargar el archivo XML");
+            }
+        }
+
+        cargarXML();
+
+    </script>
+
+    </body>
+</html>

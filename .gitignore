@@ -1,0 +1,124 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env*.local
+
+# Node.js (si aplica)
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+*.swo
+*~
+*.tmp
+*.temp
+*.bk
+
+# Logs
+logs/
+*.log
+debug.log
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+.mvn/wrapper/maven-wrapper.jar
+target/
+out/
+bin/
+.classpath
+.project
+.settings/
+
+# Compilación
+build/
+dist/
+
+# Testing
+coverage/
+test-results/
+
+# Backups
+*.bak
+*.backup
+backups/
+*.old
+
+# Editor temporales
+*.swp
+.~*
+.env.production
+.env.development
+secrets.json
+config/secrets.py
+keys/
+*.key
+*.pem
+
+# IDEs y editores
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Practicas Empresa - ignorar PDFs
+Practicas_Empresa_1DAW/**/*.pdf
+
+# Bases de datos locales
+*.db
+*.sqlite
+*.sqlite3
+
+# Imágenes o archivos grandes (si no son necesarios)
+# Comenta si necesitas subir imágenes
+# *.jpg
+# *.png
+# *.gif
+# *.txt
+
+# Archivos personales o con rutas absolutas
+# Añade aquí si hay archivos específicos con datos personales
+# Minecraft Server
+Minecraft.zip
+MC/
+
+# Cache de archivos de ensamblado de Visual Studio
+Calculadora.AssemblyInfo.cs
+Calculadora.AssemblyInfoInputs.cache
+CalculadoraTests.AssemblyInfo.cs
+CalculadoraTests.AssemblyInfoInputs.cache
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/Calculadora/obj/Debug/net10.0/Calculadora.AssemblyInfo.cs
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/Calculadora/obj/Debug/net10.0/Calculadora.AssemblyInfoInputs.cache
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/Calculadora/obj/Debug/net10.0/Calculadora.GeneratedMSBuildEditorConfig.editorconfig
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/Calculadora/obj/Debug/net10.0/Calculadora.GlobalUsings.g.cs
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/CalculadoraTests/obj/Debug/net10.0/CalculadoraTests.AssemblyInfo.cs
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/CalculadoraTests/obj/Debug/net10.0/CalculadoraTests.AssemblyInfoInputs.cache
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/CalculadoraTests/obj/Debug/net10.0/CalculadoraTests.csproj.AssemblyReference.cache
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/CalculadoraTests/obj/Debug/net10.0/CalculadoraTests.GeneratedMSBuildEditorConfig.editorconfig
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/CalculadoraTests/obj/Debug/net10.0/CalculadoraTests.GlobalUsings.g.cs
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/Calculadora/obj/Debug/net10.0/Calculadora.AssemblyInfo.cs
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/Calculadora/obj/Debug/net10.0/Calculadora.AssemblyInfoInputs.cache
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/CalculadoraTests/obj/Debug/net10.0/CalculadoraTests.AssemblyInfo.cs
+ENTORNOS DE DESARROLLO/Unidad6_DisenioRealizacionPruebas/ACTIVIDADES/Act2_PruebasUnitarias-Evaluable/CalculadoraTests/obj/Debug/net10.0/CalculadoraTests.AssemblyInfoInputs.cache

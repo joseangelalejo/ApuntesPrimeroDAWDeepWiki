@@ -1,0 +1,137 @@
+<html lang="eng">
+    <body>
+        <style>
+            th {
+                background-color: black;
+                color: white;
+            }
+        </style>
+        <input type="text" id="buscador" onkeyup="busqueda()"
+            placeholder="Buscar por título...">
+        <table border="1">
+            <tr>
+                <th>Título</th>
+                <th>Género</th>
+                <th>Año</th>
+                <th>Duración</th>
+                <th>Precio</th>
+                <th>Director</th>
+                <th>Protagonistas</th>
+            </tr>
+            <tbody id="tabla"></tbody>
+        </table>
+        <script>
+            cargarTabla();
+            function cargarTabla() {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "peliculas.xml", false);
+                xhr.send();
+                if (xhr.status !== 200) return;
+                let xmlDoc = xhr.responseXML;
+                let filas = xmlDoc.getElementsByTagName("pelicula");
+                let tabla = document.getElementById("tabla");
+                tabla.innerHTML = "";
+                for (let i = 0; i < filas.length; i++) {
+                    let n = filas[i];
+                    let titulo = n.querySelector("titulo").textContent;
+                    let genero = n.querySelector("genero").textContent;
+                    let anio = n.querySelector("anio").textContent;
+                    let duracion = n.querySelector("duracion").textContent;
+                    let precio = n.querySelector("precio").textContent;
+                    let director = n.querySelector("director").textContent;
+                    let protagonistas = Array.from(n.querySelectorAll("protagonistas actor"))
+                        .map(x => x.textContent)    // Convierte cada nodo actor a un string con su texto
+                        .join(", ");                // Une los nombres de los actores con comas
+                    tabla.innerHTML += "<tr><td>" + titulo + "</td><td>" + genero + "</td><td>" + anio +
+                    "</td><td>" + duracion + "</td><td>" + precio + "</td><td>" + director +
+                    "</td><td>" + protagonistas + "</td></tr>";
+                }
+            }
+            function busqueda() {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "peliculas.xml", false); // idealmente async, pero conserva tu estilo
+                xhr.send();
+                let xmlDoc = xhr.responseXML;
+                if (!xmlDoc) {
+                    console.error("XML no cargó");
+                    return;
+                }
+
+                let texto = document.getElementById("buscador").value.toLowerCase().trim();
+                let tabla = document.getElementById("tabla");
+                tabla.innerHTML = "";
+                let expr = `//pelicula[
+                    contains(translate(titulo, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}') or
+                    contains(translate(genero, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}') or
+                    contains(translate(anio, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}') or
+                    contains(translate(duracion, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}') or
+                    contains(translate(precio, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}') or
+                    contains(translate(director, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}') or
+                    contains(translate(protagonistas, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}')
+                ]
+                `;
+                let resultado = xmlDoc.evaluate(expr, xmlDoc, null, XPathResult.ANY_TYPE, null);
+                let nodo = resultado.iterateNext();
+                while (nodo) {
+                    let titulo = nodo.querySelector("titulo").textContent;
+                    let genero = nodo.querySelector("genero").textContent;
+                    let anio = nodo.querySelector("anio").textContent;
+                    let duracion = nodo.querySelector("duracion").textContent;
+                    let precio = nodo.querySelector("precio").textContent;
+                    let director = nodo.querySelector("director").textContent;
+                    let protagonistas = Array.from(nodo.querySelectorAll("protagonistas actor"))
+                        .map(p => p.textContent).join(", ");
+                    tabla.innerHTML += `
+                        <tr>
+                            <td>${titulo}</td><td>${genero}</td><td>${anio}</td>
+                            <td>${duracion}</td><td>${precio}</td><td>${director}</td>
+                            <td>${protagonistas}</td>
+                        </tr>`;
+                    nodo = resultado.iterateNext();
+                }
+            }
+            /*
+            function busqueda() {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "peliculas.xml", false);
+                xhr.send();
+                let xmlDoc = xhr.responseXML;
+                let texto = document.getElementById("buscador").value.toLowerCase();
+
+                let tabla = document.getElementById("tabla");
+                tabla.innerHTML = "";
+                let expr = `
+                  //pelicula[
+                    starts-with(translate(titulo, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}')
+                    or starts-with(translate(genero, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}')
+                    or starts-with(translate(anio, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}')
+                    or starts-with(translate(duracion, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}')
+                    or starts-with(translate(precio, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}')
+                    or starts-with(translate(director, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '${texto}')]`
+                let resultado = xmlDoc.evaluate(xpr, xmlDoc, null, XPathResult.ANY_TYPE, null
+                );
+                let nodo = resultado.iterateNext();
+                while (nodo) {
+                    let titulo = nodo.querySelector("titulo").textContent;
+                    let genero = nodo.querySelector("genero").textContent;
+                    let anio = nodo.querySelector("anio").textContent;
+                    let duracion = nodo.querySelector("duracion").textContent;
+                    let precio = nodo.querySelector("precio").textContent;
+                    let director = nodo.querySelector("director").textContent;
+                    let protagonistas = Array.from(nodo.querySelectorAll("protagonistas actor")).map(p => p.textContent).join(", ");
+                    tabla.innerHTML += 
+                    "<tr><td>" + titulo 
+                        + "</td><td>" + genero 
+                            + "</td><td>" + anio 
+                                + "</td><td>" + duracion 
+                                    + "</td><td>" + precio 
+                                        + "</td><td>" + director 
+                                            + "</td><td>" + protagonistas 
+                                                + "</td></tr>";
+                    nodo = resultado.iterateNext();
+                }
+            }
+                */
+        </script>
+    </body>
+</html>

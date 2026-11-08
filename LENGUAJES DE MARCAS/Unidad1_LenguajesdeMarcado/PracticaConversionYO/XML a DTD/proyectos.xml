@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE proyectos SYSTEM "proyectos.dtd">
+<proyectos>
+    <proyecto  id="P1" estado="pendiente">
+        <nombre>Diagramas de flujo 1DAW</nombre>
+        <descripcion> Preparar una unidad donde tratemos diagramas de flujo</descripcion>
+        <tareas>
+            <tarea id="T1" prioridad="alta">
+                <titulo>Hacer explicacion y teoria con ejemplos practicos en una presentacion de google</titulo>
+                <asignadoA refEmpleado="E001"/>
+            </tarea>
+            <tarea id="T2">
+                <titulo>Hacer ejercicios y correciones</titulo>
+                <asignadoA refEmpleado="E002"/>
+            </tarea>
+        </tareas>
+    </proyecto>
+    <empleados>
+        <empleado id="E001">
+            <nombre>Juan Antonio</nombre>
+            <email>juanantonio@gmail.com</email>
+        </empleado>
+        <empleado  id="E002">
+            <nombre>Maria Jesus</nombre>
+            <email>mariajesus@gmail.com</email>
+        </empleado>
+    </empleados>
+</proyectos>

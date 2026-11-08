@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogo SYSTEM "catalogo.dtd">
+
+<catalogo>
+    <pelicula codigo="p1" pais="USA">
+        <titulo>Inception</titulo>
+        <director>Christopher Nolan</director>
+        <anio>2010 </anio>
+        <actores>
+        <actor rol="protagonista">Leonardi DiCaprio</actor>
+        <actor rol="secundario">Joseph Gordon-Levitt</actor> 
+        </actores>
+
+    </pelicula>
+</catalogo>

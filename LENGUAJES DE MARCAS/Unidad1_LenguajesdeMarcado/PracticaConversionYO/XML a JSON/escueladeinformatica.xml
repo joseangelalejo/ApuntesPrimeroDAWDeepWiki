@@ -1,0 +1,41 @@
+<escuela>
+    <nombre>Academia Tech</nombre>
+    <ubicacion>
+        <pais>España</pais>
+        <ciudad>Barcelona</ciudad>
+    </ubicacion>
+    <cursos>
+        <curso>
+            <titulo>Programación en Java</titulo>
+            <nivel>Intermedio</nivel>
+            <alumnos>
+                <alumno>
+                    <nombre>Ana</nombre>
+                    <edad>22</edad>
+                    <activo>true</activo>
+                </alumno>
+                <alumno>
+                    <nombre>Luis</nombre>
+                    <edad>25</edad>
+                    <activo>false</activo>
+                </alumno>
+            </alumnos>
+        </curso>
+        <curso>
+            <titulo>Desarrollo Web</titulo>
+            <nivel>Principiante</nivel>
+            <alumnos>
+                <alumno>
+                    <nombre>Clara</nombre>
+                    <edad>20</edad>
+                    <activo>true</activo>
+                </alumno>
+                <alumno>
+                    <nombre>Mario</nombre>
+                    <edad>23</edad>
+                    <activo>true</activo>
+                </alumno>
+            </alumnos>
+        </curso>
+    </cursos>
+</escuela>

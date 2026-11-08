@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE universidad SYSTEM "universidad.dtd">
+<universidad>
+    <curso codigo="CS10" semestre="Primero">
+        <titulo>Introducción a la Programación</titulo>
+        <profesor>Dr. Ana Martínez</profesor>
+        <estudiantes >
+            <estudiante id="E001" edad="20">
+                <nombre>Juan Pérez</nombre>
+                <email>juanperez@gmail.com</email>
+            </estudiante>
+            <estudiante id="E004" edad="23">
+                <nombre>Ana Torres</nombre>
+                <email>anatorres@gmail.com</email>
+             </estudiante>
+        </estudiantes>
+    </curso>
+    <curso codigo="CS20" semestre="Segundo">
+        <titulo>Estructuras de Datos</titulo>
+        <profesor>Dr. Luis Rodríguez</profesor>
+        <estudiantes>
+            <estudiante id="E003" edad="21">
+                <nombre>Carlos Sánchez</nombre>
+                <email>carlossanchez@gmail.com</email>
+            </estudiante>
+            <estudiante id="E004" edad="23">
+                <nombre>Ana Torres</nombre>
+                <email>anatorres@gmail.com</email>
+            </estudiante>
+        </estudiantes>
+    </curso>
+
+</universidad>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Act3_20-XML-JSON_JAAlejo.xsl"?>
+
+<alumnos>
+    <alumno>
+        <nombre>Juan</nombre>
+        <edad>20</edad>
+    </alumno>
+    <alumno>
+        <nombre>Ana</nombre>
+        <edad>18</edad>
+    </alumno>
+    <alumno>
+        <nombre>Carlos</nombre>
+        <edad>22</edad>
+    </alumno>
+    <alumno>
+        <nombre>Lucía</nombre>
+        <edad>19</edad>
+    </alumno>
+    <alumno>
+        <nombre>Pedro</nombre>
+        <edad>21</edad>
+    </alumno>
+</alumnos>

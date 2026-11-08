@@ -1,0 +1,2 @@
+USE HOLAMUNDO;
+CREATE TABLE tabla1 ( Edad INT);

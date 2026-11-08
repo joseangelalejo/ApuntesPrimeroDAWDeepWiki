@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        Usamos Usamos img src para insertar una imagen que está en nuestro ordenador o en una URL 
+        <img src="Multimedia\Logo-ITP-Pablo de la torre.png" alt="Logo ITP" width="200" height="150">
+        <!-- Usamos img src para insertar una imagen que está en nuestro ordenador o en una URL -->
+        <br>
+        <hr color="#FF0000" size="2">
+        <p>Si indicamos la ruta de manera incorrecta la imagen no se mostrará. <br>En caso de no mostrarse podemos indicar un texto alternativo con el atributo alt</p>
+        <img src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick/" alt="ALT Imagen de un pajaro"> 
+        <!-- Usando el atributo alt-->
+        <br>
+        <hr color="#FF0000" size="2">
+        Usando los atributos width y height podemos ajustar el tamaño de la imagen, reescalandola. Si solo indicamos width o height, el otro atributo se ajustará de manera que la imagen no se deforme.
+        <br>
+        <img src="Multimedia\Logo-ITP-Pablo de la torre.png" alt="Logo ITP" width="200" height="150">
+        
+        <br>
+        <hr color="#FF0000" size="2">
+        <p>Si la imagen se representa como una foto, se utiliza "figure" junto con "figcaption" para añadir un título debajo de la imagen</p>
+        <figure>
+            <img src="Multimedia\Logo-ITP-Pablo de la torre.png" alt="Logo ITP" width="200" height="150">
+            <figcaption>Logo del ITP Pablo de la Torre</figcaption>
+        </figure>
+
+        <br>
+        <hr color="#FF0000" size="2">
+        <p>Si queremos crear un vínculo dentro de una imagen, tenemos que meter la etiqueta imagen dentro de una etiqueta vínculo href</p>
+        <a href="https://www.itpuebla.edu.mx/" target="_blank">
+            <img src="Multimedia\Logo-ITP-Pablo de la torre.png" alt="Logo ITP" width="200" height="150">
+        </a>
+
+        <br>
+        <hr color="#FF0000" size="2">
+        <p>Para insertar un video usamos la etiqueta <code>video</code>, dentro de la cual podemos usar la etiqueta <code>source</code> para indicar la ruta del video y su tipo.</p>
+        <p>Para poder reproducir el vídeo completamos la etiqueta con el atributo <code>controls</code>, que permite pausarlo, reanudarlo y controlarlo.</p>
+        <p>Si queremos que se reproduzca automáticamente usamos <code>autoplay muted</code>. Y si queremos que se reproduzca en bucle usamos <code>loop</code>.</p>
+        <video width="320" height="240" controls>
+            <source src="Multimedia/Video de prueba.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta <code>video</code> o no encuentra el archivo de vídeo.
+        </video>
+        </video>
+
+        <br>
+        <hr color="#FF0000" size="2">
+        <p>Para reproducir audio es exactamente igual que el vídeo pero con la etiqueta <code>audio</code>.</p>
+        <audio controls>
+            <source src="Multimedia\LXNGVX - Royalty Funk [NCS Release].mp3" type="audio/mp3">
+            Tu navegador no soporta la etiqueta <code>audio</code> o no encuentra el archivo de audio.
+        </audio>
+         
+        <br>
+        <hr color="#FF0000" size="2">
+
+        <p> Si queremos centrar un audio o un vídeo u otro elemento, utilizamos la etiqueta div englobando a la etiqueta video/audio</p>
+        <div style="text-align: center;">
+            <audio width="320" height="240" controls autoplay muted loop>
+                <source src="Multimedia\LXNGVX - Royalty Funk [NCS Release].mp3" type="audio/mp3">
+                Tu navegador no soporta la etiqueta <code>video</code> o no encuentra el archivo de vídeo.
+            </audio>
+        </div>
+
+        <br>
+        <hr color="#FF0000" size="2">
+        <p>La etiqueta iframe se utiliza para insertar contenido de otras páginas web dentro de la nuestra. Es especialmente útil para incrustar videos de plataformas como YouTube.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BLO6LRPMUp8?si=i_Ubxzw9DibgbgAu&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+        <br>
+        <hr color="#FF0000" size="2">
+        <p> Si queremos agregar un audio de otra página, utilizamos la etiqueta <code>iframe</code>.</p>
+        
+    </body>
+</html>

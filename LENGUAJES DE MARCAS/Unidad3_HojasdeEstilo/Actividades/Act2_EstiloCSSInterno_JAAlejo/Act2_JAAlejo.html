@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 2 CSS Interno JAAlejo</title>
+    <!-- Pseudoclases a usar: HOVER, FOCUS, CHECKED, VALID, INVALID, OUT-OF-RANGE, IN-RANGE, LINK, VISITED, OPTIONAL, REQUIRED -->
+        <!-- DONE: HOVER, CHECKED, VALID, INVALID, FOCUS, OUT-OF-RANGE, IN-RANGE, LINK, VISITED, OPTIONAL, REQUIRED -->
+    <!-- Pseudoelementos a usar: FIRST-LETTER, FIRST-LINE, SELECTION, AFTER, BEFORE-->
+        <!-- DONE:  FIRST-LETTER, FIRST-LINE, AFTER, BEFORE, SELECTION -->
+    <style>
+        /* Estilo global*/
+        * {
+            font-family: Miracode, monospace;
+            color: black;
+        }
+        /* Estilos generales para inputs */
+        input {
+            border: 2px solid gray;
+            margin: 2px;
+            font-size: 14px;
+            border-color: blue;
+            background-color: turquoise;
+        }
+        /* Estilos para p y hover */
+        p {
+            color: blue;
+            font-size: 15px;
+            width: fit-content;
+        }
+        #ejemplohover:hover {
+            color: red;
+            font-size: 15px;
+            font-family: 'David Libre', sans-serif;
+            font-weight: bold;
+        }
+        /* Estilos para hr */
+        hr {
+            border: 2px solid black;
+        }
+        /* Estilos para checkbox */
+        input[type="checkbox"]:checked + label{
+            accent-color: yellow;
+            text-transform: uppercase;
+        }
+        /* Estilos para email */
+        input[type="email"]:valid {
+            border-color: darkgreen;
+            background-color: lightgreen;
+        }
+        input[type="email"]:invalid {
+            border-color: red;
+            background-color: lightcoral;
+        }
+        /* Estilos para text (nombre y apellido) */
+        input[type="text"]:focus {
+            background-color: violet;
+        }
+        /* Estilos para number */
+        input[type="number"]:out-of-range {
+            border-color: red;
+            background-color: lightcoral;
+            min-width: 200px;
+        }
+        input[type="number"]:in-range {
+            border-color: darkgreen;
+            background-color: lightgreen;
+            min-width: 200px;
+        }
+        /* Estilos para enlaces */
+        a:link {
+            color: lightblue;
+        }
+        a:visited {
+            color: purple;
+            /* text-transform: uppercase; */  
+            /* DONE: Navegadores modernos como Edge y Firefox 
+            ignoran text-transform en pseudoclases aplicadas a enlaces como link o visited */
+        }
+        /* Estilos para OPTIONAL y REQUIRED */
+        input:optional {
+            border-color: orange;
+            background-color: lightyellow;
+        }
+        input:required {
+            border-color: red;
+            background-color: lightpink;
+        }
+        /* Estilo para atributo type="text" con id "nick"*/
+        #nick[type="text"] {
+            width: 215px;
+        }
+        /* Selectores de hijos para elementos p y h2 hijos de elemento div */
+        div p{
+            color: black;;
+        }
+        /* Selectores para elementos con id p1 y p2 */
+        #p1, #p2::first-letter {    /* Pseudoelemento first-letter*/
+            font-size: 18px;
+        }
+        #p2::first-line {           /* Pseudoelemento first-line*/
+            text-transform: capitalize;
+        }
+        #p1::before {
+            Content:"Inputs OPTIONAL: ";
+            color: green;
+            font-weight: bold;
+        }
+        #p2::after {
+            Content:" Nombre y apellido";
+            color: green;
+            font-weight: bold;
+        }
+        *::selection {
+            background-color: lightgray;
+            color: red;
+            text-shadow: 0 0 10px darkorange;
+            /*-webkit-box-shadow: 0 0 3px darkorange;
+            box-shadow: 0 0 3px darkorange;*/
+            /*box-shadow no se aplica correctamente con pseudoelemento selection.
+            Tampoco usando -webkit-box-shadow (habilita funcionalidad para navegadores antiguos)
+            Se ha revisado que no haya conflicto con otros estilos aplicados en la página.
+            Se ha revisado que no haya box-shadow: none en otros estilos que anulen este.
+            */
+        }
+    </style>
+</head>
+<body>
+    <p id="ejemplohover">Ejemplo de hover</p>
+    <hr>
+    <input type="checkbox"><label>Ejemplo de checkbox</label> <!--Input checkbox con atributo checked-->
+    <hr>
+    <input type="email" placeholder="Introduce tu email"> <!--Input email con atributo valid e invalid-->
+    <hr>
+    <input type="text" placeholder="Introduce tu nombre" required><br>
+    <input type="text" placeholder="Introduce tu apellido" required><br>
+    <input id ="nick" type="text" placeholder="Introduce tu nick/alias" optional><br>
+    <hr>
+    <input type="number" min="1" max="10" placeholder="Número entre 1 y 10">
+    <hr>
+    <a href="https://github.com/joseangelalejo" target="_blank">Enlace GitHub de Jose Angel Alejo</a>
+    <hr>
+    <div>
+        <h2>Aplicando pseudoelementos</h2>
+        <p id="p1">Nick/Alias</p>
+        <p id="p2">Inputs REQUIRED:</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Si queremos cargar archivos JSON dentro de un documento, debemos definirlo en el apartado de script-->
+    <h1>Películas</h1>
+    <h2>Listado de películas</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Año</th>
+            </tr>
+        </thead>
+        <tbody id="peliculas">
+            <!-- Aquí se cargarán las películas desde el JSON -->
+        </tbody>
+    </table>
+    <br>
+        <table border="1">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Año</th>
+                <th>Autor</th>
+                <th>Visto</th>
+            </tr>
+        </thead>
+        <tbody id="peliculas2">
+            <!-- Aquí se cargarán las películas desde el JSON -->
+        </tbody>
+    </table>
+    <script>
+        // Definit JSON con peliculas
+        let peliculas = [
+            { "titulo": "El Padrino", "año": 1972 },
+            { "titulo": "El Caballero Oscuro", "año": 2008 },
+            { "titulo": "Pulp Fiction", "año": 1994 }
+        ];
+
+        // Obtener la tabla con gotElementById
+        let tablaPeliculas = document.getElementById("peliculas");
+    
+        // Recorrer el array de películas con un for y crear filas en la tabla
+        for (let i = 0; i < peliculas.length; i++) {
+            let fila = "<tr>" + 
+                "<td>" + peliculas[i].titulo + "</td>" 
+                + "<td>" + peliculas[i].año + "</td>" 
+                + "</tr>";
+            tablaPeliculas.innerHTML += fila;
+        }
+        // Método alternativo utilizando createElement y appendChild
+        /*
+        for (let i = 0; i < peliculas.length; i++) {
+            let fila = document.createElement("tr");
+            let celdaTitulo = document.createElement("td");
+            let celdaAño = document.createElement("td");
+            celdaTitulo.textContent = peliculas[i].titulo;
+            celdaAño.textContent = peliculas[i].año;
+            fila.appendChild(celdaTitulo);
+            fila.appendChild(celdaAño);
+            tablaPeliculas.appendChild(fila);
+        }
+        */
+       // Si queremos cargar un JSON desde un archivo externo se hace de la siguiente manera::
+        fetch("JSONEjemplo.json")
+            .then(r => r.json())
+            .then(data => {
+            let tablaPeliculas2 = document.getElementById("peliculas2");
+            data.forEach(pelicula => {
+                let autorTexto;
+                // IF para comprobar el tipo dato por si es objeto o string. Si no es ninguno, marcamos "desconocido"
+                if (typeof pelicula.autor === "string") {
+                    autorTexto = pelicula.autor;
+                } else if (pelicula.autor && pelicula.autor.nombre && pelicula.autor.apellido) {
+                    autorTexto = pelicula.autor.nombre + " " + pelicula.autor.apellido;
+                } else {
+                    autorTexto = "Desconocido";
+                }
+            
+                let fila = "<tr>" +
+                    "<td>" + pelicula.titulo + "</td>" +
+                    "<td>" + pelicula.año + "</td>" +
+                    "<td>" + autorTexto + "</td>" +
+                    "<td>" + (pelicula.visto ? "Sí" : "No") + "</td>" +
+                    "</tr>";
+                tablaPeliculas2.innerHTML += fila;
+            });
+            })
+            .catch(error => console.error("Error al cargar el JSON:", error));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<xml version="1.0" encoding="UTF-8"?>
+
+<tienda>
+    <nombre>GameZone</nombre>
+    <ubicacion>
+        <pais>España</pais>
+        <ciudad>Valencia</ciudad>
+    </ubicacion>
+    <videojuegos>
+        <juego>
+            <titulo>Cyberpunk 2077</titulo>
+            <plataformas>
+                <plataforma>PC</plataforma>
+                <plataforma>PS5</plataforma>
+                <plataforma>Xbox Series X</plataforma>
+            </plataformas>
+            <precio>49.99</precio>
+            <stock>true</stock>
+        </juego>
+        <juego>
+            <titulo>Kingdom Come: Deliverance 2</titulo>
+            <plataformas>
+                <plataforma>PC</plataforma>
+                <plataforma>PS5</plataforma>
+            </plataformas>
+            <precio>59.99</precio>
+            <stock>false</stock>
+        </juego>
+    </videojuegos>
+</tienda>

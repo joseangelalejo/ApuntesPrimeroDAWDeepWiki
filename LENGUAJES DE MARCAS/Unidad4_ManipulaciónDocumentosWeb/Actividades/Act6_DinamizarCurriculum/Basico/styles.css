@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    --accent-color: #0284c7;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ============================================
+   MODO OSCURO
+   ============================================ */
+
+body.dark-mode {
+    background-color: #222;
+    color: #eee;
+}
+
+/* Contenedor general */
+body.dark-mode .contenedor-cv {
+    background-color: #1a1a1a;
+    color: #eee;
+}
+
+/* --- COLUMNA IZQUIERDA --- */
+body.dark-mode .columna-izquierda {
+    background-color: #2a2a2a;
+}
+
+/* h1 y h2 del nombre */
+body.dark-mode .columna-izquierda .nombre h1 {
+    color: #90caf9;
+}
+body.dark-mode .columna-izquierda .nombre h2 {
+    color: #aaa;
+}
+
+/* h2 de secciones (Perfiles, Idiomas, Competencias...) */
+body.dark-mode .columna-izquierda h2 {
+    color: #90caf9;
+    border-color: #90caf9;
+}
+
+/* Títulos de grupos de habilidades */
+body.dark-mode .grupo-habilidad h3 {
+    color: #90caf9;
+}
+
+/* Items de contacto */
+body.dark-mode .item-contacto {
+    background-color: #3a3a3a;
+    border-color: #555;
+    color: #eee;
+}
+
+/* Iconos */
+body.dark-mode .icono {
+    color: #90caf9;
+}
+
+/* Items de habilidades e idiomas */
+body.dark-mode .item-habilidad,
+body.dark-mode .item-idioma {
+    background-color: #3a3a3a;
+    border-color: #555;
+    color: #eee;
+}
+
+/* Botones de perfiles (LinkedIn, GitHub) */
+body.dark-mode .item-perfil a {
+    background-color: #3a3a3a;
+    border-color: #555;
+    color: #90caf9;
+}
+
+/* --- COLUMNA DERECHA --- */
+body.dark-mode .columna-derecha {
+    background-color: #1e1e1e;
+    color: #eee;
+}
+
+/* h2 de secciones (Sobre mí, Educación, Proyectos...) */
+body.dark-mode .columna-derecha h2 {
+    color: #90caf9;
+    border-color: #90caf9;
+}
+
+/* h3 de items (nombres de empresas, títulos de proyectos...) */
+body.dark-mode .columna-derecha h3,
+body.dark-mode .columna-derecha .item-experiencia h3,
+body.dark-mode .columna-derecha .item-educacion h3,
+body.dark-mode .columna-derecha .item-proyecto h3,
+body.dark-mode .columna-derecha .item-formacion h3 {
+    color: #90caf9;
+}
+
+/* Párrafos de subtítulo (fechas, empresa, tecnologías) */
+body.dark-mode .columna-derecha .item-experiencia p,
+body.dark-mode .columna-derecha .item-educacion p,
+body.dark-mode .columna-derecha .item-proyecto p,
+body.dark-mode .columna-derecha .item-formacion p {
+    color: #bbb;
+}
+
+/* Resto de párrafos y listas */
+body.dark-mode .columna-derecha p,
+body.dark-mode .columna-derecha li {
+    color: #ccc;
+}
+
+/* Enlaces en columna derecha */
+body.dark-mode .columna-derecha a {
+    color: #90caf9;
+}
+
+/* --- PANEL DE CONFIGURACIÓN --- */
+body.dark-mode #config-panel {
+    background-color: #333;
+    color: #eee;
+    border-color: #555;
+}
+body.dark-mode .label-form {
+    color: #eee;
+}
+
+/* ============================================
+   PANEL DE CONFIGURACIÓN
+   ============================================ */
+.config-panel {
+    background-color: #fff;
+}
+.config-panel label {
+    display: block;
+    margin-top: 10px;
+}
+.config-panel hr {
+    margin: 10px 0;
+}
+.config-panel button {
+    margin-top: 5px;
+    width: 100%;
+}
+
+/* ============================================
+   ESTRUCTURA GENERAL
+   ============================================ */
+.contenedor-cv {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.columna-izquierda {
+    flex: 1.2;
+    background-color: #e8f4f8;
+    padding: 20px;
+}
+
+.columna-derecha {
+    flex: 1.8;
+    background-color: #fff;
+    padding: 20px;
+}
+
+/* ============================================
+   FOTO Y NOMBRE
+   ============================================ */
+.foto {
+    text-align: center;
+}
+
+.foto img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid var(--accent-color);
+}
+
+.nombre h1 {
+    font-size: 24px;
+    margin: 0;
+    color: var(--accent-color);
+}
+
+.nombre h2 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #666;
+}
+
+/* ============================================
+   TÍTULOS DE SECCIÓN
+   ============================================ */
+h2 {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* ============================================
+   CONTACTO
+   ============================================ */
+.contacto p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.item-contacto {
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #0284c7;
+    margin: 5px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+a.item-contacto:hover {
+    background-color: #e8f4f8;
+}
+
+.icono {
+    color: #0284c7;
+    font-weight: bold;
+    font-family: 'Material Icons';
+}
+
+.texto {
+    font-weight: bold;
+}
+
+/* ============================================
+   LISTAS GENERALES
+   ============================================ */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* ============================================
+   PERFIL / SOBRE MÍ
+   ============================================ */
+.perfil p {
+    line-height: 1.6;
+}
+
+/* ============================================
+   ITEMS: EXPERIENCIA, EDUCACIÓN, PROYECTO, FORMACIÓN
+   ============================================ */
+.item-experiencia,
+.item-educacion,
+.item-proyecto,
+.item-formacion {
+    margin-bottom: 20px;
+}
+
+.item-experiencia h3,
+.item-educacion h3,
+.item-proyecto h3,
+.item-formacion h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #0284c7;
+}
+
+.item-experiencia p,
+.item-educacion p,
+.item-proyecto p,
+.item-formacion p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Párrafos de descripción larga en proyectos */
+.descripcion-proyecto {
+    color: #333;
+    font-weight: normal;
+}
+
+body.dark-mode .descripcion-proyecto {
+    color: #ccc;
+}
+
+/* ============================================
+   PERFILES (LinkedIn, GitHub)
+   ============================================ */
+.perfiles {
+    text-align: left;
+}
+
+.perfiles h2 {
+    margin-bottom: 5px;
+}
+
+.perfiles a {
+    color: #0284c7;
+    text-decoration: none;
+}
+
+.perfiles a:hover {
+    text-decoration: underline;
+}
+
+.item-perfil {
+    display: inline-block;
+    margin: 1px 20px;
+    font-size: 16px;
+}
+
+.item-perfil a {
+    text-decoration: none;
+    color: #0284c7;
+    background-color: #f9f9f9;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #0284c7;
+    display: inline-block;
+}
+
+.item-perfil a:hover {
+    background-color: #e8f4f8;
+}
+
+.item-perfil a img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* ============================================
+   HABILIDADES
+   ============================================ */
+.grupo-habilidad h3 {
+    font-size: 14px;
+    color: #0284c7;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.item-habilidad {
+    display: inline-block;
+    margin: 5px 15px 5px 0;
+    font-size: 12px;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* ============================================
+   IDIOMAS
+   ============================================ */
+.idiomas {
+    text-align: left;
+}
+
+.idiomas h2 {
+    margin-bottom: 5px;
+}
+
+.item-idioma {
+    display: inline-block;
+    margin: 1px 10px;
+    font-size: 12px;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* ============================================
+   BARRAS DE PROGRESO
+   ============================================ */
+.barrita-progreso {
+    display: flex;
+    gap: 2px;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.rectangulo-progreso {
+    width: 20px;
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 2px;
+}
+
+.rectangulo-progreso.lleno {
+    background-color: #0284c7;
+}
+
+/* ============================================
+   CLASES ESPECÍFICAS
+   ============================================ */
+.titulo-principal {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0284c7;
+    margin: 0;
+}
+
+.subtitulo {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+    margin: 5px 0;
+}
+
+.label-form {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.btn-enviar {
+    background-color: #0284c7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #026bb6;
+}

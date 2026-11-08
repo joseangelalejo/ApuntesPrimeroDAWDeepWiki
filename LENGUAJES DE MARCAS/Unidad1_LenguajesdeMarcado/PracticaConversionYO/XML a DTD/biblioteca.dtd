@@ -1,0 +1,11 @@
+<!ELEMENT biblioteca (libro+)>
+
+<!ELEMENT libro (titulo, autor, resumen, genero)>
+<!ATTLIST libro
+    id ID #REQUIRED
+    idioma CDATA #IMPLIED>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT resumen (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>

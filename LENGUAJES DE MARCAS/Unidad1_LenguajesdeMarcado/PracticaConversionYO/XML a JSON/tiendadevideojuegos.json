@@ -1,0 +1,28 @@
+{
+    "nombre": "GameZone",
+    "ubicacion": {
+        "pais": "España",
+        "ciudad": "Valencia"
+    },
+    "videojuegos": [
+        {
+            "titulo": "Cyberpunk 2077",
+            "plataformas": [
+                    "PC",
+                    "PS5",
+                    "Xbox Series X"
+                ],
+            "precio": "49.99",
+            "stock": true
+        },
+        {
+            "titulo": "Kingdom Come: Deliverance 2",
+            "plataformas": [
+                    "PC",
+                    "PS5"
+                ],
+            "precio": "59.99",
+            "stock": false
+        }
+    ]
+}

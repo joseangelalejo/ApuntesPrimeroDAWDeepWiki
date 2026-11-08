@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+-- ===== ARRAYS, FOR, CONDICIONES Y DOM ===== --
+
+Se dan los siguientes arrays y tienes que recorrerlos usando bucles for, aplicar 
+condiciones if y mostrar los resultados en la página web utilizando el DOM con 
+document.getElementById. Algunos resultados se mostrarán con innerText y otros 
+con innerHTML.
+
+DATOS INICIALES:
+- Array de números: [3, 12, 7, 25, 4, 18]
+- Array de nombres: ["Ana", "Luis", "María", "Juan"]
+
+EJERCICIOS:
+
+1. Recorre el array de números con un bucle for y muestra en un elemento <p> el número total de elementos del array usando innerText.
+
+2. Recorre el array de números y muestra en otro <p> únicamente los números que sean mayores o iguales que 10 usando innerText.
+
+3. Calcula la suma total de todos los números del array recorriéndolo con un for y muestra el resultado en un <p> usando innerText.
+
+4. Recorre el array de nombres y muéstralos en una lista ordenada <ol>. La lista debe generarse usando innerHTML.
+
+5. Recorre el array de números y muestra cada número en una lista no ordenada <ul> indicando si es par o impar. Usa una condición if para decidirlo y genera la lista con innerHTML.
+
+6. Recorre el array con un bucle for, usa condiciones if para comparar los valores, y muestra en dos elementos <p> usando innerText el número más alto y el más bajo.
+
+RECOMENDACIONES:
+- Usa innerText para texto simple y innerHTML para listas.
+- No usar alert ni console.log.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 1 JAAlejo</title>
+    <script>
+        // Datos iniciales
+        const numeros = [3, 12, 7, 25, 4, 18];
+        const nombres = ["Ana", "Luis", "María", "Juan"];
+
+        // Ejercicio 1: Total de elementos del array de números
+        document.getElementById("ej1").innerText = "Total de elementos: " + numeros.length;
+
+        // Ejercicio 2: Números mayores o iguales a 10
+        let mayores10 = "Números >= 10: ";
+        for (let i = 0; i < numeros.length; i++) {
+            if (numeros[i] >= 10) {
+                mayores10 += numeros[i] + " ";
+            }
+        }
+        document.getElementById("ej2").innerText = mayores10;
+
+        // Ejercicio 3: Suma total de números
+        let suma = 0;
+        for (let i = 0; i < numeros.length; i++) {
+            suma += numeros[i];
+        }
+        document.getElementById("ej3").innerText = "Suma total: " + suma;
+
+        // Ejercicio 4: Lista ordenada de nombres
+        let listaOrdenada = "<ol>";
+        for (let i = 0; i < nombres.length; i++) {
+            listaOrdenada += "<li>" + nombres[i] + "</li>";
+        }
+        listaOrdenada += "</ol>";
+        document.getElementById("ej4").innerHTML = listaOrdenada;
+
+        // Ejercicio 5: Lista no ordenada con pares e impares
+        let listaNoOrdenada = "<ul>";
+        for (let i = 0; i < numeros.length; i++) {
+            if (numeros[i] % 2 === 0) {
+                listaNoOrdenada += "<li>" + numeros[i] + " (par)</li>";
+            } else {
+                listaNoOrdenada += "<li>" + numeros[i] + " (impar)</li>";
+            }
+        }
+        listaNoOrdenada += "</ul>";
+        document.getElementById("ej5").innerHTML = listaNoOrdenada;
+
+        // Ejercicio 6: Número más alto y más bajo
+        let maximo = numeros[0];
+        let minimo = numeros[0];
+        for (let i = 1; i < numeros.length; i++) {
+            if (numeros[i] > maximo) {
+                maximo = numeros[i];
+            }
+            if (numeros[i] < minimo) {
+                minimo = numeros[i];
+            }
+        }
+        document.getElementById("ej6a").innerText = "Número más alto: " + maximo;
+        document.getElementById("ej6b").innerText = "Número más bajo: " + minimo;
+    </script>
+</head>
+<body>
+    <h1>Actividad 1 - Repaso JavaScript</h1>
+    
+    <h2>Ejercicio 1</h2>
+    <p id="ej1"></p>
+    
+    <h2>Ejercicio 2</h2>
+    <p id="ej2"></p>
+    
+    <h2>Ejercicio 3</h2>
+    <p id="ej3"></p>
+    
+    <h2>Ejercicio 4</h2>
+    <div id="ej4"></div>
+    
+    <h2>Ejercicio 5</h2>
+    <div id="ej5"></div>
+    
+    <h2>Ejercicio 6</h2>
+    <p id="ej6a"></p>
+    <p id="ej6b"></p>
+</body>
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --accent-u3t: #00e5ff;
+    --accent-u3p: #69ff47;
+    --accent-u4t: #ff6bff;
+    --accent-u4p: #ffcc00;
+    --text: #e0e0e0;
+    --dim: #777;
+    --mono: 'JetBrains Mono', monospace;
+    --head: 'Syne', sans-serif;
+  }
+
+  body {
+    background: #0d0d0d;
+    padding: 14px;
+    font-family: var(--mono);
+    color: var(--text);
+    width: 1600px;
+  }
+
+  .top-label {
+    font-family: var(--head);
+    text-align: center;
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .card {
+    border-radius: 6px;
+    padding: 13px 14px;
+    font-size: 10px;
+    line-height: 1.48;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card.u3t { background:#0b1820; border:1px solid var(--accent-u3t); }
+  .card.u3p { background:#0a1a0d; border:1px solid var(--accent-u3p); }
+  .card.u4t { background:#150b20; border:1px solid var(--accent-u4t); }
+  .card.u4p { background:#1a1500; border:1px solid var(--accent-u4p); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 7px;
+  }
+  .u3t .card-header { border-bottom:1px solid rgba(0,229,255,.25); }
+  .u3p .card-header { border-bottom:1px solid rgba(105,255,71,.25); }
+  .u4t .card-header { border-bottom:1px solid rgba(255,107,255,.25); }
+  .u4p .card-header { border-bottom:1px solid rgba(255,204,0,.25); }
+
+  .badge {
+    font-family: var(--head);
+    font-size: 8px; font-weight:800;
+    letter-spacing:2px; padding:2px 6px;
+    border-radius:3px; text-transform:uppercase;
+  }
+  .u3t .badge { background:var(--accent-u3t); color:#000; }
+  .u3p .badge { background:var(--accent-u3p); color:#000; }
+  .u4t .badge { background:var(--accent-u4t); color:#000; }
+  .u4p .badge { background:var(--accent-u4p); color:#000; }
+
+  .card-title {
+    font-family:var(--head); font-size:12px; font-weight:800; letter-spacing:.5px;
+  }
+  .u3t .card-title { color:var(--accent-u3t); }
+  .u3p .card-title { color:var(--accent-u3p); }
+  .u4t .card-title { color:var(--accent-u4t); }
+  .u4p .card-title { color:var(--accent-u4p); }
+
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex: 1; }
+  .col { display: flex; flex-direction: column; gap: 8px; }
+
+  .section { display:flex; flex-direction:column; gap:3px; }
+
+  .sec-title {
+    font-size:8px; font-weight:700; letter-spacing:2px;
+    text-transform:uppercase; padding-bottom:3px; margin-bottom:1px;
+  }
+  .u3t .sec-title { color:var(--accent-u3t); border-bottom:1px solid rgba(0,229,255,.15); }
+  .u3p .sec-title { color:var(--accent-u3p); border-bottom:1px solid rgba(105,255,71,.15); }
+  .u4t .sec-title { color:var(--accent-u4t); border-bottom:1px solid rgba(255,107,255,.15); }
+  .u4p .sec-title { color:var(--accent-u4p); border-bottom:1px solid rgba(255,204,0,.15); }
+
+  .row { display:flex; gap:4px; align-items:baseline; margin-bottom:1px; flex-wrap:wrap; }
+  .k { color:#fff; font-weight:700; min-width:80px; flex-shrink:0; font-size:9.5px; }
+  .k.w { min-width:110px; }
+  .k.xw { min-width:130px; }
+  .arr { color:var(--dim); font-size:9px; }
+  .v { color:#bbb; font-size:9.5px; }
+
+  code {
+    font-family:var(--mono); font-size:9px; padding:1px 4px; border-radius:3px;
+  }
+  .u3t code { background:rgba(0,229,255,.1); color:var(--accent-u3t); }
+  .u3p code { background:rgba(105,255,71,.1); color:var(--accent-u3p); }
+  .u4t code { background:rgba(255,107,255,.1); color:var(--accent-u4t); }
+  .u4p code { background:rgba(255,204,0,.1); color:var(--accent-u4p); }
+
+  pre {
+    font-family:var(--mono); font-size:9px; line-height:1.55;
+    padding:6px 8px; border-radius:4px; white-space:pre-wrap; word-break:break-word;
+  }
+  .u3t pre { background:rgba(0,229,255,.05); border-left:2px solid var(--accent-u3t); }
+  .u3p pre { background:rgba(105,255,71,.05); border-left:2px solid var(--accent-u3p); }
+  .u4t pre { background:rgba(255,107,255,.05); border-left:2px solid var(--accent-u4t); }
+  .u4p pre { background:rgba(255,204,0,.05); border-left:2px solid var(--accent-u4p); }
+
+  .hl { font-weight:700; }
+  .u3t .hl { color:var(--accent-u3t); }
+  .u3p .hl { color:var(--accent-u3p); }
+  .u4t .hl { color:var(--accent-u4t); }
+  .u4p .hl { color:var(--accent-u4p); }
+
+  .note { font-size:9px; color:var(--dim); font-style:italic; }
+
+  .alert {
+    font-size:9px; padding:3px 6px; border-radius:3px; font-weight:700;
+  }
+  .u3t .alert { background:rgba(0,229,255,.12); color:var(--accent-u3t); }
+  .u3p .alert { background:rgba(105,255,71,.12); color:var(--accent-u3p); }
+  .u4t .alert { background:rgba(255,107,255,.12); color:var(--accent-u4t); }
+  .u4p .alert { background:rgba(255,204,0,.12); color:var(--accent-u4p); }
+
+  .tbl { display:grid; gap:2px; margin-top:2px; }
+  .tbl.c2 { grid-template-columns: 1fr 1fr; }
+  .tbl.c3 { grid-template-columns: 1fr 1fr 1fr; }
+  .tc { padding:2px 5px; border-radius:2px; font-size:9px; }
+  .u3t .tc { background:rgba(0,229,255,.07); }
+  .u3p .tc { background:rgba(105,255,71,.07); }
+  .u4t .tc { background:rgba(255,107,255,.07); }
+  .u4p .tc { background:rgba(255,204,0,.07); }
+  .th { font-weight:700; color:#fff; font-size:8.5px; letter-spacing:.5px; }
+</style>
+    </head>
+    <body>
+        <div class="top-label">Bases de Datos · MySQL · Cheat Sheet U3 & U4 ·
+            JAAlejo 25/26</div>
+        <div class="grid">
+            <div class="card u3t">
+                <div class="card-header"><span class="badge">U3</span><span
+                        class="card-title">DDL / DCL — Teoría</span></div>
+                <div class="cols2">
+                    <div class="col">
+                        <div class="section">
+                            <div class="sec-title">Sublenguajes SQL</div>
+                            <div class="tbl c3">
+                                <div class="tc th">Sublenguaje</div><div
+                                    class="tc th">Función</div><div
+                                    class="tc th">Operaciones</div>
+                                <div class="tc"><span
+                                        class="hl">DDL</span></div><div
+                                    class="tc">Define estructura</div><div
+                                    class="tc">CREATE, ALTER, DROP</div>
+                                <div class="tc"><span
+                                        class="hl">DML</span></div><div
+                                    class="tc">Manipula datos</div><div
+                                    class="tc">SELECT, INSERT, UPDATE,
+                                    DELETE</div>
+                                <div class="tc"><span
+                                        class="hl">DCL</span></div><div
+                                    class="tc">Gestiona acceso</div><div
+                                    class="tc">GRANT, REVOKE</div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Restricciones</div>
+                            <div class="row"><span class="k">PRIMARY
+                                    KEY</span><span class="arr">→</span><span
+                                    class="v">Único + NOT NULL. Solo 1/tabla.
+                                    Crea índice auto</span></div>
+                            <div class="row"><span class="k">UNIQUE</span><span
+                                    class="arr">→</span><span class="v">Valores
+                                    únicos. Permite múltiples NULL. Crea
+                                    índice</span></div>
+                            <div class="row"><span class="k">NOT
+                                    NULL</span><span class="arr">→</span><span
+                                    class="v">Prohibe nulos. Solo nivel
+                                    columna</span></div>
+                            <div class="row"><span class="k">FOREIGN
+                                    KEY</span><span class="arr">→</span><span
+                                    class="v">Solo nivel tabla. Integridad
+                                    referencial</span></div>
+                            <div class="row"><span class="k">CHECK</span><span
+                                    class="arr">→</span><span class="v">Limita
+                                    rango. No puede referenciar otras
+                                    tablas</span></div>
+                            <div class="row"><span class="k">DEFAULT</span><span
+                                    class="arr">→</span><span class="v">Valor
+                                    automático si no se especifica</span></div>
+                            <div class="row"><span
+                                    class="k">AUTO_INCREMENT</span><span
+                                    class="arr">→</span><span class="v">Solo con
+                                    PK. NO con FLOAT</span></div>
+                            <div class="alert">⚠ NULL = NULL → siempre UNKNOWN.
+                                Usar IS NULL / IS NOT NULL</div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Integridad referencial
+                                (FK)</div>
+                            <div class="row"><span class="k">CASCADE</span><span
+                                    class="arr">→</span><span
+                                    class="v">Elimina/actualiza dependientes
+                                    automáticamente</span></div>
+                            <div class="row"><span class="k">SET
+                                    NULL</span><span class="arr">→</span><span
+                                    class="v">FK pasa a NULL al eliminar
+                                    padre</span></div>
+                            <div class="row"><span
+                                    class="k">RESTRICT</span><span
+                                    class="arr">→</span><span class="v">Prohíbe
+                                    la operación (comportamiento por
+                                    defecto)</span></div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">ALTER — MODIFY vs
+                                CHANGE</div>
+                            <div class="row"><span class="k">MODIFY</span><span
+                                    class="arr">→</span><span class="v">Cambia
+                                    tipo/restricciones. <span class="hl">No
+                                        renombra</span>. Más seguro</span></div>
+                            <div class="row"><span class="k">CHANGE</span><span
+                                    class="arr">→</span><span class="v">Renombra
+                                    + cambia tipo. Puede romper FK</span></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="section">
+                            <div class="sec-title">Tipos de datos clave</div>
+                            <div class="row"><span class="k">INT</span><span
+                                    class="arr">→</span><span class="v">IDs,
+                                    contadores. BIGINT si INT no
+                                    alcanza</span></div>
+                            <div class="row"><span
+                                    class="k">DECIMAL(m,d)</span><span
+                                    class="arr">→</span><span class="v"><span
+                                        class="hl">Dinero/precios. Precisión
+                                        exacta. NUNCA FLOAT</span></span></div>
+                            <div class="row"><span
+                                    class="k">VARCHAR(n)</span><span
+                                    class="arr">→</span><span class="v">Texto
+                                    variable. Más común</span></div>
+                            <div class="row"><span class="k">CHAR(n)</span><span
+                                    class="arr">→</span><span class="v">Longitud
+                                    fija (rellena con espacios)</span></div>
+                            <div class="row"><span class="k">BOOLEAN</span><span
+                                    class="arr">→</span><span class="v">=
+                                    TINYINT(1). 0=false, 1=true</span></div>
+                            <div class="row"><span class="k">DATE</span><span
+                                    class="arr">→</span><span
+                                    class="v">YYYY-MM-DD</span></div>
+                            <div class="row"><span
+                                    class="k">DATETIME</span><span
+                                    class="arr">→</span><span
+                                    class="v">Fecha+hora sin conversión
+                                    automática</span></div>
+                            <div class="row"><span
+                                    class="k">TIMESTAMP</span><span
+                                    class="arr">→</span><span
+                                    class="v">Fecha+hora con actualización
+                                    automática</span></div>
+                            <div class="row"><span
+                                    class="k">ENUM('a','b')</span><span
+                                    class="arr">→</span><span class="v">Un solo
+                                    valor de lista predefinida</span></div>
+                            <div class="row"><span
+                                    class="k">SET('a','b')</span><span
+                                    class="arr">→</span><span class="v">Varios
+                                    valores de lista predefinida</span></div>
+                            <div class="row"><span
+                                    class="k">UNSIGNED</span><span
+                                    class="arr">→</span><span class="v">Solo
+                                    positivos. Amplía rango
+                                    positivo</span></div>
+                            <div class="row"><span
+                                    class="k">ZEROFILL</span><span
+                                    class="arr">→</span><span class="v">Solo
+                                    visual, no afecta al valor
+                                    almacenado</span></div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Índices vs Vistas</div>
+                            <div class="row"><span class="k">Índice</span><span
+                                    class="arr">→</span><span
+                                    class="v">Estructura física en disco.
+                                    Optimiza búsquedas. Ocupa
+                                    memoria</span></div>
+                            <div class="row"><span class="k">Vista</span><span
+                                    class="arr">→</span><span class="v">Tabla
+                                    virtual. No almacena datos. Simplifica
+                                    acceso y seguridad</span></div>
+                            <div class="note">PK y UNIQUE crean índices únicos
+                                automáticamente</div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">DCL — Conceptos</div>
+                            <div class="row"><span
+                                    class="k">user@localhost</span><span
+                                    class="arr">≠</span><span class="v">user@'%'
+                                    → usuarios <span class="hl">distintos</span>
+                                    en MySQL</span></div>
+                            <div class="row"><span class="k">Rol</span><span
+                                    class="arr">→</span><span
+                                    class="v">Contenedor de privilegios. Por
+                                    defecto desactivado al asignar</span></div>
+                            <div class="row"><span class="k">SET DEFAULT
+                                    ROLE</span><span class="arr">→</span><span
+                                    class="v">Activa rol automáticamente al
+                                    conectar</span></div>
+                            <div class="row"><span class="k">Niveles</span><span
+                                    class="arr">→</span><span class="v">Global →
+                                    Base de datos → Tabla → Columna</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card u3p">
+                <div class="card-header"><span class="badge">U3</span><span
+                        class="card-title">DDL / DCL — Sintaxis</span></div>
+                <div class="cols2">
+                    <div class="col">
+                        <div class="section">
+                            <div class="sec-title">Base de datos & tabla</div>
+                            <pre><span class="hl">CREATE DATABASE</span> nombre;
+USE nombre;
+<span class="hl">DROP DATABASE IF EXISTS</span> nombre;
+
+<span class="hl">CREATE TABLE</span> tabla (
+  id   INT <span class="hl">PRIMARY KEY AUTO_INCREMENT</span>,
+  col  VARCHAR(100) <span class="hl">NOT NULL</span>,
+  sal  DECIMAL(8,2) <span class="hl">CHECK</span>(sal > 0) <span class="hl">DEFAULT</span> 0.00,
+  tipo ENUM('A','B') DEFAULT 'A',
+  ts   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  <span class="hl">FOREIGN KEY</span>(col_fk) <span class="hl">REFERENCES</span> otra(id)
+    <span class="hl">ON DELETE CASCADE</span>
+);
+<span class="hl">DROP TABLE IF EXISTS</span> tabla;</pre>
+                            <div class="note">Orden: DROP IF EXISTS → CREATE →
+                                tablas sin FK primero</div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">CONSTRAINT nombrado</div>
+                            <pre><span class="hl">CONSTRAINT</span> pk_id    PRIMARY KEY (id)
+<span class="hl">CONSTRAINT</span> uk_email UNIQUE (email)
+<span class="hl">CONSTRAINT</span> ck_edad  CHECK (edad >= 18)
+<span class="hl">CONSTRAINT</span> fk_dep   FOREIGN KEY (id_dep)
+             REFERENCES dep(id)</pre>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Índices</div>
+                            <pre><span class="hl">CREATE INDEX</span> idx_col ON tabla(col);
+<span class="hl">CREATE UNIQUE INDEX</span> idx_u ON tabla(col);
+<span class="hl">DROP INDEX</span> idx_col ON tabla;
+<span class="hl">SHOW INDEX FROM</span> tabla;</pre>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Vistas</div>
+                            <pre><span class="hl">CREATE VIEW</span> v_nombre AS
+  SELECT col1, col2 FROM tabla
+  WHERE condicion;
+
+<span class="hl">CREATE OR REPLACE VIEW</span> v_nombre AS ...;
+<span class="hl">DROP VIEW IF EXISTS</span> v_nombre;</pre>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="section">
+                            <div class="sec-title">ALTER TABLE</div>
+                            <pre><span class="hl">ALTER TABLE</span> t <span class="hl">ADD</span> col INT NOT NULL;
+<span class="hl">ALTER TABLE</span> t <span class="hl">DROP COLUMN</span> col;
+
+-- Solo tipo/restricciones (no renombra)
+<span class="hl">ALTER TABLE</span> t <span class="hl">MODIFY</span> col VARCHAR(200) NOT NULL;
+
+-- Renombra + cambia tipo
+<span class="hl">ALTER TABLE</span> t <span class="hl">CHANGE</span> old new VARCHAR(200);
+
+-- Restricciones
+<span class="hl">ALTER TABLE</span> t <span class="hl">ADD CONSTRAINT</span> fk_x
+  FOREIGN KEY(col) REFERENCES r(id);
+<span class="hl">ALTER TABLE</span> t <span class="hl">DROP CONSTRAINT</span> fk_x;</pre>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">DCL — Usuarios, Roles y
+                                Permisos</div>
+                            <pre><span class="hl">CREATE USER</span> 'u'@'localhost' IDENTIFIED BY 'pwd';
+<span class="hl">CREATE USER</span> 'u'@'%' IDENTIFIED BY 'pwd'; -- remoto
+<span class="hl">DROP USER</span>   'u'@'localhost';
+
+<span class="hl">CREATE ROLE</span> nombre_rol;
+<span class="hl">DROP ROLE</span>   nombre_rol;
+
+<span class="hl">GRANT</span> SELECT, INSERT ON db.* TO 'u'@'host';
+<span class="hl">GRANT</span> ALL PRIVILEGES ON *.* TO 'admin'@'localhost';
+<span class="hl">GRANT</span> rol TO 'u'@'host';
+<span class="hl">SET DEFAULT ROLE</span> rol FOR 'u'@'host';
+
+<span class="hl">REVOKE</span> INSERT ON db.tabla FROM 'u'@'host';
+<span class="hl">REVOKE</span> rol FROM 'u'@'host';</pre>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Útiles</div>
+                            <pre>SHOW DATABASES;   SHOW TABLES;
+DESC tabla;       SHOW CREATE TABLE tabla;
+SELECT DATABASE();  SELECT USER();
+SHOW FULL TABLES WHERE TABLE_TYPE='VIEW';</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card u4t">
+                <div class="card-header"><span class="badge">U4</span><span
+                        class="card-title">DML — Teoría</span></div>
+                <div class="cols2">
+                    <div class="col">
+                        <div class="section">
+                            <div class="sec-title">SELECT — funciones</div>
+                            <div class="row"><span
+                                    class="k">Proyección</span><span
+                                    class="arr">→</span><span class="v">Elige
+                                    columnas a mostrar</span></div>
+                            <div class="row"><span
+                                    class="k">Selección</span><span
+                                    class="arr">→</span><span class="v">Filtra
+                                    filas con WHERE</span></div>
+                            <div class="row"><span class="k">Unión</span><span
+                                    class="arr">→</span><span class="v">Combina
+                                    tablas con JOIN</span></div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Orden de ejecución
+                                lógico</div>
+                            <div class="tbl c2">
+                                <div class="tc th">Orden</div><div
+                                    class="tc th">Cláusula</div>
+                                <div class="tc">1</div><div class="tc">FROM /
+                                    JOIN</div>
+                                <div class="tc">2</div><div
+                                    class="tc">WHERE</div>
+                                <div class="tc">3</div><div class="tc">GROUP
+                                    BY</div>
+                                <div class="tc">4</div><div
+                                    class="tc">HAVING</div>
+                                <div class="tc">5</div><div
+                                    class="tc">SELECT</div>
+                                <div class="tc">6</div><div class="tc">ORDER BY
+                                    / LIMIT</div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Operadores WHERE</div>
+                            <div class="row"><span class="k w">= &lt;&gt; &gt;
+                                    &lt; &gt;= &lt;=</span><span
+                                    class="arr">→</span><span
+                                    class="v">Comparación básica</span></div>
+                            <div class="row"><span class="k w">BETWEEN a AND
+                                    b</span><span class="arr">→</span><span
+                                    class="v">Rango (ambos
+                                    incluidos)</span></div>
+                            <div class="row"><span class="k w">IN
+                                    (a,b,c)</span><span
+                                    class="arr">→</span><span
+                                    class="v">Pertenencia a lista</span></div>
+                            <div class="row"><span class="k w">LIKE
+                                    '%x%'</span><span class="arr">→</span><span
+                                    class="v">% = 0..N chars &nbsp; _ =
+                                    exactamente 1 char</span></div>
+                            <div class="row"><span class="k w">IS
+                                    NULL</span><span class="arr">→</span><span
+                                    class="v"><span class="hl">Nunca col =
+                                        NULL</span> (devuelve
+                                    UNKNOWN)</span></div>
+                            <div class="row"><span class="k w">AND / OR /
+                                    NOT</span><span class="arr">→</span><span
+                                    class="v">AND tiene mayor precedencia que
+                                    OR</span></div>
+                            <div class="row"><span class="k w">LIKE vs
+                                    IN</span><span class="arr">→</span><span
+                                    class="v">LIKE: patrones texto · IN:
+                                    pertenencia a lista</span></div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Funciones de agregación</div>
+                            <div class="row"><span
+                                    class="k w">COUNT(*)</span><span
+                                    class="arr">→</span><span class="v">Todas
+                                    las filas (incluye NULL)</span></div>
+                            <div class="row"><span
+                                    class="k w">COUNT(col)</span><span
+                                    class="arr">→</span><span class="v">Solo
+                                    valores no-NULL</span></div>
+                            <div class="row"><span class="k w">COUNT(DISTINCT
+                                    c)</span><span class="arr">→</span><span
+                                    class="v">Valores únicos
+                                    no-NULL</span></div>
+                            <div class="row"><span class="k w">SUM /
+                                    AVG</span><span class="arr">→</span><span
+                                    class="v">Ignoran NULL. Solo
+                                    numéricos</span></div>
+                            <div class="row"><span class="k w">MIN /
+                                    MAX</span><span class="arr">→</span><span
+                                    class="v">Cualquier tipo comparable (texto,
+                                    fecha, nº)</span></div>
+                            <div class="alert">GROUP BY obligatorio al mezclar
+                                columnas normales con agregados</div>
+                            <div class="row"><span class="k w">WHERE</span><span
+                                    class="arr">→</span><span class="v">Filtra
+                                    filas <span class="hl">antes</span> de
+                                    agrupar</span></div>
+                            <div class="row"><span
+                                    class="k w">HAVING</span><span
+                                    class="arr">→</span><span class="v">Filtra
+                                    grupos <span class="hl">después</span> de
+                                    GROUP BY</span></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="section">
+                            <div class="sec-title">JOINs</div>
+                            <div class="row"><span class="k w">INNER
+                                    JOIN</span><span class="arr">→</span><span
+                                    class="v">Solo filas con coincidencia en
+                                    ambas tablas</span></div>
+                            <div class="row"><span class="k w">LEFT
+                                    JOIN</span><span class="arr">→</span><span
+                                    class="v">Todas de izquierda + coincidentes
+                                    de derecha (NULL si no hay
+                                    match)</span></div>
+                            <div class="row"><span class="k w">RIGHT
+                                    JOIN</span><span class="arr">→</span><span
+                                    class="v">Todas de derecha + coincidentes de
+                                    izquierda</span></div>
+                            <div class="row"><span class="k w">CROSS
+                                    JOIN</span><span class="arr">→</span><span
+                                    class="v">Producto cartesiano: cada fila ×
+                                    cada fila</span></div>
+                            <div class="row"><span class="k w">NATURAL
+                                    JOIN</span><span class="arr">→</span><span
+                                    class="v">Auto por nombre de columna.
+                                    Peligroso si se añaden cols</span></div>
+                            <div class="row"><span
+                                    class="k w">USING(col)</span><span
+                                    class="arr">→</span><span class="v">Las cols
+                                    a unir <span class="hl">deben tener el mismo
+                                        nombre</span></span></div>
+                            <div class="row"><span class="k w">Alias
+                                    obligatorio</span><span
+                                    class="arr">→</span><span class="v">Si la
+                                    tabla aparece más de una vez (self-join) o
+                                    hay ambigüedad</span></div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Subconsultas</div>
+                            <div class="row"><span class="k w">En
+                                    WHERE</span><span class="arr">→</span><span
+                                    class="v">Escalar (1 valor) o con IN / NOT
+                                    IN / ALL / ANY</span></div>
+                            <div class="row"><span class="k w">En
+                                    SELECT</span><span class="arr">→</span><span
+                                    class="v"><span class="hl">Debe devolver 1
+                                        solo dato por fila</span></span></div>
+                            <div class="row"><span
+                                    class="k w">EXISTS</span><span
+                                    class="arr">→</span><span
+                                    class="v">Comprueba si hay filas. SELECT 1
+                                    porque solo importa existencia</span></div>
+                            <div class="row"><span
+                                    class="k w">Correlacionada</span><span
+                                    class="arr">→</span><span
+                                    class="v">Referencia columnas externas.
+                                    Ejecuta 1 vez por fila</span></div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">UNION</div>
+                            <div class="row"><span class="k w">UNION</span><span
+                                    class="arr">→</span><span class="v">Elimina
+                                    duplicados (más lento)</span></div>
+                            <div class="row"><span class="k w">UNION
+                                    ALL</span><span class="arr">→</span><span
+                                    class="v">Conserva duplicados (más
+                                    rápido)</span></div>
+                            <div class="note">Ambas consultas: mismo número y
+                                tipo de columnas</div>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">INSERT / UPDATE /
+                                DELETE</div>
+                            <div class="row"><span
+                                    class="k w">DELETE</span><span
+                                    class="arr">→</span><span class="v">Fila a
+                                    fila, admite WHERE, rollback
+                                    posible</span></div>
+                            <div class="row"><span
+                                    class="k w">TRUNCATE</span><span
+                                    class="arr">→</span><span class="v">Más
+                                    rápido, generalmente sin rollback, sin
+                                    WHERE</span></div>
+                            <div class="row"><span class="k w">DROP</span><span
+                                    class="arr">→</span><span class="v">Elimina
+                                    estructura + datos completos</span></div>
+                            <div class="alert">⚠ UPDATE y DELETE sin WHERE →
+                                afectan TODAS las filas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card u4p">
+                <div class="card-header"><span class="badge">U4</span><span
+                        class="card-title">DML — Sintaxis</span></div>
+                <div class="cols2">
+                    <div class="col">
+                        <div class="section">
+                            <div class="sec-title">SELECT básico</div>
+                            <pre><span class="hl">SELECT</span> col1, col2 <span class="hl">AS</span> alias <span class="hl">FROM</span> tabla;
+<span class="hl">SELECT DISTINCT</span> col FROM tabla;
+<span class="hl">SELECT</span> CONCAT(col1,' ',col2) AS nombre FROM t;
+<span class="hl">SELECT</span> * FROM t <span class="hl">WHERE</span> col > 10
+  <span class="hl">AND</span> col2 <span class="hl">LIKE</span> 'A%';
+<span class="hl">SELECT</span> * FROM t <span class="hl">WHERE</span> col <span class="hl">BETWEEN</span> 10 <span class="hl">AND</span> 20;
+<span class="hl">SELECT</span> * FROM t <span class="hl">WHERE</span> col <span class="hl">IN</span> (1,2,3);
+<span class="hl">SELECT</span> * FROM t <span class="hl">WHERE</span> col <span class="hl">IS NULL</span>;
+<span class="hl">ORDER BY</span> col DESC, col2 ASC;
+<span class="hl">LIMIT</span> 10;   <span class="hl">LIMIT</span> 10 <span class="hl">OFFSET</span> 5;</pre>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Agregación + GROUP BY +
+                                HAVING</div>
+                            <pre><span class="hl">SELECT</span> col,
+  <span class="hl">COUNT(*)</span>, <span class="hl">SUM</span>(x), <span class="hl">AVG</span>(x),
+  <span class="hl">MIN</span>(x), <span class="hl">MAX</span>(x)
+<span class="hl">FROM</span> tabla
+<span class="hl">WHERE</span> condicion_filas      -- filtra ANTES
+<span class="hl">GROUP BY</span> col
+<span class="hl">HAVING</span> COUNT(*) > 5;       -- filtra DESPUÉS</pre>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">INSERT / UPDATE /
+                                DELETE</div>
+                            <pre><span class="hl">INSERT INTO</span> t (c1,c2) <span class="hl">VALUES</span> (v1,v2),(v3,v4);
+<span class="hl">INSERT INTO</span> t SELECT * FROM t2 WHERE ...;
+
+<span class="hl">UPDATE</span> t <span class="hl">SET</span> c=v, c2=c2+1 <span class="hl">WHERE</span> id=1;
+<span class="hl">UPDATE</span> a <span class="hl">INNER JOIN</span> b ON a.id=b.id
+  <span class="hl">SET</span> a.col = b.col;
+
+<span class="hl">DELETE FROM</span> t <span class="hl">WHERE</span> id = 1;
+<span class="hl">TRUNCATE TABLE</span> t; -- sin WHERE, sin rollback</pre>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">CASE WHEN</div>
+                            <pre><span class="hl">SELECT</span> col,
+  <span class="hl">CASE</span>
+    WHEN col > 100 THEN 'Alto'
+    WHEN col > 50  THEN 'Medio'
+    ELSE 'Bajo'
+  <span class="hl">END AS</span> categoria
+FROM tabla;</pre>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="section">
+                            <div class="sec-title">JOINs</div>
+                            <pre><span class="hl">SELECT</span> a.col, b.col
+<span class="hl">FROM</span> tablaA a
+<span class="hl">INNER JOIN</span> tablaB b <span class="hl">ON</span> a.id = b.id_a;
+
+<span class="hl">LEFT JOIN</span>  tablaB b ON a.id = b.id_a;
+<span class="hl">RIGHT JOIN</span> tablaB b ON a.id = b.id_a;
+<span class="hl">CROSS JOIN</span> tablaB;
+
+-- USING (cols con mismo nombre)
+<span class="hl">INNER JOIN</span> tablaB <span class="hl">USING</span>(id_comun)
+
+-- Múltiples JOINs
+FROM a
+  <span class="hl">INNER JOIN</span> b ON a.x = b.x
+  <span class="hl">INNER JOIN</span> c ON b.y = c.y</pre>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">Subconsultas</div>
+                            <pre>-- Escalar en WHERE
+SELECT * FROM t
+WHERE col > (<span class="hl">SELECT AVG</span>(col) FROM t);
+
+-- IN
+SELECT * FROM t WHERE id <span class="hl">IN</span>
+  (SELECT id FROM t2 WHERE ...);
+
+-- EXISTS
+SELECT * FROM a WHERE <span class="hl">EXISTS</span>
+  (SELECT 1 FROM b WHERE b.id = a.id);
+
+-- En SELECT (1 valor por fila)
+SELECT col,
+  (<span class="hl">SELECT COUNT</span>(*) FROM b
+   WHERE b.id = a.id) AS cnt
+FROM a;</pre>
+                        </div>
+                        <div class="section">
+                            <div class="sec-title">UNION + Fechas</div>
+                            <pre>SELECT col FROM tablaA
+<span class="hl">UNION</span>      -- sin duplicados
+SELECT col FROM tablaB;
+<span class="hl">UNION ALL</span>  -- con duplicados (más rápido)
+
+<span class="hl">NOW()</span>  CURDATE()  YEAR(c)  MONTH(c)  DAY(c)
+DATEDIFF(f1, f2)
+DATE_ADD(f, INTERVAL 7 DAY)
+DATE_FORMAT(c, '%d/%m/%Y')</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <!--
+    Fuentes: Mis apuntes, documentación oficial MySQL, SQLZoo, W3Schools, StackOverflow
+    Versión alternativa: MisApuntesITPDAW/BASE DE DATOS/BBDD_Cheatsheet.html
+    -->
+</html>

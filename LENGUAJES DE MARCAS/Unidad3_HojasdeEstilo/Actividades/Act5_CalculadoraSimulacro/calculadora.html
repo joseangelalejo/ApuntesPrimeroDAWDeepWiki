@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora | José Ángel Alejo </title>
+    <style>
+        /* Estilos para el cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif; font-weight: bold;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; /* Altura completa de la ventana */
+            background-image: url('background.jpg');
+            background-size: cover; background-position: center;
+        }
+        /* Estilos para el div principal */
+        div {
+            background-color: rgb(100, 99, 99); opacity: 0.98;
+            padding: 20px; box-shadow: 0 0 10px lightblue;
+            border: 3px solid black; border-radius: 10px;
+            flex-basis: 300px; flex-grow: 0; flex-shrink: 1;
+        }
+        /* Estilos para el título */
+        h1 {
+            text-align: center; text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        /* Estilos para el campo de texto */
+        input[type="text"] {
+            width: 100%; height: 40px;
+            font-size: 24px; text-align: right;
+            margin-bottom: 20px; padding: 5px;
+            box-sizing: border-box; border: 3px solid #000000e5; border-radius: 7px;
+        }
+        input[type="text"]:focus {
+            background-color: rgb(127, 241, 222);
+        }
+        /* Estilos para el div del teclado */
+        .teclado {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); grid-gap: 10px 10px;
+            flex-basis: auto; flex-grow: 1; flex-shrink: 1;
+            background-color: rgb(128, 128, 128);
+            opacity: inherit;   /* Hereda del div principal */
+        }
+        /* Estilos para los botones (general) */
+        button {
+            height: 50px; cursor: pointer; border-radius: 5px;
+            flex-grow: 1; flex-shrink: 1;
+            font-size: 18px; color: white;
+            background-color: #007BFF;
+        }
+        button:hover {
+            background-color: #00b3aa;
+            font-size: 22px; text-decoration-line: underline;
+        }
+        button:focus {
+            background-color: #1ffc56;
+        }
+        /* Estilos para los botones de operaciones */
+        .teclado button:nth-child(4n){
+            background-color: #d8b43e;
+        }
+        .teclado button:nth-child(4n):hover{
+            background-color: #e6937a;
+        }
+        .teclado button:nth-child(4n):focus {
+            background-color: #ff951c;
+            background-color: #ff5100;
+        }
+        /* Estilo especial para el botón "=" */
+        .teclado button:nth-child(16){
+            background-color: #ff8800;
+            grid-column: 3/5; height: 35px; border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Calculadora</h1>
+        <input type="text"  placeholder="0">
+        <div class="teclado">
+            <button >7</button> <button >8</button> <button >9</button> <button >/</button>
+            <button >4</button> <button >5</button> <button >6</button> <button >*</button>
+            <button >1</button> <button >2</button> <button >3</button> <button >-</button>
+            <button >0</button> <button >C</button> <button >+</button> <button >=</button>
+        </div>
+    </div>
+</body>
+</html>

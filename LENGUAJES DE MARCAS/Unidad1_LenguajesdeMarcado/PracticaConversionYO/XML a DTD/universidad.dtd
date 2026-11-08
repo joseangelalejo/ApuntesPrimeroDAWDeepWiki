@@ -1,0 +1,18 @@
+<!ELEMENT universidad (curso+)>
+
+<!ELEMENT curso (titulo, profesor, estudiantes)>
+<!ATTLIST curso
+    codigo ID #REQUIRED
+    semestre CDATA #IMPLIED>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT profesor (#PCDATA)>
+
+<!ELEMENT estudiantes (estudiante+)>
+<!ELEMENT estudiante (nombre, email)>
+<!ATTLIST estudiante
+    id ID #REQUIRED
+    edad CDATA #IMPLIED>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT email (#PCDATA)>

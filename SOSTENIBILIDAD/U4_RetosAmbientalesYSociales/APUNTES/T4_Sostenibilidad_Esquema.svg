@@ -1,0 +1,465 @@
+<svg width="1000" height="1320" viewBox="0 0 1000 1320" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+
+  <!-- FONDO -->
+  <rect width="1000" height="1320" fill="#f3f6f2"/>
+
+  <!-- ══════════════════════════════════════
+       TÍTULO
+  ══════════════════════════════════════ -->
+  <rect x="16" y="14" width="968" height="44" rx="10" fill="#1a3a1a"/>
+  <text x="500" y="42" text-anchor="middle" font-size="16" font-weight="bold" fill="white">T4 — Retos Ambientales y Sociales · Sostenibilidad Aplicada a los Sectores Productivos</text>
+
+  <!-- ══════════════════════════════════════
+       FILA 1: PILARES + INTERCONEXIÓN
+       y=68 h=76
+  ══════════════════════════════════════ -->
+  <!-- Pilares sostenibilidad -->
+  <rect x="16" y="68" width="380" height="76" rx="8" fill="white" stroke="#c8d8c0" stroke-width="1"/>
+  <rect x="16" y="68" width="380" height="30" rx="8" fill="#2d5a1b"/>
+  <rect x="16" y="84" width="380" height="14" fill="#2d5a1b"/>
+  <text x="206" y="88" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Sostenibilidad — 3 Pilares</text>
+  <text x="32"  y="112" font-size="9" fill="#555">Satisfacer necesidades actuales sin comprometer a generaciones futuras</text>
+  <rect x="32"  y="118" width="88" height="18" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+  <text x="76"  y="131" text-anchor="middle" font-size="9" font-weight="bold" fill="#0F6E56">Ecologico</text>
+  <rect x="132" y="118" width="88" height="18" rx="4" fill="#FAEEDA" stroke="#BA7517" stroke-width="1"/>
+  <text x="176" y="131" text-anchor="middle" font-size="9" font-weight="bold" fill="#BA7517">Economico</text>
+  <rect x="232" y="118" width="78" height="18" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <text x="271" y="131" text-anchor="middle" font-size="9" font-weight="bold" fill="#185FA5">Social</text>
+
+  <!-- Interconexión de problemas -->
+  <rect x="408" y="68" width="576" height="76" rx="8" fill="white" stroke="#c8d8c0" stroke-width="1"/>
+  <rect x="408" y="68" width="576" height="30" rx="8" fill="#4a1a1a"/>
+  <rect x="408" y="84" width="576" height="14" fill="#4a1a1a"/>
+  <text x="696"  y="88" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Los problemas estan INTERCONECTADOS — no se abordan de forma aislada</text>
+  <!-- cadena de flechas -->
+  <g font-size="9" text-anchor="middle">
+    <rect x="424" y="106" width="72" height="28" rx="4" fill="#FCEBEB"/>
+    <text x="460" y="118" fill="#A32D2D" font-weight="bold">Residuos</text>
+    <text x="460" y="129" fill="#A32D2D">→ contamina</text>
+    <rect x="506" y="106" width="90" height="28" rx="4" fill="#FAEEDA"/>
+    <text x="551" y="118" fill="#BA7517" font-weight="bold">Contaminacion</text>
+    <text x="551" y="129" fill="#BA7517">→ acelera</text>
+    <rect x="606" y="106" width="106" height="28" rx="4" fill="#fff0f0"/>
+    <text x="659" y="118" fill="#993556" font-weight="bold">Cambio climatico</text>
+    <text x="659" y="129" fill="#993556">→ genera</text>
+    <rect x="722" y="106" width="90" height="28" rx="4" fill="#E6F1FB"/>
+    <text x="767" y="118" fill="#185FA5" font-weight="bold">Escasez agua</text>
+    <text x="767" y="129" fill="#185FA5">→ causa</text>
+    <rect x="822" y="106" width="110" height="28" rx="4" fill="#E1F5EE"/>
+    <text x="877" y="118" fill="#0F6E56" font-weight="bold">Perdida biodiv.</text>
+    <text x="877" y="129" fill="#0F6E56">y mas</text>
+  </g>
+
+  <!-- ══════════════════════════════════════
+       BLOQUE A: PROBLEMAS MEDIOAMBIENTALES
+       y=156 h=370
+  ══════════════════════════════════════ -->
+  <rect x="16" y="156" width="968" height="370" rx="8" fill="white" stroke="#c8d8c0" stroke-width="1"/>
+  <rect x="16" y="156" width="968" height="32" rx="8" fill="#4a1a1a"/>
+  <rect x="16" y="174" width="968" height="14" fill="#4a1a1a"/>
+  <text x="500" y="179" text-anchor="middle" font-size="13" font-weight="bold" fill="white">1. PROBLEMAS MEDIOAMBIENTALES</text>
+
+  <!-- 7 tarjetas en 2 filas: 4 arriba + 3 abajo -->
+
+  <!-- Fila 1 (y=196): 4 tarjetas -->
+  <!-- CC -->
+  <rect x="32"  y="196" width="224" height="148" rx="6" fill="#fff0f0" stroke="#A32D2D" stroke-width="1.2"/>
+  <rect x="32"  y="196" width="224" height="22" rx="6" fill="#A32D2D"/>
+  <rect x="32"  y="206" width="224" height="12" fill="#A32D2D"/>
+  <text x="144" y="212" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Cambio Climatico</text>
+  <text x="42"  y="230" font-size="8.5" fill="#333" font-weight="bold">Causas humanas (antropogenico):</text>
+  <g font-size="8" fill="#555">
+    <text x="42" y="243">• Energia (carbon, gas)</text>
+    <text x="42" y="255">• Industria y mineria</text>
+    <text x="42" y="267">• Deforestacion</text>
+    <text x="42" y="279">• Transporte (gasolina)</text>
+    <text x="42" y="291">• Produccion alimentos</text>
+    <text x="42" y="303">• Consumo excesivo</text>
+  </g>
+  <text x="42" y="317" font-size="8" fill="#333" font-weight="bold">GEI: CO₂, CH₄ (metano), NOₓ</text>
+  <rect x="42" y="323" width="204" height="16" rx="3" fill="#FCEBEB"/>
+  <text x="144" y="334" text-anchor="middle" font-size="7.5" fill="#A32D2D">2024: año mas calido ever (+1,55°C)</text>
+
+  <!-- Contaminacion -->
+  <rect x="266" y="196" width="224" height="148" rx="6" fill="#fdf0f8" stroke="#993556" stroke-width="1.2"/>
+  <rect x="266" y="196" width="224" height="22" rx="6" fill="#993556"/>
+  <rect x="266" y="206" width="224" height="12" fill="#993556"/>
+  <text x="378" y="212" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Contaminacion</text>
+  <text x="276" y="230" font-size="8.5" fill="#333" font-weight="bold">Tipos:</text>
+  <g font-size="8" fill="#555">
+    <text x="276" y="243">• Aire: gases industriales, vehiculos</text>
+    <text x="276" y="255">• Agua: plasticos, fertilizantes</text>
+    <text x="276" y="267">• Suelo: vertederos, pesticidas</text>
+  </g>
+  <text x="276" y="281" font-size="8.5" fill="#333" font-weight="bold">Consecuencias:</text>
+  <g font-size="8" fill="#555">
+    <text x="276" y="294">• 7 mill. muertes/año por aire (ONU)</text>
+    <text x="276" y="306">• 80% oceanos con microplasticos</text>
+    <text x="276" y="318">• Deterioro ecosistemas</text>
+  </g>
+
+  <!-- Perdida biodiversidad -->
+  <rect x="500" y="196" width="224" height="148" rx="6" fill="#f0faf4" stroke="#0F6E56" stroke-width="1.2"/>
+  <rect x="500" y="196" width="224" height="22" rx="6" fill="#0F6E56"/>
+  <rect x="500" y="206" width="224" height="12" fill="#0F6E56"/>
+  <text x="612" y="212" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Perdida de Biodiversidad</text>
+  <text x="510" y="230" font-size="8.5" fill="#333" font-weight="bold">Causas:</text>
+  <g font-size="8" fill="#555">
+    <text x="510" y="243">• Destruccion de habitats</text>
+    <text x="510" y="255">• Contaminacion y CC</text>
+    <text x="510" y="267">• Sobreexplotacion</text>
+    <text x="510" y="279">• Especies invasoras</text>
+  </g>
+  <text x="510" y="293" font-size="8.5" fill="#333" font-weight="bold">Ejemplo Yellowstone:</text>
+  <g font-size="7.5" fill="#555">
+    <text x="510" y="305">Sin lobos → crecen ciervos →</text>
+    <text x="510" y="316">sobrepastoreo → degrada ecosistema</text>
+  </g>
+  <rect x="510" y="323" width="204" height="16" rx="3" fill="#E1F5EE"/>
+  <text x="612" y="334" text-anchor="middle" font-size="7.5" fill="#0F6E56">1 millon de especies en riesgo (WWF 2024)</text>
+
+  <!-- Deforestacion -->
+  <rect x="734" y="196" width="234" height="148" rx="6" fill="#fdf8ec" stroke="#BA7517" stroke-width="1.2"/>
+  <rect x="734" y="196" width="234" height="22" rx="6" fill="#BA7517"/>
+  <rect x="734" y="206" width="234" height="12" fill="#BA7517"/>
+  <text x="851" y="212" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Deforestacion y Erosion del Suelo</text>
+  <text x="744" y="230" font-size="8.5" fill="#333" font-weight="bold">Causas: agricultura, mineria, urbanizacion</text>
+  <g font-size="8" fill="#555">
+    <text x="744" y="244">• 10 mill. hectareas de bosque/año perdidas</text>
+    <text x="744" y="257">• Bosques absorben 15% del CO₂ global</text>
+    <text x="744" y="270">• Erosion reduce productividad agricola 24%</text>
+  </g>
+  <text x="744" y="284" font-size="8.5" fill="#333" font-weight="bold">Consecuencias:</text>
+  <g font-size="8" fill="#555">
+    <text x="744" y="297">• Perdida de biodiversidad</text>
+    <text x="744" y="310">• Aceleracion del cambio climatico</text>
+    <text x="744" y="323">• Menos sumideros de carbono</text>
+  </g>
+
+  <!-- Fila 2 (y=352): 3 tarjetas -->
+  <!-- Sobreexplotacion -->
+  <rect x="32" y="352" width="296" height="158" rx="6" fill="#eef0ff" stroke="#534AB7" stroke-width="1.2"/>
+  <rect x="32" y="352" width="296" height="22" rx="6" fill="#534AB7"/>
+  <rect x="32" y="362" width="296" height="12" fill="#534AB7"/>
+  <text x="180" y="368" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Sobreexplotacion de Recursos Naturales</text>
+  <text x="46" y="387" font-size="8.5" fill="#333" font-weight="bold">Uso insostenible: extraccion mas rapida que regeneracion</text>
+  <g font-size="8" fill="#555">
+    <text x="46" y="401">• Recursos extraidos 1,7x mas rapido de lo que se regeneran</text>
+    <text x="46" y="413">• 35% poblaciones de peces sobreexplotadas</text>
+    <text x="46" y="425">• Petroleo: reservas ~50 años / Cobre: ~40 años</text>
+  </g>
+  <rect x="46" y="432" width="268" height="28" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+  <text x="180" y="443" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#534AB7">Dia del Sobregiro de la Tierra</text>
+  <text x="180" y="455" text-anchor="middle" font-size="7.5" fill="#534AB7">Dia en que se agota lo que la Tierra puede</text>
+  <text x="180" y="466" text-anchor="middle" font-size="7.5" fill="#534AB7">regenerar en un año entero</text>
+  <rect x="46" y="470" width="268" height="34" rx="3" fill="#fdf8f0"/>
+  <text x="180" y="481" text-anchor="middle" font-size="8" fill="#333" font-weight="bold">Efecto multiplicador de la sobrepesca:</text>
+  <text x="180" y="493" text-anchor="middle" font-size="7.5" fill="#666">1 empleo perdido en pesca = 2-3 indirectos perdidos</text>
+  <text x="180" y="503" text-anchor="middle" font-size="7.5" fill="#666">en industria, logistica, hosteleria y comercio</text>
+
+  <!-- Escasez agua -->
+  <rect x="340" y="352" width="296" height="158" rx="6" fill="#f0f6ff" stroke="#185FA5" stroke-width="1.2"/>
+  <rect x="340" y="352" width="296" height="22" rx="6" fill="#185FA5"/>
+  <rect x="340" y="362" width="296" height="12" fill="#185FA5"/>
+  <text x="488" y="368" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Escasez del Agua</text>
+  <text x="354" y="387" font-size="8.5" fill="#333" font-weight="bold">Solo el 3% del agua es dulce; menos es potable</text>
+  <text x="354" y="399" font-size="8.5" fill="#333" font-weight="bold">Estres hidrico: demanda mayor que disponibilidad</text>
+  <g font-size="8" fill="#555">
+    <text x="354" y="413">• Causas: sequias, deforestacion, contaminacion</text>
+    <text x="354" y="425">• Sobreexplotacion de acuiferos</text>
+    <text x="354" y="437">• Agricultura consume el 70% del agua</text>
+    <text x="354" y="449">• Despilfarro ciudadano</text>
+  </g>
+  <rect x="354" y="455" width="268" height="18" rx="3" fill="#E6F1FB"/>
+  <text x="488" y="467" text-anchor="middle" font-size="7.5" fill="#185FA5" font-weight="bold">2.400 millones de personas con estres hidrico grave</text>
+  <rect x="354" y="476" width="268" height="28" rx="3" fill="#f0f4f8"/>
+  <text x="488" y="487" text-anchor="middle" font-size="7.5" fill="#333">Lago Powell y Mead (EEUU): reservas en minimos historicos</text>
+  <text x="488" y="499" text-anchor="middle" font-size="7.5" fill="#333">por sobreexplotacion y sequia persistente</text>
+
+  <!-- Residuos -->
+  <rect x="648" y="352" width="320" height="158" rx="6" fill="#f5f0ff" stroke="#7F77DD" stroke-width="1.2"/>
+  <rect x="648" y="352" width="320" height="22" rx="6" fill="#7F77DD"/>
+  <rect x="648" y="362" width="320" height="12" fill="#7F77DD"/>
+  <text x="808" y="368" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Generacion y Gestion de Residuos</text>
+  <text x="662" y="387" font-size="8.5" fill="#333" font-weight="bold">Economia lineal (insostenible): comprar → usar → TIRAR</text>
+  <g font-size="8" fill="#555">
+    <text x="662" y="401">• ~2 kg de residuos/persona/dia (paises desarrollados)</text>
+    <text x="662" y="413">• Solo el 9% del plastico producido ha sido reciclado</text>
+    <text x="662" y="425">• Residuos electronicos crecen 3x mas que otros</text>
+    <text x="662" y="437">• Residuos globales crecen un 70% para 2050</text>
+  </g>
+  <rect x="662" y="445" width="292" height="16" rx="3" fill="#EEEDFE"/>
+  <text x="808" y="456" text-anchor="middle" font-size="7.5" fill="#534AB7" font-weight="bold">Solucion: Economia circular → producir → usar → RECICLAR</text>
+  <rect x="662" y="464" width="292" height="40" rx="3" fill="#f8f8ff"/>
+  <text x="808" y="475" text-anchor="middle" font-size="7.5" fill="#333" font-weight="bold">Ley 7/2022 (España): fomenta economia circular</text>
+  <text x="808" y="486" text-anchor="middle" font-size="7.5" fill="#333">Lucha contra CC y protege el medio marino</text>
+  <text x="808" y="497" text-anchor="middle" font-size="7.5" fill="#333">Too Good To Go: lucha contra desperdicio alimentario</text>
+
+  <!-- ══════════════════════════════════════
+       SEPARADOR
+  ══════════════════════════════════════ -->
+  <line x1="16" y1="538" x2="984" y2="538" stroke="#b0c8a0" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- ══════════════════════════════════════
+       BLOQUE B: RETOS AMBIENTALES (SOLUCIONES)
+       y=548 h=306
+  ══════════════════════════════════════ -->
+  <rect x="16" y="548" width="968" height="308" rx="8" fill="white" stroke="#c8d8c0" stroke-width="1"/>
+  <rect x="16" y="548" width="968" height="32" rx="8" fill="#2d5a1b"/>
+  <rect x="16" y="566" width="968" height="14" fill="#2d5a1b"/>
+  <text x="500" y="571" text-anchor="middle" font-size="13" font-weight="bold" fill="white">2. RETOS AMBIENTALES — Soluciones</text>
+
+  <!-- Mitigacion + Transicion + Eficiencia (columna izq 320px) -->
+  <rect x="32" y="588" width="296" height="254" rx="6" fill="#f0faf4" stroke="#0F6E56" stroke-width="1.2"/>
+  <rect x="32" y="588" width="296" height="22" rx="6" fill="#0F6E56"/>
+  <rect x="32" y="598" width="296" height="12" fill="#0F6E56"/>
+  <text x="180" y="604" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Mitigacion → Transicion Energetica + Eficiencia</text>
+
+  <text x="46" y="622" font-size="9" fill="#1a3a1a" font-weight="bold">Transicion energetica:</text>
+  <text x="46" y="634" font-size="8" fill="#555">Sustituir fosiles (finitos) por renovables (infinitas)</text>
+  <!-- pequeñas tarjetas renovables -->
+  <g font-size="7.5" text-anchor="middle">
+    <rect x="46"  y="638" width="60" height="16" rx="3" fill="#E1F5EE"/>
+    <text x="76"  y="650" fill="#0F6E56">Eolica</text>
+    <rect x="116" y="638" width="80" height="16" rx="3" fill="#E1F5EE"/>
+    <text x="156" y="650" fill="#0F6E56">Solar FV</text>
+    <rect x="206" y="638" width="84" height="16" rx="3" fill="#E1F5EE"/>
+    <text x="248" y="650" fill="#0F6E56">Hidroelectrica</text>
+    <rect x="46"  y="658" width="64" height="16" rx="3" fill="#E1F5EE"/>
+    <text x="78"  y="670" fill="#0F6E56">Geotermica</text>
+    <rect x="120" y="658" width="64" height="16" rx="3" fill="#E1F5EE"/>
+    <text x="152" y="670" fill="#0F6E56">Biomasa</text>
+    <rect x="194" y="658" width="76" height="16" rx="3" fill="#E1F5EE"/>
+    <text x="232" y="670" fill="#0F6E56">Mareomotriz</text>
+  </g>
+  <rect x="46" y="678" width="268" height="14" rx="3" fill="#c8e8c0"/>
+  <text x="180" y="688" text-anchor="middle" font-size="7.5" fill="#1a3a1a" font-weight="bold">Meta PNIEC 2030: 81% electricidad de renovables</text>
+
+  <text x="46" y="706" font-size="9" fill="#1a3a1a" font-weight="bold">Eficiencia energetica:</text>
+  <text x="46" y="718" font-size="8" fill="#555">Mismo resultado con menos energia</text>
+  <!-- etiqueta energetica mini -->
+  <g font-size="7.5">
+    <rect x="46"  y="722" width="30" height="14" rx="2" fill="#00aa44"/>
+    <text x="61"  y="732" text-anchor="middle" fill="white" font-weight="bold">A</text>
+    <rect x="84"  y="722" width="30" height="14" rx="2" fill="#44bb44"/>
+    <text x="99"  y="732" text-anchor="middle" fill="white">B</text>
+    <rect x="122" y="722" width="30" height="14" rx="2" fill="#aabb00"/>
+    <text x="137" y="732" text-anchor="middle" fill="white">C</text>
+    <rect x="160" y="722" width="30" height="14" rx="2" fill="#ffcc00"/>
+    <text x="175" y="732" text-anchor="middle" fill="#333">D</text>
+    <rect x="198" y="722" width="30" height="14" rx="2" fill="#ffaa00"/>
+    <text x="213" y="732" text-anchor="middle" fill="white">E</text>
+    <rect x="236" y="722" width="30" height="14" rx="2" fill="#ee5500"/>
+    <text x="251" y="732" text-anchor="middle" fill="white">F</text>
+    <rect x="274" y="722" width="30" height="14" rx="2" fill="#cc1100"/>
+    <text x="289" y="732" text-anchor="middle" fill="white">G</text>
+  </g>
+  <text x="46" y="752" font-size="7.5" fill="#555">A (max eficiencia) a G (min) — ahorro A vs G: 60-70%</text>
+  <g font-size="8" fill="#555">
+    <text x="46" y="766">• Iluminacion LED: 80-90% menos consumo</text>
+    <text x="46" y="778">• Apagar (no stand-by): evita consumo fantasma</text>
+    <text x="46" y="790">• Modo ahorro en dispositivos</text>
+    <text x="46" y="802">• Cargadores inteligentes</text>
+    <text x="46" y="814">• Climatizacion racional</text>
+  </g>
+
+  <!-- Movilidad sostenible (col central 296px) -->
+  <rect x="340" y="588" width="296" height="254" rx="6" fill="#f0f4ff" stroke="#185FA5" stroke-width="1.2"/>
+  <rect x="340" y="588" width="296" height="22" rx="6" fill="#185FA5"/>
+  <rect x="340" y="598" width="296" height="12" fill="#185FA5"/>
+  <text x="488" y="604" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Movilidad Sostenible</text>
+  <text x="354" y="622" font-size="8.5" fill="#333" font-weight="bold">Desplazarse minimizando el impacto ambiental</text>
+  <g font-size="8" fill="#555">
+    <text x="354" y="636">• Movilidad activa: zonas peatonales, carriles bici</text>
+    <text x="354" y="648">• Transporte publico: metro, autobus, tren</text>
+    <text x="354" y="660">• Vehiculos electricos: cero emisiones directas</text>
+    <text x="354" y="672">• Zonas de Bajas Emisiones (ZBE)</text>
+  </g>
+  <rect x="354" y="678" width="268" height="44" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <text x="488" y="691" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#185FA5">Carpooling (BlaBlaCar)</text>
+  <text x="488" y="703" text-anchor="middle" font-size="7.5" fill="#333">4 personas en 1 coche = 4x menos emisiones</text>
+  <text x="488" y="715" text-anchor="middle" font-size="7.5" fill="#333">Optimiza capacidad ociosa del vehiculo</text>
+  <rect x="354" y="728" width="268" height="44" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <text x="488" y="741" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#185FA5">PMUS Sevilla 2030</text>
+  <text x="488" y="753" text-anchor="middle" font-size="7.5" fill="#333">Objetivo: 2 de cada 3 desplazamientos a pie,</text>
+  <text x="488" y="764" text-anchor="middle" font-size="7.5" fill="#333">bici o transporte publico. 75% flota cero emisiones</text>
+  <rect x="354" y="778" width="268" height="28" rx="4" fill="#f0f4ff"/>
+  <text x="488" y="789" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#185FA5">Educacion + Normativa + Alianzas</text>
+  <text x="488" y="801" text-anchor="middle" font-size="7.5" fill="#555">Programa Aldea · Plan 130 · Ley 7/2022 · Acuerdo de Paris</text>
+
+  <!-- Conservacion biodiversidad + economia circular (col der 296px) -->
+  <rect x="648" y="588" width="320" height="254" rx="6" fill="#fdf8ec" stroke="#BA7517" stroke-width="1.2"/>
+  <rect x="648" y="588" width="320" height="22" rx="6" fill="#BA7517"/>
+  <rect x="648" y="598" width="320" height="12" fill="#BA7517"/>
+  <text x="808" y="604" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Conservacion Biodiversidad + Economia Circular</text>
+
+  <text x="662" y="622" font-size="9" fill="#1a2e4a" font-weight="bold">Conservacion de la biodiversidad:</text>
+  <g font-size="8" fill="#555">
+    <text x="662" y="635">1. Conservacion habitats: espacios protegidos</text>
+    <text x="662" y="647">2. Restauracion ecosistemas: reforestacion</text>
+    <text x="662" y="659">3. Agricultura sostenible: organica, rotacion cultivos</text>
+    <text x="662" y="671">4. Lucha caza furtiva y trafico de especies</text>
+    <text x="662" y="683">5. Control de especies invasoras</text>
+  </g>
+
+  <line x1="662" y1="692" x2="952" y2="692" stroke="#BA7517" stroke-width="0.8" stroke-dasharray="4 3"/>
+
+  <text x="662" y="708" font-size="9" fill="#1a2e4a" font-weight="bold">Economia circular (fin sobreexplotacion y residuos):</text>
+  <g font-size="8">
+    <!-- lineal vs circular -->
+    <rect x="662" y="714" width="150" height="36" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+    <text x="737" y="727" text-anchor="middle" font-size="8" fill="#A32D2D" font-weight="bold">Lineal (actual)</text>
+    <text x="737" y="741" text-anchor="middle" font-size="7.5" fill="#A32D2D">Producir → Usar → TIRAR</text>
+    <rect x="820" y="714" width="148" height="36" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+    <text x="894" y="727" text-anchor="middle" font-size="8" fill="#0F6E56" font-weight="bold">Circular (objetivo)</text>
+    <text x="894" y="741" text-anchor="middle" font-size="7.5" fill="#0F6E56">Producir → Usar → RECICLAR</text>
+  </g>
+
+  <rect x="662" y="756" width="306" height="40" rx="4" fill="#FAEEDA" stroke="#BA7517" stroke-width="1"/>
+  <text x="815" y="770" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#7a5500">Sector Primario: perdida cultivos, pesca y bosques</text>
+  <text x="815" y="782" text-anchor="middle" font-size="7.5" fill="#7a5500">Sector Secundario: escasez materias primas, industria energetica</text>
+  <text x="815" y="793" text-anchor="middle" font-size="7.5" fill="#7a5500">Sector Terciario: turismo, hosteleria, transporte, salud</text>
+
+  <rect x="662" y="802" width="306" height="34" rx="4" fill="#f8faf0" stroke="#2d5a1b" stroke-width="1"/>
+  <text x="815" y="814" text-anchor="middle" font-size="8" fill="#2d5a1b" font-weight="bold">Normativa clave:</text>
+  <text x="815" y="826" text-anchor="middle" font-size="7.5" fill="#555">Ley 7/2022 Residuos · Marco Energia y Clima 2019 · Agenda 2030</text>
+
+  <!-- ══════════════════════════════════════
+       SEPARADOR
+  ══════════════════════════════════════ -->
+  <line x1="16" y1="868" x2="984" y2="868" stroke="#b0c8a0" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- ══════════════════════════════════════
+       BLOQUE C: RETOS SOCIALES
+       y=878 h=326
+  ══════════════════════════════════════ -->
+  <rect x="16" y="878" width="968" height="330" rx="8" fill="white" stroke="#c8d8c0" stroke-width="1"/>
+  <rect x="16" y="878" width="968" height="32" rx="8" fill="#1a2e4a"/>
+  <rect x="16" y="896" width="968" height="14" fill="#1a2e4a"/>
+  <text x="500" y="901" text-anchor="middle" font-size="13" font-weight="bold" fill="white">3. RETOS SOCIALES — Problemas y Soluciones</text>
+
+  <!-- Pobreza -->
+  <rect x="32" y="920" width="296" height="272" rx="6" fill="#fef9ec" stroke="#BA7517" stroke-width="1.2"/>
+  <rect x="32" y="920" width="296" height="22" rx="6" fill="#BA7517"/>
+  <rect x="32" y="930" width="296" height="12" fill="#BA7517"/>
+  <text x="180" y="936" text-anchor="middle" font-size="10" font-weight="bold" fill="white">La Pobreza</text>
+
+  <text x="46" y="955" font-size="8.5" fill="#333" font-weight="bold">Sin recursos para cubrir necesidades basicas</text>
+  <rect x="46" y="960" width="130" height="50" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="1"/>
+  <text x="111" y="974" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#A32D2D">Absoluta</text>
+  <text x="111" y="986" text-anchor="middle" font-size="7.5" fill="#555">Sin necesidades basicas</text>
+  <text x="111" y="997" text-anchor="middle" font-size="7.5" fill="#555">Umbral BM: 2,15$/dia</text>
+  <text x="111" y="1007" text-anchor="middle" font-size="7.5" fill="#555">~10% pobl. mundial</text>
+
+  <rect x="184" y="960" width="130" height="50" rx="4" fill="#FAEEDA" stroke="#BA7517" stroke-width="1"/>
+  <text x="249" y="974" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#BA7517">Relativa</text>
+  <text x="249" y="986" text-anchor="middle" font-size="7.5" fill="#555">Ingresos bajo 60%</text>
+  <text x="249" y="997" text-anchor="middle" font-size="7.5" fill="#555">renta mediana del pais</text>
+  <text x="249" y="1007" text-anchor="middle" font-size="7.5" fill="#555">Presente en paises ricos</text>
+
+  <text x="46" y="1024" font-size="8.5" fill="#333" font-weight="bold">Soluciones:</text>
+  <g font-size="8" fill="#555">
+    <text x="46" y="1037">• Ingreso Minimo Vital (IMV) — Espana 2020</text>
+    <text x="46" y="1049">• Educacion publica de calidad universal</text>
+    <text x="46" y="1061">• Becas al estudio y concesion de prestamos</text>
+    <text x="46" y="1073">• Acceso a vivienda social y ayudas alquiler</text>
+  </g>
+  <rect x="46" y="1080" width="268" height="36" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <text x="180" y="1092" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#185FA5">Muhammad Yunus — Nobel de la Paz 2006</text>
+  <text x="180" y="1104" text-anchor="middle" font-size="7.5" fill="#333">Fundador del Grameen Bank</text>
+  <text x="180" y="1115" text-anchor="middle" font-size="7.5" fill="#333">Microcreditos para personas sin garantias</text>
+  <text x="180" y="1126" text-anchor="middle" font-size="7.5" fill="#333">Objetivo: autosuficiencia economica</text>
+  <rect x="46" y="1120" width="268" height="22" rx="4" fill="#fff3cd" stroke="#BA7517" stroke-width="0.8"/>
+  <text x="180" y="1130" text-anchor="middle" font-size="7.5" fill="#7a5500" font-weight="bold">Objetivo: autosuficiencia economica</text>
+  <text x="180" y="1140" text-anchor="middle" font-size="7.5" fill="#7a5500">Banco de los pobres — prestamos de baja cuantia</text>
+  <rect x="46" y="1146" width="268" height="38" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <text x="180" y="1158" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#185FA5">Grameen Bank — Nobel de la Paz 2006</text>
+  <text x="180" y="1170" text-anchor="middle" font-size="7.5" fill="#333">Microcreditos para personas sin garantias</text>
+  <text x="180" y="1181" text-anchor="middle" font-size="7.5" fill="#333">Objetivo: autosuficiencia economica</text>
+
+  <!-- Desigualdad -->
+  <rect x="340" y="920" width="296" height="272" rx="6" fill="#f5f0ff" stroke="#534AB7" stroke-width="1.2"/>
+  <rect x="340" y="920" width="296" height="22" rx="6" fill="#534AB7"/>
+  <rect x="340" y="930" width="296" height="12" fill="#534AB7"/>
+  <text x="488" y="936" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Desigualdad y Exclusion Social</text>
+
+  <text x="354" y="955" font-size="8.5" fill="#333" font-weight="bold">Distribucion desigual de recursos, derechos y oportunidades</text>
+  <text x="354" y="967" font-size="8.5" fill="#333" font-weight="bold">Tipos de desigualdad:</text>
+  <g font-size="8" fill="#555">
+    <text x="354" y="979">• Economica: brecha salarial (ricos vs pobres)</text>
+    <text x="354" y="991">• Genero: brecha salarial ~18-20% en Espana</text>
+    <text x="354" y="1003">• Etnica/racial: discriminacion en empleo y vivienda</text>
+    <text x="354" y="1015">• Educativa: origen social condiciona acceso</text>
+  </g>
+
+  <line x1="354" y1="1022" x2="622" y2="1022" stroke="#534AB7" stroke-width="0.8" stroke-dasharray="3 3"/>
+
+  <text x="354" y="1036" font-size="8.5" fill="#333" font-weight="bold">Exclusion social:</text>
+  <text x="354" y="1048" font-size="8" fill="#555">Proceso que relega personas al margen de la</text>
+  <text x="354" y="1060" font-size="8" fill="#555">vida economica, social y cultural</text>
+  <text x="354" y="1072" font-size="8.5" fill="#333" font-weight="bold">Grupos vulnerables:</text>
+  <g font-size="8" fill="#555">
+    <text x="354" y="1084">• Sin hogar · Discapacidad · Inmigrantes irregulares</text>
+    <text x="354" y="1096">• Jovenes de entornos desfavorecidos</text>
+  </g>
+
+  <text x="354" y="1110" font-size="8.5" fill="#333" font-weight="bold">Estrategias de inclusion:</text>
+  <g font-size="8" fill="#555">
+    <text x="354" y="1122">• IMV, vivienda social, becas, prestamos jovenes</text>
+    <text x="354" y="1134">• Housing First (Finlandia: erradico sinhogarismo)</text>
+    <text x="354" y="1146">• Programas de empleo con apoyo personalizado</text>
+    <text x="354" y="1158">• Atencion a la diversidad en la escuela</text>
+  </g>
+  <rect x="354" y="1165" width="268" height="22" rx="4" fill="#EEEDFE"/>
+  <text x="488" y="1176" text-anchor="middle" font-size="7.5" fill="#534AB7" font-weight="bold">La escuela: primer espacio de inclusion real</text>
+  <text x="488" y="1186" text-anchor="middle" font-size="7.5" fill="#534AB7">Metodologias adaptadas, valores, empatia</text>
+
+  <!-- España vaciada -->
+  <rect x="648" y="920" width="320" height="272" rx="6" fill="#f0f8f0" stroke="#2d5a1b" stroke-width="1.2"/>
+  <rect x="648" y="920" width="320" height="22" rx="6" fill="#2d5a1b"/>
+  <rect x="648" y="930" width="320" height="12" fill="#2d5a1b"/>
+  <text x="808" y="936" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Problemas Demograficos — La España Vaciada</text>
+
+  <text x="662" y="955" font-size="8.5" fill="#333" font-weight="bold">Exodo rural → despoblacion de zonas rurales</text>
+  <g font-size="8" fill="#555">
+    <text x="662" y="968">• +80% poblacion en menos del 20% del territorio</text>
+    <text x="662" y="980">• 4.900 municipios con menos de 1.000 habitantes</text>
+    <text x="662" y="992">• Desde 2000: +6M personas pero 60% municipios despoblados</text>
+    <text x="662" y="1004">• Zonas mas afectadas: Castillas, Aragon, Extremadura</text>
+  </g>
+
+  <line x1="662" y1="1012" x2="952" y2="1012" stroke="#2d5a1b" stroke-width="0.8" stroke-dasharray="3 3"/>
+
+  <text x="662" y="1026" font-size="8.5" fill="#333" font-weight="bold">Causas:</text>
+  <g font-size="8" fill="#555">
+    <text x="662" y="1038">• Emigracion jovenes a ciudades (empleo y estudios)</text>
+    <text x="662" y="1050">• Falta de servicios: sanidad, educacion, transporte</text>
+    <text x="662" y="1062">• Envejecimiento progresivo de la poblacion rural</text>
+    <text x="662" y="1074">• Circulo vicioso: menos servicios → mas emigracion</text>
+  </g>
+
+  <text x="662" y="1090" font-size="8.5" fill="#333" font-weight="bold">Plan 130 — 130 medidas en 10 ejes:</text>
+  <g font-size="8" fill="#555">
+    <text x="662" y="1102">• Banda ancha de alta velocidad en municipios rurales</text>
+    <text x="662" y="1114">• Incentivos al teletrabajo</text>
+    <text x="662" y="1126">• Incentivos fiscales a empresas en zonas despobladas</text>
+    <text x="662" y="1138">• Mejora de servicios publicos locales</text>
+    <text x="662" y="1150">• Ayudas al emprendimiento rural</text>
+  </g>
+  <rect x="662" y="1157" width="306" height="30" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+  <text x="815" y="1169" text-anchor="middle" font-size="8" fill="#0F6E56" font-weight="bold">Teletrabajo + banda ancha = fijar poblacion sin renunciar</text>
+  <text x="815" y="1181" text-anchor="middle" font-size="7.5" fill="#555">al empleo digital. Estudio U. Zaragoza (Cities, 2025)</text>
+
+  <!-- ══════════════════════════════════════
+       FOOTER conceptos clave
+  ══════════════════════════════════════ -->
+  <rect x="16" y="1218" width="968" height="88" rx="8" fill="#1a3a1a"/>
+  <text x="500" y="1238" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Conceptos clave para el examen</text>
+  <g font-size="8.5" fill="#c8dfc8">
+    <text x="32" y="1256"><tspan font-weight="bold" fill="white">Sostenibilidad:</tspan> satisfacer necesidades actuales sin comprometer a futuras generaciones (pilares: ecologico, economico, social)</text>
+    <text x="32" y="1270"><tspan font-weight="bold" fill="white">Mitigacion:</tspan> acciones para reducir GEI | <tspan font-weight="bold" fill="white">Transicion energetica:</tspan> de fosiles a renovables | <tspan font-weight="bold" fill="white">Eficiencia energetica:</tspan> mismo resultado con menos energia</text>
+    <text x="32" y="1284"><tspan font-weight="bold" fill="white">Estres hidrico:</tspan> demanda agua mayor que disponibilidad | <tspan font-weight="bold" fill="white">Dia del Sobregiro:</tspan> agotamos lo que la Tierra regenera en un año | <tspan font-weight="bold" fill="white">Biodiversidad:</tspan> variedad de formas de vida</text>
+    <text x="32" y="1298"><tspan font-weight="bold" fill="white">Pobreza absoluta:</tspan> sin necesidades basicas | <tspan font-weight="bold" fill="white">Pobreza relativa:</tspan> bajo el 60% renta mediana | <tspan font-weight="bold" fill="white">España vaciada:</tspan> zonas con drastica perdida de poblacion</text>
+  </g>
+
+</svg>

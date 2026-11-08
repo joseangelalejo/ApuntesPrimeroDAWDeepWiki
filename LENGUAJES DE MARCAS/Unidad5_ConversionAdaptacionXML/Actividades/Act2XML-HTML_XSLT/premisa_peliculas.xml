@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Act2_19_JAAlejo_html.xsl"?>
+
+<peliculas>
+    
+    <pelicula id="p1">
+        <titulo>Inception</titulo>
+        <genero>Ciencia Ficcion</genero>
+        <anio>2010</anio>
+        <duracion>148</duracion>
+        <precio>9.99</precio>
+        <director>Christopher Nolan</director>
+        <protagonistas>
+            <actor>Leonardo DiCaprio</actor>
+            <actor>Joseph Gordon-Levitt</actor>
+            <actor>Elliot Page</actor>
+        </protagonistas>
+    </pelicula>
+
+    <pelicula id="p2">
+        <titulo>Interstellar</titulo>
+        <genero>Ciencia Ficcion</genero>
+        <anio>2014</anio>
+        <duracion>169</duracion>
+        <precio>11.99</precio>
+        <director>Christopher Nolan</director>
+        <protagonistas>
+            <actor>Matthew McConaughey</actor>
+            <actor>Anne Hathaway</actor>
+            <actor>Jessica Chastain</actor>
+        </protagonistas>
+    </pelicula>
+
+    <pelicula id="p3">
+        <titulo>Gladiator</titulo>
+        <genero>Accion</genero>
+        <anio>2000</anio>
+        <duracion>155</duracion>
+        <precio>7.99</precio>
+        <director>Ridley Scott</director>
+        <protagonistas>
+            <actor>Russell Crowe</actor>
+            <actor>Joaquin Phoenix</actor>
+        </protagonistas>
+    </pelicula>
+
+    <pelicula id="p4">
+        <titulo>Titanic</titulo>
+        <genero>Romance</genero>
+        <anio>1997</anio>
+        <duracion>195</duracion>
+        <precio>6.99</precio>
+        <director>James Cameron</director>
+        <protagonistas>
+            <actor>Leonardo DiCaprio</actor>
+            <actor>Kate Winslet</actor>
+        </protagonistas>
+    </pelicula>
+
+    <pelicula id="p5">
+        <titulo>The Matrix</titulo>
+        <genero>Ciencia Ficcion</genero>
+        <anio>1999</anio>
+        <duracion>136</duracion>
+        <precio>8.99</precio>
+        <director>Lana Wachowski</director>
+        <protagonistas>
+            <actor>Keanu Reeves</actor>
+            <actor>Laurence Fishburne</actor>
+            <actor>Carrie-Anne Moss</actor>
+        </protagonistas>
+    </pelicula>
+
+    <pelicula id="p6">
+        <titulo>Avengers Endgame</titulo>
+        <genero>Superheroes</genero>
+        <anio>2019</anio>
+        <duracion>181</duracion>
+        <precio>12.99</precio>
+        <director>Anthony Russo</director>
+        <protagonistas>
+            <actor>Robert Downey Jr</actor>
+            <actor>Chris Evans</actor>
+            <actor>Scarlett Johansson</actor>
+        </protagonistas>
+    </pelicula>
+
+    <pelicula id="p7">
+        <titulo>El Padrino</titulo>
+        <genero>Drama</genero>
+        <anio>1972</anio>
+        <duracion>175</duracion>
+        <precio>10.99</precio>
+        <director>Francis Ford Coppola</director>
+        <protagonistas>
+            <actor>Marlon Brando</actor>
+            <actor>Al Pacino</actor>
+        </protagonistas>
+    </pelicula>
+
+</peliculas>

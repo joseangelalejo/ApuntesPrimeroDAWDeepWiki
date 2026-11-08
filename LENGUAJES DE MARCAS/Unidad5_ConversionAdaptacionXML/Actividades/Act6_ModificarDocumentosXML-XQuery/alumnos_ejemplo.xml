@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+    <alumno id="1">
+        <nombre>Juan</nombre>
+        <edad>20</edad>
+        <curso>DAW</curso>
+        <email>juan@example.com</email>
+    </alumno>
+    <alumno id="2">
+        <nombre>Ana</nombre>
+        <edad>19</edad>
+        <curso>DAM</curso>
+        <email>ana@example.com</email>
+    </alumno>
+    <alumno id="3">
+        <nombre>Luis</nombre>
+        <edad>21</edad>
+        <curso>ASIR</curso>
+        <email>luis@example.com</email>
+    </alumno>
+</alumnos>

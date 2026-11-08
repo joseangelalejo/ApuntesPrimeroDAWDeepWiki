@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "biblioteca.dtd">
+<biblioteca>
+    <libro id="1" idioma="es">
+        <titulo> </titulo>
+        <autor> </autor>
+        <resumen> </resumen>
+        <genero> </genero>
+    </libro>
+    <libro id="2">
+        <titulo> </titulo>
+        <autor> </autor>
+        <resumen> </resumen>
+        <genero> </genero>
+    </libro>
+</biblioteca>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libreria>
+    <libro>
+        <titulo>El Quijote</titulo>
+        <autor>
+            <nombre>Miguel de Cervantes</nombre>
+            <nacionalidad>Española</nacionalidad>
+            <fecha_nacimiento>1547-09-29</fecha_nacimiento>
+        </autor>
+        <editorial>
+            <nombre>Editorial ABC</nombre>
+            <direccion>Calle Falsa 123, Madrid, España</direccion>
+            <telefono>+34 123 456 789</telefono>
+            <sitio_web>http://www.editorialabc.com</sitio_web>
+        </editorial>
+        <fecha_publicacion>1605-01-16</fecha_publicacion>
+        <ISBN>978-3-16-148410-0</ISBN>
+        <precio>25.00</precio>
+    </libro>
+    <libro>
+        <titulo>Cien Años de Soledad</titulo>
+        <autor>
+            <nombre>Gabriel García Márquez</nombre>
+            <nacionalidad>Colombiana</nacionalidad>
+            <fecha_nacimiento>1927-03-06</fecha_nacimiento>
+        </autor>
+        <editorial>
+            <nombre>Editorial XYZ</nombre>
+            <direccion>Avenida Siempre Viva 742, Bogotá, Colombia</direccion>
+            <telefono>+57 987 654 321</telefono>
+            <sitio_web>http://www.editorialxyz.com</sitio_web>
+        </editorial>
+        <fecha_publicacion>1967-05-30</fecha_publicacion>
+        <ISBN>978-0-14-118499-9</ISBN>
+        <precio>30.00</precio>
+    </libro>
+</libreria>

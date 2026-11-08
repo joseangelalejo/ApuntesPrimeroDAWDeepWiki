@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CineVault</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+
+        <header>
+            <a class="logo" href="#"><span>CINE</span>VAULT</a>
+
+            <nav>
+                <button class="active" data-type="all">Todo</button>
+                <button data-type="pelicula">Películas</button>
+                <button data-type="serie">Series</button>
+                <button data-type="documental">Documentales</button>
+            </nav>
+
+            <div class="header-right">
+                <input id="search-input" type="text"
+                    placeholder="Buscar por título..." />
+            </div>
+        </header>
+
+        <div class="genre-bar" id="genre-bar">
+            <button class="genre-pill active" data-genre="all">Todos</button>
+        </div>
+
+        <main>
+            <div class="section-header">
+                <h2 class="section-title" id="section-title">Catálogo
+                    completo</h2>
+                <span class="section-count" id="section-count">0 títulos</span>
+            </div>
+            <div class="grid" id="grid"></div>
+        </main>
+
+    <script>
+      // ESTADO
+        let peliculas = [];
+        let activeType = 'all';
+        let activeGenre = 'all';
+        let searchQuery = '';
+
+      // CARGAR JSON
+        fetch('peliculas.json')
+        .then(response => {
+            if (!response.ok) throw new Error('No se pudo cargar peliculas.json');
+            return response.json();
+        })
+        .then(data => {
+            peliculas = Array.isArray(data)
+            ? data.filter(item => item && item.titulo && item.tipo)
+            : [];
+            buildGenreBar();
+            renderGrid();
+        })
+        .catch(() => {
+            const grid = document.getElementById('grid');
+            grid.innerHTML = `
+            <div class="empty">
+                <div class="empty-icon">⚠️</div>
+                <p>Error cargando el catálogo.</p>
+            </div>`;
+            document.getElementById('section-count').textContent = '0 títulos';
+        });
+
+      // BARRA DE GÉNEROS
+        function buildGenreBar() {
+            const allGenres = new Set();
+
+            peliculas.forEach(item => {
+                const gs = Array.isArray(item.generos) ? item.generos : [];
+                gs.forEach(g => allGenres.add(g));
+            });
+
+            const bar = document.getElementById('genre-bar');
+
+            [...allGenres].sort().forEach(g => {
+                const btn = document.createElement('button');
+                btn.className = 'genre-pill';
+                btn.dataset.genre = g;
+                btn.textContent = g;
+                btn.addEventListener('click', () => setGenre(g));
+                bar.appendChild(btn);
+            });
+
+            bar.querySelector('[data-genre="all"]').addEventListener('click', () => setGenre('all'));
+        }
+
+        function setGenre(g) {
+            activeGenre = g;
+            document.querySelectorAll('.genre-pill').forEach(b => {
+                b.classList.toggle('active', b.dataset.genre === g);
+            });
+            renderGrid();
+        }
+
+      // GRID
+        function renderGrid() {
+            const grid = document.getElementById('grid');
+            const q = searchQuery.toLowerCase().trim();
+
+            const items = peliculas.filter(m => {
+                const byType = activeType === 'all' || m.tipo === activeType;
+                const byGenre = activeGenre === 'all' || (Array.isArray(m.generos) && m.generos.includes(activeGenre));
+                const bySearch = !q || String(m.titulo).toLowerCase().includes(q);
+                return byType && byGenre && bySearch;
+            });
+
+            document.getElementById('section-count').textContent =
+                `${items.length} título${items.length !== 1 ? 's' : ''}`;
+
+            const typeLabel =
+                activeType === 'all' ? 'Catálogo completo' :
+                activeType === 'pelicula' ? 'Películas' :
+                activeType === 'serie' ? 'Series' : 'Documentales';
+
+            document.getElementById('section-title').textContent =
+                activeGenre === 'all' ? typeLabel : `${typeLabel} · ${activeGenre}`;
+
+            grid.innerHTML = '';
+
+            if (!items.length) {
+                grid.innerHTML = `
+                    <div class="empty">
+                        <div class="empty-icon">🎬</div>
+                        <p>No hay resultados con los filtros actuales.</p>
+                    </div>`;
+                return;
+            }
+
+            items.forEach((m, i) => {
+                const card = document.createElement('article');
+                card.className = 'card';
+                card.style.animationDelay = `${Math.min(i * 0.03, 0.3)}s`;
+
+                const badge = m.tipo === 'pelicula' ? 'Película' : m.tipo === 'serie' ? 'Serie' : 'Documental';
+                const badgeClass = m.tipo === 'serie' ? 'card-badge serie' : 'card-badge';
+
+                card.innerHTML = `
+                    <img class="card-poster" src="${m.poster || ''}" alt="${m.titulo}" loading="lazy" />
+                    <span class="${badgeClass}">${badge}</span>
+                    <span class="card-rating">★ ${Number(m.rating || 0).toFixed(1)}</span>
+                    <div class="card-info">
+                        <h3 class="card-title">${m.titulo}</h3>
+                        <p class="card-meta">${m.año || '-'} · ${m.duracion || '-'}</p>
+                    </div>
+                `;
+
+                card.addEventListener('click', () => openModal(m));
+                grid.appendChild(card);
+            });
+        }
+
+      // DETALLE
+        function openModal(m) {
+            if (!m || !m.id) return;
+            window.location.href = `detalle.html?id=${encodeURIComponent(m.id)}`;
+        }
+
+      // EVENTOS GLOBALES
+        document.querySelectorAll('nav button').forEach(btn => {
+            btn.addEventListener('click', () => {
+            activeType = btn.dataset.type;
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderGrid();
+            });
+        });
+
+        document.getElementById('search-input').addEventListener('input', e => {
+            searchQuery = e.target.value || '';
+            renderGrid();
+        });
+    </script>
+
+    </body>
+</html>

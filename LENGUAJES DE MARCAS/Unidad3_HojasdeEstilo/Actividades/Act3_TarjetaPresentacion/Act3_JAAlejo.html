@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación | Jose Angel Alejo</title>
+    <!-- Estilo CSS Interno-->
+    <style>
+        /* Estilos para el body - centra el contenido vertical y horizontalmente */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: min-content;
+            background-color: #201e1e; /* Fondo negro para modo oscuro */
+        }
+        /* Estilos para #principal - contenedor principal con borde azul y sombra */
+        #principal{
+            border: 5px dotted #3b82f6; /* Borde azul sólido para modo oscuro */
+            border-radius: 22px;
+            box-shadow: 10px 5px 15px #2e64bd;
+            padding: 20px;
+            font-family: Miracode, monospace;
+            font-weight: bold;
+            background-color: #1a1a1a; /* Gris oscuro para modo oscuro */
+            min-width:fit-content
+        }
+        /* Estilos para #imagen - imagen de fondo con opacidad y bordes */
+        #imagen {   /* Engloba a div de texto y div de competencias digitales*/
+            position: relative;  /* Se utiliza para posicionar pseudo-elementos */
+            background-image: url('Fondo3.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 400px;  /* Tamaño fijo */
+            min-height: 650px;  /* Mínimo fijo, se expande si es necesario */
+            padding: 35px;
+            border: 5px solid #6b7280; /* Fusionado con gris claro */
+            border-radius: 22px;
+            outline: 2px solid #6b7280; /* Agregado para cumplir premisa */
+            outline-offset: 5px; /* Agregado para cumplir premisa */
+            box-shadow: 10px 5px 10px rgba(240, 178, 86, 0.5);
+        }
+        /* Estilos para el pseudo-elemento ::before de #imagen - opacidad en la imagen */
+        #imagen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Fondo3.jpg');  /* Repite la imagen aquí */
+            background-size: contain; /* Sirve para ajustar la imagen dentro del contenedor sin recortarla ni producir desbordamiento*/
+            background-position: center;
+            opacity: 0.5;  /* Transparencia solo en la imagen */
+            z-index: -1;  /* Envía detrás del contenido */
+            border-radius: 22px;
+        }
+        /* Estilos para #texto - texto blanco centrado */
+        #texto {
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+        /* Estilos para #info-estudiante - contenedor de información del estudiante */
+        #info-estudiante {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            border: 4px solid #6b7280;
+            border-radius: 15px;
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        /* Estilos para #competenciasdigitales - grid de competencias */
+        #competenciasdigitales {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            margin-top: 20px;
+            text-align: center;
+            max-width: 100%;
+        }
+        /* Estilos para los divs dentro de #competenciasdigitales - cada competencia */
+        #competenciasdigitales>div {
+            width: 140px; /* Reducido para evitar desbordamiento */
+            height: 160px; /* Reducido para menos separación vertical */
+            text-align: left;
+            border: 1px solid #6b7280; /* Borde gris claro para modo oscuro */
+            border-radius: 10px;
+            margin: 10px;
+            background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro con poca opacidad */
+            padding: 15px 15px 5px 15px;
+            transition: background-color 0.3s ease;
+        }
+        /* Hover para divs de competencias */
+        #competenciasdigitales>div:hover {
+            background-color: rgba(240, 178, 86, 0.5); /* Color del box-shadow de #principal */
+        }
+        /* Estilos para h4 en #competenciasdigitales */
+        #competenciasdigitales h4 {
+            text-align: center;
+            margin: 5px 0 5px 0;
+        }
+        /* Estilos globales para h1, h2, h3, h4 - mayúsculas */
+        h1, h2, h3, h4 {
+            text-transform: uppercase;
+        }
+        /* Estilos para #contenedor-competencias - contenedor de competencias */
+        #contenedor-competencias {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            border: 3px solid #6b7280; /* Borde gris claro agregado */
+            border-radius: 15px;
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        /* Estilos para #contenedor-soft-skills - contenedor de soft skills */
+        #contenedor-soft-skills {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px 0;
+            border: 3px solid #6b7280; /* Borde gris claro agregado */
+            border-radius: 15px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        /* Estilos para #soft-skills - grid de soft skills */
+        #soft-skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas para 3 filas de 3 divs */
+            gap: 5px;
+            margin-top: 10px;
+            text-align: center;
+            max-width: 100%;
+        }
+        /* Estilos para los divs dentro de #soft-skills - cada soft skill */
+        #soft-skills > div {
+            width: auto;
+            height: 50px;
+            text-align: center;
+            border: 1px solid #6b7280; /* Borde gris claro para modo oscuro */
+            border-radius: 15px;
+            margin: 5px;
+            background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro con poca opacidad */
+            padding: 5px;
+            display: flex; /* Para centrar vertical y horizontal */
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        /* Hover para divs de soft skills */
+        #soft-skills > div:hover {
+            background-color: rgba(240, 178, 86, 0.5); /* Color del box-shadow de #principal */
+        }
+        /* Estilos para h4 en #soft-skills */
+        #soft-skills h4 {
+            font-size: 12px; /* Reducido para evitar desbordamiento */
+            margin: 0;
+        }
+        /* Mostrar #desplegable cuando #toggleDesplegable está checked */
+        #toggleDesplegable:checked ~ #desplegable {
+            display: block;
+        }
+        /* Ocultar #desplegable por defecto */
+        #desplegable {
+            display: none;
+        }
+        /* Estilos para botones */
+        button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 1px solid #6b7280; /* Borde gris claro agregado */
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+        /* Hover para botones */
+        button:hover {
+            background-color: rgba(240, 178, 86, 0.5); /* Color del box-shadow de #principal */
+        }
+        /* Estilos para label de toggleDesplegable */
+        label[for="toggleDesplegable"] {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 1px solid #6b7280;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-size: 16px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        /* Hover para label de toggleDesplegable */
+        label[for="toggleDesplegable"]:hover {
+            background-color: rgba(240, 178, 86, 0.5); /* Color del box-shadow de #principal */
+        }
+    </style>
+</head>
+<body>
+    <!-- Div principal | Borde azul solido, punteado y redondeado |Box-shadow externo | Padding-->
+    <div id="principal">
+        <!-- Div para imagen-->
+        <div id="imagen">
+                <!-- Div para texto-->
+                <div id="texto">
+                    <div id="info-estudiante">
+                        <h1>José Ángel<br>Alejo Sillero</h1>
+                        <h2>ALUMNO DE 1º DAW</h2>
+                    </div>
+                    <div id="contenedor-competencias">
+                        <h2>Competencias Digitales</h2>
+                        <!-- Div para Competencias Digitales | Ordenar-->
+                        <div id="competenciasdigitales">
+                            <!-- Div para Tecnologías-->
+                            <div>
+                                <h4>Tecnologías</h4>
+                                <ul>
+                                    <li>Github / Git</li>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>JavaScript</li>
+                                    <li>MySQL</li>
+                                </ul>
+                            </div>
+                            <!--Div para lenguajes de programación-->
+                            <div>
+                                <h4>Lenguajes de Programación</h4>
+                                <ul>
+                                    <li>Java</li>
+                                    <li>JavaScript</li>
+                                    <li>C#</li>
+                                </ul>
+                            </div>
+                            <!-- Div para otros lenguajes-->
+                            <div>
+                                <h4>Lenguajes de Marcado y Otros</h4>
+                                <ul>
+                                    <li>Markdown</li>
+                                    <li>JSON</li>
+                                    <li>XML/XSD</li>
+                                </ul>
+                            </div>
+                            <!-- Div para Entornos de Desarrollo-->
+                            <div>
+                                <h4>Entornos de Desarrollo</h4>
+                                <ul>
+                                    <li>VS Code</li>
+                                    <li>NetBeans</li>
+                                    <li>IntelliJ IDEA</li>
+                                    <li>Eclipse</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="contenedor-soft-skills">
+                        <h3>Soft Skills</h3>
+                        <!-- Div para Soft Skills -->
+                        <div id="soft-skills">
+                            <!-- Trabajo en equipo -->
+                            <div>
+                                <h4>Trabajo en equipo</h4>
+                            </div>
+                            <!-- Resolución de problemas -->
+                            <div>
+                                <h4>Resolución de problemas</h4>
+                            </div>
+                            <!-- Adaptabilidad -->
+                            <div>
+                                <h4>Adaptabilidad</h4>
+                            </div>
+                            <!-- Gestión del tiempo -->
+                            <div>
+                                <h4>Gestión del tiempo</h4>
+                            </div>
+                            <!-- Pensamiento crítico -->
+                            <div>
+                                <h4>Pensamiento crítico</h4>
+                            </div>
+                            <!-- Proactividad -->
+                            <div>
+                                <h4>Proactividad</h4>
+                            </div>
+                            <!-- Empatía -->
+                            <div>
+                                <h4>Empatía</h4>
+                            </div>
+                            <!-- Creatividad -->
+                            <div>
+                                <h4>Creatividad</h4>
+                            </div>
+                            <!-- Aprendizaje continuo -->
+                            <div>
+                                <h4>Aprendizaje continuo</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="toggleDesplegable" style="display: none;">
+                    <label for="toggleDesplegable">Ver más</label>
+                    <!-- Desplegable oculto -->
+                    <div id="desplegable" style="text-align: center; margin-top: 10px;">
+                        <button onclick="window.open('https://github.com/joseangelalejo', '_blank')">GitHub</button>
+                        <button onclick="window.open('https://www.linkedin.com/in/joseangelalejosillero/', '_blank')">LinkedIn</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+</body>
+</html>

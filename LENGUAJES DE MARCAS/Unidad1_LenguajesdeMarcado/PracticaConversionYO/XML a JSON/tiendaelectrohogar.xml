@@ -1,0 +1,23 @@
+<xml version="1.0" encoding="UTF-8"?>
+
+<tienda>
+    <nombre>ElectroHogar</nombre>
+    <ubicacion>
+        <pais>España</pais>
+        <ciudad>Sevilla</ciudad>
+    </ubicacion>
+    <productos>
+        <producto>
+            <nombre>Televisor Samsung 55"</nombre>
+            <categoria>Electrónica</categoria>
+            <precio>699.99</precio>
+            <disponible>true</disponible>
+        </producto>
+        <producto>
+            <nombre>Aspiradora Dyson V15</nombre>
+            <categoria>Hogar</categoria>
+            <precio>499.99</precio>
+            <disponible>false</disponible>
+        </producto>
+    </productos>
+</tienda>

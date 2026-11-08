@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Flex | José Ángel Alejo</title>
+    <!--Estilo interno con CSS-->
+    <style>
+        * {
+            font-family: Miracode, monospace;
+            font-weight: bold;
+        }
+        /* Selectores para hr: definen ancho y color para separadores visuales */
+        hr {
+            width: 80%;
+            height: 5px;
+            background-color: black;
+        }
+        #hr2 {
+            width: 40%;
+            height: 5px;
+            background-color: black;
+        }
+        /* Selector para h2 y h3: transforma texto a mayúsculas para énfasis */
+        h2, h3 {
+            text-transform:uppercase;
+        }
+        /* Selector para contenedores padre: establece flexbox base con ancho fijo para demos */
+        .contenedor {
+            display: flex;
+            border: 2px solid black;
+            margin-bottom: 20px; height: fit-content; align-items: center;
+            max-width: 1000px;
+            width: 800px;   /*  ancho fijo para ver efectos de flex-wrap    */
+        }
+        /* Selector para cajas: define tamaño y color base para elementos flexibles */
+        .caja {
+            width: 80px;
+            height: 80px;
+            background-color: rgb(145, 238, 145);
+            margin: 5px;
+            text-align: center;
+            line-height: 80px;
+        }
+        /* Selector para row: aplica flex-direction row para orden horizontal */
+        .row {
+            flex-direction:  row;
+        }
+        /* Selector para row-reverse: invierte orden horizontal de cajas */
+        .row_reverse {
+            flex-direction: row-reverse;
+        }
+        /* Selector para hijos de row_reverse: cambia color para diferenciar demo */
+        .row_reverse>.caja {
+            background-color: rgb(110, 17, 110);
+        }
+        /* Selector para column: cambia a dirección vertical con altura adaptativa */
+        .column {
+            flex-direction: column;
+            height: fit-content;    /*  height para adaptar altura (no adaptativa en selector "contenedor")     */
+        }
+        .column>.caja {
+            background-color: rgb(173, 216, 230);
+        }
+        /* Selector para hijos de column_reverse: asigna color marrón y opacidad para demo */
+        .column_reverse {
+            flex-direction: column-reverse;
+            height: fit-content;
+        }
+        .column_reverse>.caja {
+            background-color: rgb(82, 39, 25);
+            opacity: 0.90;
+        }
+        /*  DONE: Aplicar estilos para DIVS padres con wrap    */
+        /* Selector para nowrap: mantiene cajas en una línea sin wrapping */
+        .no_wrap {
+            flex-wrap: nowrap;
+        }
+        .no_wrap>.caja {
+            background-color: rgb(255, 105, 180);
+        }
+        /* Selector para wrap: permite wrapping en múltiples líneas con ancho reducido */
+        .wrap {
+            flex-wrap: wrap;
+            width: 400px; /*  50% Si lo quiero dejar en adaptativo    |     400px si con 8 contenedores quiero cortar en el cuarto*/
+            height: fit-content;
+        }
+        .wrap>.caja {
+            background-color: rgb(105, 180, 255);
+        }
+        /* Selector para wrap-reverse: invierte orden de líneas al hacer wrap */
+        .wrap_reverse {
+            flex-wrap: wrap-reverse;
+            width: 400px; /*  50% Si lo quiero dejar en adaptativo    |     400px si con 8 contenedores quiero cortar en el cuarto*/
+            height: fit-content;
+        }
+        .wrap_reverse>.caja {
+            background-color: rgb(180, 255, 105);
+        }
+        /*  Estilos con JUSTIFY-CONTENT                     */
+        /*  DONE: Aplicar estilos con justify-content   */
+            .flex_start {
+                justify-content: flex-start;
+            }
+            .flex_start>.caja {
+                background-color: rgb(255, 200, 200);
+            }
+            .flex_end {
+                justify-content: flex-end;
+            }
+            .flex_end>.caja {
+                background-color: rgb(200, 255, 200);
+            }
+            .justify_center {
+                justify-content: center;
+            }
+            .justify_center>.caja {
+                background-color: rgb(200, 200, 255);
+            }
+            .justify_spacebetween {
+                justify-content: space-between;
+            }
+            .justify_spacebetween>.caja {
+                background-color: rgb(255, 255, 200);
+            }
+            .justify_spacearound {
+                justify-content: space-around;
+            }
+            .justify_spacearound>.caja {
+                background-color: rgb(255, 200, 255);
+            }
+        /*  Estilos con ALIGN-ITEMS                         */
+        /*  DONE: Aplicar estilos con align-items   */
+            .align_flexstart {
+                align-items: flex-start;
+            }
+            .align_flexstart>.caja {
+                background-color: rgb(200, 255, 255);
+            }
+            .align_flexend {
+                align-items: flex-end;
+            }
+            .align_flexend>.caja {
+                background-color: rgb(255, 220, 180);
+            }
+            .align_center {
+                align-items: center;
+            }
+            .align_center>.caja {
+                background-color: rgb(220, 255, 220);
+            }
+            .align_stretch {
+                align-items: stretch;
+            }
+            .align_stretch>.caja {
+                background-color: rgb(255, 240, 200);
+            }
+        /*  Estilos con FLEX-GROW, FLEX-SHRINK y FLEX-BASIS */
+        .flex_grow {    /*  Ancho base específico para flex-grow y flex-basis */
+            width: 1200px;
+            height: fit-content;
+        }
+        .flex_basis {    /*  Ancho de 1200px para permitir crecimiento proporcional en flex-basis */
+            width: 1200px;
+            height: fit-content;
+        }
+        .flex_shrink {
+            width: 600px;
+            height: fit-content;
+        }
+        /* DONE: Aplicar estilos con FLEX-GROW: asigna crecimiento proporcional a cajas */
+        .flex_grow>.caja {
+            background-color: rgb(182, 208, 111);
+        }
+        .flex_grow .caja:nth-child(1) {
+            flex-grow: 1;
+        }
+        .flex_grow .caja:nth-child(2) {
+            flex-grow: 2;
+        }
+        .flex_grow .caja:nth-child(3) {
+            flex-grow: 1;
+        }
+        /* DONE: Aplicar estilos con FLEX-SHRINK: controla reducción de cajas al encogerse */
+        .flex_shrink>.caja {
+            background-color: rgb(200, 240, 255);
+            flex-basis: 300px;
+        }
+        .flex_shrink .caja:nth-child(1) {
+            flex-shrink: 1;
+        }
+        .flex_shrink .caja:nth-child(2) {
+            flex-shrink: 0;
+        }
+        .flex_shrink .caja:nth-child(3) {
+            flex-shrink: 2;
+        }
+        /* DONE: Aplicar estilos con FLEX-BASIS: establece bases fijas antes de crecimiento */
+        .flex_basis>.caja {
+            background-color: rgb(255, 200, 220);
+            flex-grow: 1;
+        }
+        .flex_basis .caja:nth-child(1) {
+            flex-basis: 100px;
+        }
+        .flex_basis .caja:nth-child(2) {
+            flex-basis: 200px;
+        }
+        .flex_basis .caja:nth-child(3) {
+            flex-basis: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aplicación de propiedades flex en estilo CSS interno<br>José Ángel Alejo Sillero</h1>
+    <hr>
+    <h2>Aplicación de ROW</h2>
+    <!--Div contenedor para aplicar row-->
+    <div class="contenedor row">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+            <div class="caja">
+            4
+        </div>
+    </div>
+    <h2>Aplicación de ROW-REVERSE</h2>
+    <!--Div contenedor para aplicar row-reverse-->
+    <div class="contenedor row_reverse">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+            <div class="caja">
+            4
+        </div>
+    </div>
+    <hr>
+    <h2>Aplicación de COLUMN</h2>
+    <!--Div contenedor para aplicar column-->
+    <div class="contenedor column">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+            <div class="caja">
+            4
+        </div>
+    </div>
+    <h2>Aplicación de COLUMN-REVERSE</h2>
+    <!--Div contenedor para aplicar column-reverse-->
+    <div class="contenedor column_reverse">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+        <div class="caja">
+            4
+        </div>
+    </div>
+    <hr>
+    <!--DONE Crear divs y aplicar estilos en CSS interno con WRAP-->
+    <h2>Aplicación de "flex-wrap: nowrap"</h2>
+    <div class="contenedor no_wrap">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+        <div class="caja">
+            4
+        </div>
+        <div class="caja">
+            5
+        </div>
+        <div class="caja">
+            6
+        </div>
+        <div class="caja">
+            7
+        </div>
+        <div class="caja">
+            8
+        </div>
+    </div>
+    <hr>
+    <h2>Aplicación de "flex-wrap: wrap"</h2>
+    <div class="contenedor wrap">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+        <div class="caja">
+            4
+        </div>
+        <div class="caja">
+            5
+        </div>
+        <div class="caja">
+            6
+        </div>
+        <div class="caja">
+            7
+        </div>
+        <div class="caja">
+            8
+        </div>
+    </div>
+    <hr>
+    <h2>Aplicación de "flex-wrap: wrap-reverse"</h2>
+    <div class="contenedor wrap_reverse">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+        <div class="caja">
+            4
+        </div>
+        <div class="caja">
+            5
+        </div>
+        <div class="caja">
+            6
+        </div>
+        <div class="caja">
+            7
+        </div>
+        <div class="caja">
+            8
+        </div>
+    </div>
+    <hr>
+    <!--DONE Aplicar estilos en CSS interno con JUSTIFY-CONTENT-->
+    <h2>Aplicación de "justify-content"</h2>
+    <hr id="hr2">
+    <h3>"justify-content: flex-start"</h3>
+    <div class="contenedor flex_start">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+        <div class="caja">
+            4
+        </div>
+        <div class="caja">
+            5
+        </div>
+    </div>
+    <hr id="hr2">
+    <h3>"justify-content: flex-end"</h3>
+    <div class="contenedor flex_end">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+        <div class="caja">
+            4
+        </div>
+        <div class="caja">
+            5
+        </div>
+    </div>
+    <hr id="hr2">
+    <h3>"justify-content: center"</h3>
+    <div class="contenedor justify_center">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+        <div class="caja">
+            4
+        </div>
+        <div class="caja">
+            5
+        </div>
+    </div>
+    <hr id="hr2">
+    <h3>"justify-content: space-between"</h3>
+    <div class="contenedor justify_spacebetween">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+        <div class="caja">
+            4
+        </div>
+        <div class="caja">
+            5
+        </div>
+    </div>
+    <hr id="hr2">
+    <h3>"justify-content: space-around"</h3>
+    <div class="contenedor justify_spacearound">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+        <div class="caja">
+            4
+        </div>
+        <div class="caja">
+            5
+        </div>
+    </div>
+    <!--DONE Aplicar estilos en CSS interno con ALIGN-ITEMS -->
+    <hr>
+    <h2>Aplicación de "align-items"</h2>
+    <hr id="hr2">
+    <h3>"align-items: flex-start"</h3>
+    <div class="contenedor align_flexstart">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+    </div>
+    <hr id="hr2">
+    <h3>"align-items: flex-end"</h3>
+    <div class="contenedor align_flexend">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+    </div>
+    <hr id="hr2">
+    <h3>"align-items: center"</h3>
+    <div class="contenedor align_center">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+    </div>
+    <hr id="hr2">
+    <h3>"align-items: stretch"</h3>
+    <div class="contenedor align_stretch">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+    </div>
+    <!--DONE Aplicar estilos en CSS interno con FLEX-GROW | FLEX-SHRINK | FLEX-BASIS -->
+    <hr>
+    <h2>Aplicación de estilos con "FLEX-GROW", "FLEX-SHRINK" y "FLEX-BASIS"</h2>
+    <hr id="hr2">
+    <h3>"flex-grow"</h3>
+    <!-- Las cajas crecen proporcionalmente: la segunda (flex-grow: 2) ocupa el doble de espacio extra que las otras. -->
+    <div class="contenedor flex_grow">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+    </div>
+    <hr id="hr2">
+    <h3>"flex-shrink"</h3>
+    <!-- Las cajas se reducen según flex-shrink: la tercera (2) se reduce más, la segunda (0) no se reduce. -->
+    <div class="contenedor flex_shrink">
+        <div class="caja">
+            1
+        </div>
+        <div class="caja">
+            2
+        </div>
+        <div class="caja">
+            3
+        </div>
+    </div>
+    <hr id="hr2">
+    <h3>"flex-basis"</h3>
+    <!-- Las cajas tienen bases fijas (100px, 200px, 300px) y crecen para ocupar el espacio restante. -->
+    <div class="contenedor flex_basis">
+        <div class="caja">
+            Base 100px
+        </div>
+        <div class="caja">
+            Base 200px
+        </div>
+        <div class="caja">
+            Base 300px
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+{
+  "emoji_map": [
+    {
+      "emoji": "📚",
+      "unicode": "\\u25c6",
+      "character": "◆",
+      "description": "Librería, documentación"
+    },
+    {
+      "emoji": "📋",
+      "unicode": "\\u25ac",
+      "character": "▬",
+      "description": "Lista, tabla de contenidos"
+    },
+    {
+      "emoji": "🎯",
+      "unicode": "\\u2605",
+      "character": "★",
+      "description": "Objetivo, resumen"
+    },
+    {
+      "emoji": "📊",
+      "unicode": "\\u25a0",
+      "character": "■",
+      "description": "Estadísticas, estado"
+    },
+    {
+      "emoji": "🔄",
+      "unicode": "\\u21bb",
+      "character": "↻",
+      "description": "Cambios, ciclo"
+    },
+    {
+      "emoji": "✅",
+      "unicode": "\\u2713",
+      "character": "✓",
+      "description": "Completado, éxito"
+    },
+    {
+      "emoji": "⚠️",
+      "unicode": "\\u26a0",
+      "character": "⚠",
+      "description": "Advertencia, en progreso"
+    },
+    {
+      "emoji": "🔴",
+      "unicode": "\\u25cf",
+      "character": "●",
+      "description": "Problema, alto, privado"
+    },
+    {
+      "emoji": "⚒️",
+      "unicode": "\\u2692",
+      "character": "⚒",
+      "description": "Herramientas, implementación"
+    },
+    {
+      "emoji": "🔍",
+      "unicode": "\\u25c9",
+      "character": "◉",
+      "description": "Análisis, búsqueda"
+    },
+    {
+      "emoji": "✨",
+      "unicode": "\\u2605",
+      "character": "★",
+      "description": "Solución, especial"
+    },
+    {
+      "emoji": "🛠️",
+      "unicode": "\\u2692",
+      "character": "⚒",
+      "description": "Guía, herramientas"
+    },
+    {
+      "emoji": "🕐",
+      "unicode": "\\u25ca",
+      "character": "◊",
+      "description": "Timeline, tiempo"
+    },
+    {
+      "emoji": "📈",
+      "unicode": "\\u2191",
+      "character": "↑",
+      "description": "Diagrama, flujo hacia arriba"
+    },
+    {
+      "emoji": "❌",
+      "unicode": "\\u2716",
+      "character": "✖",
+      "description": "NO permitido, prohibido"
+    },
+    {
+      "emoji": "✗",
+      "unicode": "\\u2717",
+      "character": "✗",
+      "description": "Error, fallo"
+    },
+    {
+      "emoji": "⚡",
+      "unicode": "\\u26a1",
+      "character": "⚡",
+      "description": "Rápido, energía"
+    },
+    {
+      "emoji": "⚙️",
+      "unicode": "\\u2699",
+      "character": "⚙",
+      "description": "Configuración"
+    },
+    {
+      "emoji": "💻",
+      "unicode": "\\u2328",
+      "character": "⌨",
+      "description": "Computadora, código"
+    },
+    {
+      "emoji": "🖥️",
+      "unicode": "\\u2500",
+      "character": "─",
+      "description": "Servidor, gráfico"
+    },
+    {
+      "emoji": "📱",
+      "unicode": "\\u25a1",
+      "character": "□",
+      "description": "Móvil, dispositivo"
+    },
+    {
+      "emoji": "🔗",
+      "unicode": "\\u2192",
+      "character": "→",
+      "description": "Link, conexión, flujo"
+    },
+    {
+      "emoji": "⭐",
+      "unicode": "\\u2605",
+      "character": "★",
+      "description": "Favorito, importante"
+    },
+    {
+      "emoji": "🎨",
+      "unicode": "\\u25ce",
+      "character": "◎",
+      "description": "Diseño, arte"
+    },
+    {
+      "emoji": "🏁",
+      "unicode": "\\u25a6",
+      "character": "▦",
+      "description": "Meta, final, inicio"
+    },
+    {
+      "emoji": "📌",
+      "unicode": "\\u25cb",
+      "character": "○",
+      "description": "Pin, punto de atención"
+    },
+    {
+      "emoji": "🆕",
+      "unicode": "\\u25aa",
+      "character": "▪",
+      "description": "Nuevo, reciente"
+    },
+    {
+      "emoji": "📞",
+      "unicode": "\\u260e",
+      "character": "☎",
+      "description": "Contacto, FAQ"
+    },
+    {
+      "emoji": "🚀",
+      "unicode": "\\u2191",
+      "character": "↑",
+      "description": "Próximos pasos, lanzar"
+    },
+    {
+      "emoji": "📝",
+      "unicode": "\\u270e",
+      "character": "✎",
+      "description": "Información, notas, editar"
+    },
+    {
+      "emoji": "🌐",
+      "unicode": "\\u25cb",
+      "character": "○",
+      "description": "Web, global, internet"
+    },
+    {
+      "emoji": "✓",
+      "unicode": "\\u2713",
+      "character": "✓",
+      "description": "Verificado, correcto"
+    },
+    {
+      "emoji": "◆",
+      "unicode": "\\u25c6",
+      "character": "◆",
+      "description": "Diamante, punto"
+    },
+    {
+      "emoji": "◉",
+      "unicode": "\\u25c9",
+      "character": "◉",
+      "description": "Círculo lleno"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+//	Examen de java de José Ángel Alejo Sillero | Unidad 3 - Strings, Arrays y Objetos
+
+//	No indico el package porque no recuerdo cómo se declara, en mis módulos maven del repositorio suelo trabajar las actividades de clase en el paquete principal
+
+import java.util.Scanner; //	No recuerdo si los import van antes del public class o entre el public class y el método principal
+import java.util.Arrays;
+
+public class GestionIncidencias {
+    public static void main(String[] args) {
+        //	Inicio del programa
+        Scanner scanner = new Scanner(System.in);
+        
+        //	Declaración de arrays y otras variables necesarias
+        //	Array bidimensional para los datos de las incidencias
+			//	(columna 1 corresponde a índice 0)	datosIncidencias[i][0] = número de incidencia
+			//	(Columna 2 para índice 1)			datosIncidencias[i][1] = prioridad
+			//	(Columna 3 para índice 2)			datosIncidencias[i][2] = horas estimadas
+        String[] equipos = new String[5];
+        int[][] datosIncidencias = new int[5][3];
+        int contadorIncidencias = 0;				//	Contador para cuando liste las incidencias
+        
+        //	Menú con 3 opciones
+        System.out.println("Introduzca el número de la opción que desea elegir\n	1. Registrar 5 incidencias\n	2. Consultar incidencias de un equipo\n	3. Lisstar todas las incidencias");
+        
+        int opcion = scanner.nextInt();
+        scanner.nextLine(); //	Para limpiar el scanner, consumiendo salto de línea
+        
+        switch (opcion) {
+            case 1 -> {		//	Registrar 5 incidencias
+                System.out.println("Bienvenido al programa de gestión de incidencias.");
+                
+                for (int i = 0; i < 5; i++) {
+                    System.out.println("\n Incidencia " + (i + 1));
+                    
+                    System.out.print("Indique el nombre del equipo: ");
+                    equipos[i] = scanner.nextLine();
+                    
+                    System.out.println("Introduzca los siguientes datos en orden, pulsando la tecla enter entre cada dato.");
+                    
+                    System.out.print("Número de incidencia: ");
+                    datosIncidencias[i][0] = scanner.nextInt();
+                    
+                    System.out.print("Prioridad de la incidencia: ");
+                    datosIncidencias[i][1] = scanner.nextInt();
+                    
+                    System.out.print("Horas estimadas de resolución: ");
+                    datosIncidencias[i][2] = scanner.nextInt();
+                    scanner.nextLine(); //	Limpiar scanner saltando de línea
+                    
+                    contadorIncidencias++;
+                }
+                System.out.println("\nSe han registrado " + contadorIncidencias + " incidencias correctamente.");
+            }
+            case 2 -> {		//	Consultar incidencias de un equipo por nombre
+                System.out.print("Indique el nombre del equipo a consultar: ");
+                String equipoBuscado = scanner.nextLine();
+                
+                boolean encontrado = false;
+                System.out.println("\n Incidencias del equipo: " + equipoBuscado);
+                
+                for (int i = 0; i < contadorIncidencias; i++) {
+                    if (equipos[i] != null && equipos[i].equalsIgnoreCase(equipoBuscado)) {
+                        System.out.println("Número de incidencia: " + datosIncidencias[i][0] + "Prioridad: " + datosIncidencias[i][1] + "Horas estimadas: " + datosIncidencias[i][2]);
+                        System.out.println();
+                        encontrado = true;
+                    }
+                }
+                if (!encontrado) {
+                    System.out.println("No se encontraron incidencias para el equipo: " + equipoBuscado);
+                }
+            }
+            case 3 -> {		//	Listar todas las incidencias usando Arrays
+			//	Acuerdate de usar un contador cabezón
+                System.out.println("\n LISTADO DE TODAS LAS INCIDENCIAS \n");
+                
+                if (contadorIncidencias == 0) {
+                    System.out.println("No hay incidencias registradas.");
+                } else {
+                    System.out.println("Equipos: " + Arrays.toString(Arrays.copyOf(equipos, contadorIncidencias)));
+                    System.out.println("Datos de incidencias (Número, Prioridad, Horas): ");
+                    for (int i = 0; i < contadorIncidencias; i++) {
+                        System.out.println("  Incidencia " + (i + 1) + ": " + Arrays.toString(datosIncidencias[i]));
+                    }
+                    
+                    System.out.println("\n DETALLE DE INCIDENCIAS ");
+                    for (int i = 0; i < contadorIncidencias; i++) {
+                        System.out.println("\nIncidencia " + (i + 1) + ":" + "\n  Equipo: " + equipos[i] + "\n  Número: " + datosIncidencias[i][0] + "\n  Prioridad: " + datosIncidencias[i][1] + "\n  Horas estimadas: " + datosIncidencias[i][2]);
+                    }
+                }
+            }
+            default -> System.out.println("Opción incorrecta, saliendo del programa.");
+        }
+        scanner.close();
+    }
+}

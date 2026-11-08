@@ -1,0 +1,514 @@
+﻿[
+    {
+        "id":  1,
+        "titulo":  "Dune: Parte Dos",
+        "tipo":  "pelicula",
+        "año":  2024,
+        "duracion":  "2h 46m",
+        "rating":  8.5,
+        "generos":  [
+                        "Ciencia ficción",
+                        "Aventura",
+                        "Drama"
+                    ],
+        "director":  "Denis Villeneuve",
+        "reparto":  [
+                        {
+                            "nombre":  "Timothée Chalamet",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BZTIyZWY4ZjktOGJiZi00NGFkLTllMjctZjJjMmNiMjIxOTY2XkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Zendaya",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BZjM5N2U3MzQtZWU5My00YzE0LThmZTgtYjE1NDJjNmIzZmIxXkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Rebecca Ferguson",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMDVlZjIzOTktYzNmZC00MjIzLTk1YTMtMzdlOTFiNzQ3ZGY0XkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Josh Brolin",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTQ1MzYyMjQ0Nl5BMl5BanBnXkFtZTcwMTA0ODkyMg@@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "Paul Atreides se une a Chani y los Fremen en una guerra de venganza contra los conspiradores que destruyeron a su familia mientras intenta evitar el terrible futuro que solo él puede prever.",
+        "poster":  "https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg",
+        "trailerKey":  "Way9Dexny3w",
+        "sinopsis":  "Paul Atreides se une a Chani y los Fremen en una guerra de venganza contra los conspiradores que destruyeron a su familia mientras intenta evitar el terrible futuro que solo él puede prever.",
+        "actores":  [
+                        "Timothée Chalamet",
+                        "Zendaya",
+                        "Rebecca Ferguson",
+                        "Josh Brolin"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=Way9Dexny3w",
+        "caratula":  "https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg"
+    },
+    {
+        "id":  2,
+        "titulo":  "Oppenheimer",
+        "tipo":  "pelicula",
+        "año":  2023,
+        "duracion":  "3h 0m",
+        "rating":  8.9,
+        "generos":  [
+                        "Historia",
+                        "Drama",
+                        "Biopic"
+                    ],
+        "director":  "Christopher Nolan",
+        "reparto":  [
+                        {
+                            "nombre":  "Cillian Murphy",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BNWM3NTg0NGYtNTFmYS00OWY1LTlkNTgtNzZlMWY4OGRmMmEzXkEyXkFqcGc@._V1_CR1542,983,1114,1670_.jpg"
+                        },
+                        {
+                            "nombre":  "Emily Blunt",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTUxNDY4MTMzM15BMl5BanBnXkFtZTcwMjg5NzM2Ng@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Robert Downey Jr",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Matt Damon",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTM0NzYzNDgxMl5BMl5BanBnXkFtZTcwMDg2MTMyMw@@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "La historia del físico J. Robert Oppenheimer y su papel en el desarrollo de la bomba atómica durante el Proyecto Manhattan en la Segunda Guerra Mundial.",
+        "poster":  "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+        "trailerKey":  "JpUd4BS7yI0",
+        "sinopsis":  "La historia del físico J. Robert Oppenheimer y su papel en el desarrollo de la bomba atómica durante el Proyecto Manhattan en la Segunda Guerra Mundial.",
+        "actores":  [
+                        "Cillian Murphy",
+                        "Emily Blunt",
+                        "Robert Downey Jr",
+                        "Matt Damon"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=JpUd4BS7yI0",
+        "caratula":  "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"
+    },
+    {
+        "id":  3,
+        "titulo":  "Breaking Bad",
+        "tipo":  "serie",
+        "año":  2008,
+        "duracion":  "5 Temporadas",
+        "rating":  9.5,
+        "generos":  [
+                        "Drama",
+                        "Crimen",
+                        "Thriller"
+                    ],
+        "director":  "Vince Gilligan",
+        "reparto":  [
+                        {
+                            "nombre":  "Bryan Cranston",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTA2NjEyMTY4MTVeQTJeQWpwZ15BbWU3MDQ5NDAzNDc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Aaron Paul",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTY1OTY5NjI5NV5BMl5BanBnXkFtZTcwODA4MjM0OA@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Anna Gunn",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTU0NTk3MDQ3OV5BMl5BanBnXkFtZTcwNDY3NzQ4Mg@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Dean Norris",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BZDVhMDliNGMtMmViMi00MDMwLTk5YzctNDg1NGExNWI2ZDQ1XkEyXkFqcGc@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "Un profesor de química de secundaria con cáncer terminal se asocia con un antiguo alumno para fabricar y vender metanfetamina a fin de asegurar el futuro de su familia.",
+        "poster":  "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+        "trailerKey":  "XZ8daibM3AE",
+        "sinopsis":  "Un profesor de química de secundaria con cáncer terminal se asocia con un antiguo alumno para fabricar y vender metanfetamina a fin de asegurar el futuro de su familia.",
+        "actores":  [
+                        "Bryan Cranston",
+                        "Aaron Paul",
+                        "Anna Gunn",
+                        "Dean Norris"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=XZ8daibM3AE",
+        "caratula":  "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg"
+    },
+    {
+        "id":  4,
+        "titulo":  "El Señor de los Anillos: La Comunidad del Anillo",
+        "tipo":  "pelicula",
+        "año":  2001,
+        "duracion":  "3h 28m",
+        "rating":  9.0,
+        "generos":  [
+                        "Fantasía",
+                        "Aventura",
+                        "Épico"
+                    ],
+        "director":  "Peter Jackson",
+        "reparto":  [
+                        {
+                            "nombre":  "Elijah Wood",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTM0NDIxMzQ5OF5BMl5BanBnXkFtZTcwNzAyNTA4Nw@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Ian McKellen",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTQ2MjgyNjk3MV5BMl5BanBnXkFtZTcwNTA3NTY5Mg@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Viggo Mortensen",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BNDQzOTg4NzA2Nl5BMl5BanBnXkFtZTcwMzkwNjkxMg@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Orlando Bloom",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMjE1MDkxMjQ3NV5BMl5BanBnXkFtZTcwMzQ3Mjc4MQ@@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "Un hobbit reluctante y una comunidad de seres de la Tierra Media emprenden una misión épica para destruir el Anillo Único y salvar al mundo de las fuerzas del mal.",
+        "poster":  "https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+        "trailerKey":  "V75dMMIW2B4",
+        "sinopsis":  "Un hobbit reluctante y una comunidad de seres de la Tierra Media emprenden una misión épica para destruir el Anillo Único y salvar al mundo de las fuerzas del mal.",
+        "actores":  [
+                        "Elijah Wood",
+                        "Ian McKellen",
+                        "Viggo Mortensen",
+                        "Orlando Bloom"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=V75dMMIW2B4",
+        "caratula":  "https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg"
+    },
+    {
+        "id":  5,
+        "titulo":  "Planeta Tierra III",
+        "tipo":  "documental",
+        "año":  2023,
+        "duracion":  "8 Episodios",
+        "rating":  9.2,
+        "generos":  [
+                        "Naturaleza",
+                        "Documental",
+                        "Vida salvaje"
+                    ],
+        "director":  "BBC Studios",
+        "reparto":  [
+                        {
+                            "nombre":  "David Attenborough",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMjMwODQyODk4Nl5BMl5BanBnXkFtZTgwNDEyNjY3NzM@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "La tercera entrega de la aclamada serie documental de la BBC explora los hábitats más extremos del planeta y cómo la vida animal se adapta a un mundo cambiante.",
+        "poster":  "https://image.tmdb.org/t/p/w1280/cZrE4IjKVxsSJonfbVkcHnFpnct.jpg",
+        "trailerKey":  "nNWXMAJF7ww",
+        "sinopsis":  "La tercera entrega de la aclamada serie documental de la BBC explora los hábitats más extremos del planeta y cómo la vida animal se adapta a un mundo cambiante.",
+        "actores":  [
+                        "David Attenborough"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=nNWXMAJF7ww",
+        "caratula":  "https://image.tmdb.org/t/p/w1280/cZrE4IjKVxsSJonfbVkcHnFpnct.jpg"
+    },
+    {
+        "id":  6,
+        "titulo":  "Stranger Things",
+        "tipo":  "serie",
+        "año":  2016,
+        "duracion":  "4 Temporadas",
+        "rating":  8.7,
+        "generos":  [
+                        "Terror",
+                        "Ciencia ficción",
+                        "Drama"
+                    ],
+        "director":  "Hermanos Duffer",
+        "reparto":  [
+                        {
+                            "nombre":  "Millie Bobby Brown",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BNzI5MWI0NGMtMmMyMC00MWUzLWE4ZjktNTA3MTMyZDMxNDExXkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Finn Wolfhard",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BNTlkZmM3YTYtMWIyYS00Y2UwLTk0YjAtZTdmNmFjNjcyMDNiXkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Winona Ryder",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTQ3NzM3MTc2NF5BMl5BanBnXkFtZTcwODMxNjA0NA@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "David Harbour",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BZjVkZmNiZGYtZTU3Mi00YzhhLWI1NzQtOTIyNWVmN2IwMjg2XkEyXkFqcGc@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "Cuando un niño desaparece, sus amigos, familia y la policía descubren una serie de misterios que involucran experimentos secretos, fuerzas sobrenaturales aterradoras y una extraña niña.",
+        "poster":  "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+        "trailerKey":  "b9EkMc79ZSU",
+        "sinopsis":  "Cuando un niño desaparece, sus amigos, familia y la policía descubren una serie de misterios que involucran experimentos secretos, fuerzas sobrenaturales aterradoras y una extraña niña.",
+        "actores":  [
+                        "Millie Bobby Brown",
+                        "Finn Wolfhard",
+                        "Winona Ryder",
+                        "David Harbour"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=b9EkMc79ZSU",
+        "caratula":  "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg"
+    },
+    {
+        "id":  7,
+        "titulo":  "Inception",
+        "tipo":  "pelicula",
+        "año":  2010,
+        "duracion":  "2h 28m",
+        "rating":  8.8,
+        "generos":  [
+                        "Ciencia ficción",
+                        "Thriller",
+                        "Acción"
+                    ],
+        "director":  "Christopher Nolan",
+        "reparto":  [
+                        {
+                            "nombre":  "Leonardo DiCaprio",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Joseph Gordon-Levitt",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTY3NTk0NDI3Ml5BMl5BanBnXkFtZTgwNDA3NjY0MjE@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Elliot Page",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BZmM3ZjE2M2QtYzljOC00ZTI4LWFhNTItOWVhNTkzM2JhOTE3XkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Ken Watanabe",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTQzMTUzNjc4Nl5BMl5BanBnXkFtZTcwMTUyODU2Mw@@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "Un ladrón que roba secretos corporativos a través del uso de tecnología de intercambio de sueños recibe la tarea inversa de plantar una idea en la mente de un CEO.",
+        "poster":  "https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
+        "trailerKey":  "RV9L7ui9Cn8",
+        "sinopsis":  "Un ladrón que roba secretos corporativos a través del uso de tecnología de intercambio de sueños recibe la tarea inversa de plantar una idea en la mente de un CEO.",
+        "actores":  [
+                        "Leonardo DiCaprio",
+                        "Joseph Gordon-Levitt",
+                        "Elliot Page",
+                        "Ken Watanabe"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=RV9L7ui9Cn8",
+        "caratula":  "https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg"
+    },
+    {
+        "id":  8,
+        "titulo":  "The Last of Us",
+        "tipo":  "serie",
+        "año":  2023,
+        "duracion":  "2 Temporadas",
+        "rating":  8.8,
+        "generos":  [
+                        "Drama",
+                        "Acción",
+                        "Post-apocalíptico"
+                    ],
+        "director":  "Craig Mazin",
+        "reparto":  [
+                        {
+                            "nombre":  "Pedro Pascal",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BZWNlYmQ3MzctNTM4OC00Mjk5LTlmM2EtNTU4MjgxMjNiZGEyXkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Bella Ramsey",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BNGY3YTk0MDItNDk0Zi00NDAzLTk1NjYtMzM4NTNlNjhhMmM1XkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Gabriel Luna",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BZjBjMzdjMzctMzk1Yi00MWJjLWI2MDItZTgxYzVjN2MwZTFjXkEyXkFqcGc@._V1_CR102,1,1002,1503_.jpg"
+                        },
+                        {
+                            "nombre":  "Nick Offerman",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTYzMjY2ODkxMV5BMl5BanBnXkFtZTgwMjQxMDA5MTE@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "Después de una pandemia devastadora, Joel, un superviviente curtido, es contratado para sacar de contrabando a la adolescente Ellie de una zona de cuarentena opresiva.",
+        "poster":  "https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+        "trailerKey":  "yyGetSp7CIc",
+        "sinopsis":  "Después de una pandemia devastadora, Joel, un superviviente curtido, es contratado para sacar de contrabando a la adolescente Ellie de una zona de cuarentena opresiva.",
+        "actores":  [
+                        "Pedro Pascal",
+                        "Bella Ramsey",
+                        "Gabriel Luna",
+                        "Nick Offerman"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=yyGetSp7CIc",
+        "caratula":  "https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg"
+    },
+    {
+        "id":  9,
+        "titulo":  "Interstellar",
+        "tipo":  "pelicula",
+        "año":  2014,
+        "duracion":  "2h 49m",
+        "rating":  8.7,
+        "generos":  [
+                        "Ciencia ficción",
+                        "Drama",
+                        "Aventura"
+                    ],
+        "director":  "Christopher Nolan",
+        "reparto":  [
+                        {
+                            "nombre":  "Matthew McConaughey",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTg0MDc3ODUwOV5BMl5BanBnXkFtZTcwMTk2NjY4Nw@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Anne Hathaway",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BNzA0MWI3ZDgtMDVkZS00NTVhLTkwMzQtNmNlODk5MDYzMzFmXkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Jessica Chastain",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTU1MDM5NjczOF5BMl5BanBnXkFtZTcwOTY2MDE4OA@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Michael Caine",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMjAwNzIwNTQ4Ml5BMl5BanBnXkFtZTYwMzE1MTUz._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de garantizar la supervivencia de la humanidad.",
+        "poster":  "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+        "trailerKey":  "zSWdZVtXT7E",
+        "sinopsis":  "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de garantizar la supervivencia de la humanidad.",
+        "actores":  [
+                        "Matthew McConaughey",
+                        "Anne Hathaway",
+                        "Jessica Chastain",
+                        "Michael Caine"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+        "caratula":  "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+    },
+    {
+        "id":  10,
+        "titulo":  "Chernobyl",
+        "tipo":  "documental",
+        "año":  2019,
+        "duracion":  "5 Episodios",
+        "rating":  9.4,
+        "generos":  [
+                        "Historia",
+                        "Drama",
+                        "Docudrama"
+                    ],
+        "director":  "Johan Renck",
+        "reparto":  [
+                        {
+                            "nombre":  "Jared Harris",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BZjRiMWMzNDUtNDQ0Ny00YjdiLWEzM2UtMTVmZTEyNTRhMmI5XkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Stellan Skarsgård",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BNTA5MmNiNzMtOTQ1MC00ZDc5LTg3NzItNTZjNWY1MjI2MGM3XkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Emily Watson",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMjAwNzc5MjE0N15BMl5BanBnXkFtZTcwMzUyNTMzNw@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Paul Ritter",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTUyNTcwNDUxMl5BMl5BanBnXkFtZTcwNDc1MDcxOA@@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "La historia del desastre nuclear de Chernobyl de 1986, uno de los peores desastres causados por el hombre en la historia de la humanidad.",
+        "poster":  "https://image.tmdb.org/t/p/w500/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
+        "trailerKey":  "s9APLXM9Ei8",
+        "sinopsis":  "La historia del desastre nuclear de Chernobyl de 1986, uno de los peores desastres causados por el hombre en la historia de la humanidad.",
+        "actores":  [
+                        "Jared Harris",
+                        "Stellan Skarsgård",
+                        "Emily Watson",
+                        "Paul Ritter"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=s9APLXM9Ei8",
+        "caratula":  "https://image.tmdb.org/t/p/w500/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg"
+    },
+    {
+        "id":  11,
+        "titulo":  "El Padrino",
+        "tipo":  "pelicula",
+        "año":  1972,
+        "duracion":  "2h 55m",
+        "rating":  9.2,
+        "generos":  [
+                        "Crimen",
+                        "Drama"
+                    ],
+        "director":  "Francis Ford Coppola",
+        "reparto":  [
+                        {
+                            "nombre":  "Marlon Brando",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTg3MDYyMDE5OF5BMl5BanBnXkFtZTcwNjgyNTEzNA@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Al Pacino",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTQzMzg1ODAyNl5BMl5BanBnXkFtZTYwMjAxODQ1._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "James Caan",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTI5NjkyNDQ3NV5BMl5BanBnXkFtZTcwNjY5NTQ0Mw@@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Diane Keaton",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMTY5NDI5OTEyOF5BMl5BanBnXkFtZTgwMzU4NDI1NzM@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "El patriarca envejecido de una dinastía del crimen organizado transfiere el control de su imperio clandestino a su reticente hijo.",
+        "poster":  "https://image.tmdb.org/t/p/w1280/ApiEfzSkrqS4m1L5a2GwWXzIiAs.jpg",
+        "trailerKey":  "v72XprPxy3E",
+        "sinopsis":  "El patriarca envejecido de una dinastía del crimen organizado transfiere el control de su imperio clandestino a su reticente hijo.",
+        "actores":  [
+                        "Marlon Brando",
+                        "Al Pacino",
+                        "James Caan",
+                        "Diane Keaton"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=v72XprPxy3E",
+        "caratula":  "https://image.tmdb.org/t/p/w1280/ApiEfzSkrqS4m1L5a2GwWXzIiAs.jpg"
+    },
+    {
+        "id":  12,
+        "titulo":  "Dark",
+        "tipo":  "serie",
+        "año":  2017,
+        "duracion":  "3 Temporadas",
+        "rating":  8.8,
+        "generos":  [
+                        "Ciencia ficción",
+                        "Misterio",
+                        "Thriller"
+                    ],
+        "director":  "Baran bo Odar",
+        "reparto":  [
+                        {
+                            "nombre":  "Louis Hofmann",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMzY3YjM5MmItZmQ2YS00N2FkLWIyMjMtMDMxOTBlYTRlN2M4XkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Lisa Vicari",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMDYxZjA4OGEtODAwOS00N2YwLTllYTItYzkyNzU4ZTY4NjAwXkEyXkFqcGc@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Karoline Eichhorn",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMjQ1MTE2ODc4N15BMl5BanBnXkFtZTgwNjAyNDkyNDM@._V1_.jpg"
+                        },
+                        {
+                            "nombre":  "Oliver Masucci",
+                            "avatar":  "https://m.media-amazon.com/images/M/MV5BMjg1ZGFhNTAtMTQwMC00M2RlLTk5MzgtNDkzZWRlZjdlMDc0XkEyXkFqcGc@._V1_.jpg"
+                        }
+                    ],
+        "descripcion":  "Un thriller de ciencia ficción alemán que sigue a cuatro familias interconectadas a medida que se revelan secretos de crimen y corrupción en una pequeña ciudad y dos épocas distintas.",
+        "poster":  "https://image.tmdb.org/t/p/w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg",
+        "trailerKey":  "rrwycJ08PSA",
+        "sinopsis":  "Un thriller de ciencia ficción alemán que sigue a cuatro familias interconectadas a medida que se revelan secretos de crimen y corrupción en una pequeña ciudad y dos épocas distintas.",
+        "actores":  [
+                        "Louis Hofmann",
+                        "Lisa Vicari",
+                        "Karoline Eichhorn",
+                        "Oliver Masucci"
+                    ],
+        "trailer":  "https://www.youtube.com/watch?v=rrwycJ08PSA",
+        "caratula":  "https://image.tmdb.org/t/p/w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg"
+    }
+]

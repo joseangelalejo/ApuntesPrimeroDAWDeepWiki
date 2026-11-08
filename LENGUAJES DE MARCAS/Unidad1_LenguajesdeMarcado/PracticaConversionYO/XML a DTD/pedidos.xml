@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pedidos SYSTEM "pedidos.dtd">
+<pedidos>
+    <pedido numero="p1" fecha="2025-08-01">
+        <cliente>
+            <nombre> Juan Pérez</nombre>
+            <direccion> Calle Falsa 123, Ciudad</direccion>
+            <email> juanitoperez@gmail.com</email>
+        </cliente>
+        <productos>
+            <producto codigo="A001">
+                <descripcion> Ordenador portátil</descripcion>
+                <cantidad> 1</cantidad>
+                <precio> 1200.00</precio>
+            </producto>
+            <producto codigo="A002">
+                <descripcion> Ratón inalámbrico</descripcion>
+                <cantidad> 2</cantidad>
+                <precio> 25.00</precio>
+            </producto>
+        </productos>
+        <total> 1225.00</total>
+    </pedido>
+</pedidos>

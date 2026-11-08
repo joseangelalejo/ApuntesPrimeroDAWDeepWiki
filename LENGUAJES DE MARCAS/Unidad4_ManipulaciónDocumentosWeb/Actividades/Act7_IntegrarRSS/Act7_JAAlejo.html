@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noticias RSS</title>
+        <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.contenedor {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.columna {
+    background: white;
+    border-radius: 10px;
+    padding: 16px;
+    width: 320px;
+    height: 900px;
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.columna h2 {
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    background-color: #1a73e8;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.noticia {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+}
+
+.noticia:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.noticia img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.noticia h3 {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.noticia h3 a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.noticia h3 a:hover {
+    text-decoration: underline;
+}
+
+.noticia p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 4px;
+    /* Limitar a 3 líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.noticia .fecha {
+    font-size: 0.75rem;
+    color: #999;
+}
+</style>
+    </head>
+
+    <body>
+
+        <h1>📰 Noticias RSS</h1>
+
+        <div class="contenedor">
+
+            <div class="columna">
+                <h2>⚡ Xataka</h2>
+                <div id="feed-xataka">Cargando...</div>
+            </div>
+
+            <div class="columna">
+                <h2>🌍 El País</h2>
+                <div id="feed-elpais">Cargando...</div>
+            </div>
+
+            <div class="columna">
+                <h2>📺 20minutos</h2>
+                <div id="feed-sensacine">Cargando...</div>
+            </div>
+
+        </div>
+
+        <script>
+
+// Esta función recibe la URL del feed RSS y el id del div donde mostrar las noticias
+function cargarRSS(urlRSS, contenedorId) {
+
+// rss2json convierte el XML del RSS a JSON para que JavaScript lo pueda leer
+var apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(urlRSS);
+
+fetch(apiUrl)
+.then(function(respuesta) {
+return respuesta.json();
+})
+.then(function(data) {
+
+var html = "";
+
+// Cogemos solo las 5 primeras noticias
+data.items.slice(0, 5).forEach(function(item) {
+
+html += '<div class="noticia">';
+
+// Si la noticia tiene imagen, la mostramos
+if (item.thumbnail) {
+html += '<img src="' + item.thumbnail + '" alt="imagen noticia">';
+}
+
+html += '<h3><a href="' + item.link + '" target="_blank">' + item.title + '</a></h3>';
+html += '<p>' + item.description + '</p>';
+html += '<span class="fecha">📅 ' + item.pubDate + '</span>';
+html += '</div>';
+
+});
+
+document.getElementById(contenedorId).innerHTML = html;
+
+})
+.catch(function(error) {
+document.getElementById(contenedorId).innerHTML = "❌ Error al cargar el feed.";
+console.error(error);
+});
+
+}
+
+// Llamamos a la función con cada feed RSS
+cargarRSS("https://www.xataka.com/feedburner.xml", "feed-xataka");
+cargarRSS("https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada", "feed-elpais");
+cargarRSS("https://www.20minutos.es/rss/", "feed-sensacine");
+
+</script>
+
+    </body>
+</html>

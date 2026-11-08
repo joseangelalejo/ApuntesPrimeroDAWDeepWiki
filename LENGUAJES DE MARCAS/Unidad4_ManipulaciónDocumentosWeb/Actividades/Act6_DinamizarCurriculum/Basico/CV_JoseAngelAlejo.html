@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - José Ángel Alejo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- botón para mostrar/ocultar panel de configuración -->
+    <button id="toggle-config" style="position:fixed;top:10px;right:10px;z-index:1000;">⚙️ Tema</button>
+
+    <!-- panel de personalización -->
+    <div id="config-panel" class="config-panel" hidden style="position:fixed; top:50px; right:10px; border:1px solid #ccc; padding:15px; width:250px; max-height:80vh; overflow:auto; z-index:999; box-shadow:0 0 10px rgba(0,0,0,0.3);">
+        <h3>Personalizar CV</h3>
+        <label class="label-form">Fuente títulos:</label>
+        <select id="title-font">
+            <option value="Poppins, sans-serif">Poppins</option>
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Georgia, serif">Georgia</option>
+        </select>
+        <label class="label-form">Tamaño títulos:</label>
+        <input id="title-size" type="number" min="12" max="48" value="24"> px
+        <label class="label-form">Color títulos:</label>
+        <input id="title-color" type="color" value="#0284c7">
+        <hr>
+        <label class="label-form">Fuente párrafos:</label>
+        <select id="para-font">
+            <option value="Poppins, sans-serif">Poppins</option>
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Georgia, serif">Georgia</option>
+        </select>
+        <label class="label-form">Tamaño párrafos:</label>
+        <input id="para-size" type="number" min="10" max="24" value="14"> px
+        <label class="label-form">Color párrafos:</label>
+        <input id="para-color" type="color" value="#333333">
+        <hr>
+        <label class="label-form">Color acentos:</label>
+        <input id="accent-color" type="color" value="#0284c7">
+        <label class="label-form">Color fondo columna derecha:</label>
+        <input id="bg-color" type="color" value="#ffffff">
+        <hr>
+        <label class="label-form">Modo oscuro:</label>
+        <input id="dark-mode" type="checkbox">
+        <hr>
+    </div>
+
+    <div class="contenedor-cv">
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="columna-izquierda">
+            <div class="foto">
+                <img src="https://github.com/joseangelalejo.png" alt="Foto de José Ángel Alejo">
+            </div>
+            <div class="nombre">
+                <h1>José Ángel Alejo Sillero</h1>
+                <h2>Estudiante de Desarrollo de Aplicaciones Web</h2>
+            </div>
+            <div class="contacto">
+                <a class="item-contacto" href="mailto:joseangelcorptiv@gmail.com">
+                    <i class="material-icons icono">alternate_email</i>
+                    <span class="texto">joseangelcorptiv@gmail.com</span>
+                </a>
+                <div class="item-contacto">
+                    <i class="material-icons icono">phone</i>
+                    <span class="texto">+34 601 048 859</span>
+                </div>
+                <div class="item-contacto">
+                    <i class="material-icons icono">location_on</i>
+                    <span class="texto">Sevilla, España</span>
+                </div>
+                <div class="item-contacto">
+                    <i class="material-icons icono">drive_eta</i>
+                    <span class="texto">Permisos de conducción: B, A2</span>
+                </div>
+            </div>
+            <div class="perfiles">
+                <h2>PERFILES PROFESIONALES</h2>
+                <div class="item-perfil"><a href="https://www.linkedin.com/in/joseangelalejosillero/"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg" alt="LinkedIn" width="24" height="24"> <strong>LinkedIn</strong></a></div>
+                <div class="item-perfil"><a href="https://www.github.com/joseangelalejo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/github.svg" alt="GitHub" width="24" height="24"> <strong>GitHub</strong></a></div>
+            </div>
+            <div class="idiomas">
+                <h2>IDIOMAS</h2>
+                <div class="item-idioma">
+                    <strong>ESPAÑOL</strong><br>
+                    <strong>Nativo</strong>
+                    <div class="barrita-progreso">
+                        <div class="rectangulo-progreso lleno"></div>
+                        <div class="rectangulo-progreso lleno"></div>
+                        <div class="rectangulo-progreso lleno"></div>
+                        <div class="rectangulo-progreso lleno"></div>
+                        <div class="rectangulo-progreso lleno"></div>
+                    </div>
+                </div>
+                <div class="item-idioma">
+                    <strong>INGLÉS</strong><br>
+                    <strong>Alto - B2</strong>
+                    <div class="barrita-progreso">
+                        <div class="rectangulo-progreso lleno"></div>
+                        <div class="rectangulo-progreso lleno"></div>
+                        <div class="rectangulo-progreso lleno"></div>
+                        <div class="rectangulo-progreso"></div>
+                        <div class="rectangulo-progreso"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="habilidades">
+                <h2>COMPETENCIAS DIGITALES</h2>
+                <div class="grupo-habilidad">
+                    <h3>Control de Versiones y Colaboración</h3>
+                    <div class="item-habilidad"><strong>Git</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>GitHub</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>GitOps</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Desarrollo Web</h3>
+                    <div class="item-habilidad"><strong>HTML</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>CSS</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Bootstrap</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Tailwind CSS</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Angular</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>React</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Next.js</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>WordPress</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Lenguajes de Programación</h3>
+                    <div class="item-habilidad"><strong>Java</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>JavaScript</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>TypeScript</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>C#</strong><div class="barrita-progreso"><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>PHP</strong><div class="barrita-progreso"><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Lenguajes de Marcado</h3>
+                    <div class="item-habilidad"><strong>Markdown</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>JSON</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>XML/XSD</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Bases de Datos</h3>
+                    <div class="item-habilidad"><strong>MySQL</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>MariaDB</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>PostgreSQL</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>MongoDB</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>SQLite</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Oracle SQL</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>DevOps e Infraestructura</h3>
+                    <div class="item-habilidad"><strong>Docker</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>nginx</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Proxmox VE</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Linux</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Shell Script</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Entornos de Desarrollo</h3>
+                    <div class="item-habilidad"><strong>VS Code</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>NetBeans</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>IntelliJ IDEA</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                    <div class="item-habilidad"><strong>Eclipse</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div><div class="rectangulo-progreso"></div></div></div>
+                </div>
+                <div class="grupo-habilidad">
+                    <h3>Soft Skills</h3>
+                    <div class="item-habilidad"><strong>Trabajo en equipo</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Resolución de problemas</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Adaptabilidad</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Gestión del tiempo</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Pensamiento crítico</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Proactividad</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Empatía</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                    <div class="item-habilidad"><strong>Creatividad</strong><div class="barrita-progreso"><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div><div class="rectangulo-progreso lleno"></div></div></div>
+                </div>
+            </div>
+        </div>
+        <!-- COLUMNA DERECHA -->
+        <div class="columna-derecha">
+            <div class="perfil">
+                <h2>SOBRE MÍ</h2>
+                <p>Estudiante de <strong>Desarrollo de Aplicaciones Web</strong> con experiencia práctica en desarrollo <strong>frontend y backend</strong>. Entusiasta de Linux como sistema principal con <strong>homelab</strong> con Proxmox VE. Apasionado por <strong>DevOps, GitOps</strong> y la automatización de infraestructura. Busco oportunidades para crecer profesionalmente y aplicar mis conocimientos en un entorno real de desarrollo.</p>
+            </div>
+            <div class="educacion">
+                <h2>EDUCACIÓN</h2>
+                <div class="item-educacion">
+                    <h3>Técnico Superior en Desarrollo de Aplicaciones Web</h3>
+                    <p>Instituto Tecnológico Pablo de la Torre · Sep 2025 - Jun 2027</p>
+                </div>
+                <div class="item-educacion">
+                    <h3>Técnico Superior en Enseñanza y Animación Sociodeportiva</h3>
+                    <p>IES Virgen de Valme · Sep 2020 - Jun 2022</p>
+                </div>
+                <div class="item-educacion">
+                    <h3>Técnico en Conducción de Actividades Físico-Deportivas en el Medio Natural</h3>
+                    <p>IES Hermanos Machado · Sep 2018 - Dic 2019</p>
+                </div>
+            </div>
+            <div class="proyectos">
+                <h2>PROYECTOS</h2>
+                <div class="item-proyecto">
+                    <!-- CORRECCIÓN: quitados style="color:#0284c7" y style="color:#333" inline -->
+                    <h3><a href="https://github.com/joseangelalejo/json-csv-visualizerv1">Data Explorer &amp; Web IDE</a></h3>
+                    <p>Next.js · React · TypeScript · Tailwind CSS · Docker · nginx</p>
+                    <p class="descripcion-proyecto">Aplicación web full-stack para explorar archivos <strong>JSON/CSV</strong> y conectar con servidores de bases de datos (SQLite, PostgreSQL, MySQL, MongoDB). Incluye editor de consultas SQL con Monaco Editor, generación de gráficos dinámicos, diagramas ER y exportación a CSV. Desplegada con <strong>Docker y nginx</strong>; implementa seguridad avanzada (JWT, rate limiting, CSP headers).</p>
+                    <p class="descripcion-proyecto"><b>Disponible en mi perfíl de GitHub. Desplegado con Vercel.</b></p>
+                </div>
+                <div class="item-proyecto">
+                    <h3>CS2-SVSS Fragify</h3>
+                    <p>MySQL · Steam API · Proxmox VE · IEEE 830 · RGPD</p>
+                    <p class="descripcion-proyecto">Sistema backend para recopilar y visualizar estadísticas de jugadores de <strong>Counter-Strike 2</strong> mediante integración con la Steam API. Incluye gestión de rankings ELO, histórico de partidas, estadísticas detalladas y sistema de reportes. Desplegado en homelab propio con <strong>Proxmox VE</strong>. Frontend en desarrollo.</p>
+                </div>
+                <div class="item-proyecto">
+                    <!-- CORRECCIÓN: quitado style="color:#0284c7" inline -->
+                    <h3><a href="https://github.com/joseangelalejo/MisApuntesITPDAW">MisApuntesITPDAW</a></h3>
+                    <p>Markdown · Java · Git</p>
+                    <p class="descripcion-proyecto">Repositorio personal con más de <strong>123 archivos</strong> que documenta el ciclo formativo DAW. Incluye apuntes, ejercicios prácticos, entregables y simulacros de todos los módulos.</p>
+                </div>
+                <div class="item-proyecto">
+                    <!-- CORRECCIÓN: quitado style="color:#0284c7" inline -->
+                    <h3><a href="https://github.com/joseangelalejo/ActividadGit_GestorTareas_JoseAngelAlejo">Gestor de Tareas</a></h3>
+                    <p>HTML · JavaScript · Git</p>
+                    <p class="descripcion-proyecto">Aplicación web de gestión de tareas desarrollada como actividad práctica del módulo de Entornos de Desarrollo, con control de versiones mediante Git y GitHub.</p>
+                </div>
+            </div>
+            <div class="experiencia">
+                <h2>EXPERIENCIA LABORAL</h2>
+                <div class="item-experiencia">
+                    <h3>Carretillero Retráctil</h3>
+                    <p>Factor 5 Carrefour | Ybarra | Acesur | Nov 2024 - May 2025 · Dos Hermanas, Sevilla</p>
+                    <ul>
+                        <li>Recepción y expedición de mercancía. Solución de incidencias. Ubicación de mercancía. Carga y descarga de camiones. Uso de PDA y sistemas relacionados.</li>
+                    </ul>
+                </div>
+                <div class="item-experiencia">
+                    <h3>Recepción de Mercancía · Carretillero Retráctil</h3>
+                    <p>Corporación Jiménez Maña · Feb 2024 - Nov 2024 · Polígono La Isla, Dos Hermanas</p>
+                    <ul>
+                        <li>Recepción de mercancía en almacén y sistema. Solución de incidencias. Asignación a pulmón y picking. Ubicación con carretilla retráctil. Carga y descarga de camiones con todo tipo de carretilla y transpaleta eléctrica. Uso de PDA.</li>
+                    </ul>
+                </div>
+                <div class="item-experiencia">
+                    <h3>Carretillero / Técnico de Taller</h3>
+                    <p>Iris Elegance / Decoplat · Abr 2023 - Ene 2024 · Polígono Cuchipanda, Alcalá de Guadaíra</p>
+                    <ul>
+                        <li>Recepción y ubicación de mercancía. Fabricación de moldes y platos de ducha. Preparación de productos para envío al cliente. Carga y descarga de camiones. Atención al cliente.</li>
+                    </ul>
+                </div>
+                <div class="item-experiencia">
+                    <h3>Monitor Deportivo Multidisciplinar</h3>
+                    <p>Excmo. Ayto. Dos Hermanas · Feb 2022 - Jun 2022</p>
+                    <ul>
+                        <li>Técnico deportivo, salvamento acuático, natación, actividades acuáticas, fitness y deportes individuales. Total: 370 horas.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="formacion-complementaria">
+                <h2>FORMACIÓN COMPLEMENTARIA</h2>
+                <div class="item-formacion">
+                    <h3>Introduction to GitOps (LFS169)</h3>
+                    <p>Linux Foundation · 2025 · Completado · Con certificación</p>
+                </div>
+                <div class="item-formacion">
+                    <h3>Introduction to DevOps and Site Reliability Engineering (LFS162)</h3>
+                    <p>Linux Foundation · 2025 · En curso</p>
+                </div>
+                <div class="item-formacion">
+                    <h3>Prevención de Riesgos Laborales</h3>
+                    <p>Formación oficial en PRL · 2022</p>
+                </div>
+                <div class="item-formacion">
+                    <h3>Carnet de Conducir B y A2</h3>
+                    <p>Permisos de conducción vigentes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const toggleBtn = document.querySelector('#toggle-config');
+        const panel = document.querySelector('#config-panel');
+        toggleBtn.addEventListener('click', () => {
+            panel.toggleAttribute('hidden');
+        });
+
+        const titleEls = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+        const paraEls = document.querySelectorAll('p,li,span,a');
+
+        function updateElements(els, property, value) {
+            els.forEach(el => el.style[property] = value);
+        }
+
+        const controls = [
+            {id:'title-font', type:'change', handler: v => updateElements(titleEls,'fontFamily',v)},
+            {id:'title-size', type:'input', handler: v => updateElements(titleEls,'fontSize',v+'px')},
+            {id:'title-color', type:'input', handler: v => updateElements(titleEls,'color',v)},
+            {id:'para-font', type:'change', handler: v => updateElements(paraEls,'fontFamily',v)},
+            {id:'para-size', type:'input', handler: v => updateElements(paraEls,'fontSize',v+'px')},
+            {id:'para-color', type:'input', handler: v => updateElements(paraEls,'color',v)},
+            {id:'accent-color', type:'input', handler: v => document.documentElement.style.setProperty('--accent-color',v)},
+            // CORRECCIÓN: apunta a columna-derecha en lugar del body
+            {id:'bg-color', type:'input', handler: v => document.querySelector('.columna-derecha').style.backgroundColor = v}
+        ];
+
+        controls.forEach(c => {
+            const el = document.getElementById(c.id);
+            if (el) {
+                el.addEventListener(c.type, e => c.handler(e.target.value));
+            }
+        });
+
+        document.getElementById('dark-mode').addEventListener('change', e => {
+            document.body.classList.toggle('dark-mode', e.target.checked);
+        });
+    </script>
+</body>
+</html>

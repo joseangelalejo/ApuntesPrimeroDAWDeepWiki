@@ -1,0 +1,18 @@
+<!ELEMENT biblioteca (libro+, prestamo+)>
+
+<!ELEMENT libro (titulo, autor, anio)>
+<!ATTLIST libro
+    id ID #REQUIRED
+    genero CDATA #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+
+<!ELEMENT prestamo (fecha)>
+<!ATTLIST prestamo
+    id ID #REQUIRED
+    libroId ID #REQUIRED
+    usuario ID #REQUIRED
+    estado (activo|devuelto) #REQUIRED>
+
+<!ELEMENT fecha (#PCDATA)>

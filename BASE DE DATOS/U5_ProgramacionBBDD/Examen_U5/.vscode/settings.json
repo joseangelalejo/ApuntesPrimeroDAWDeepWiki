@@ -1,0 +1,33 @@
+{
+    "sqltools.connections": [
+        {
+            "name": "ExamDB JAAlejo",
+            "driver": "MySQL",
+            "server": "gateway01.eu-central-1.prod.aws.tidbcloud.com",
+            "port": 4000,
+            "database": "exam_daw_joseangelalejosillero",
+            "username": "oBHmAWFcWFDfQ8t.joseangelalejosi",
+            "askForPassword": true,
+            "mysqlOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            }
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "100.66.214.108",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "DOCKERJA",
+            "database": "CS2SVSS",
+            "username": "root",
+            "password": "5r0i{h<aB8/aqF}"
+        }
+    ]
+}

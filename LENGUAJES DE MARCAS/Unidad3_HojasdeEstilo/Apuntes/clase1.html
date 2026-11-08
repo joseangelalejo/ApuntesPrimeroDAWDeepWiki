@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase1CSS</title>
+    <style>
+        /* Selectores de tipo */
+        p {
+            color: blue;
+            font-family: Miracode, monospace;
+            font-size: 18px;
+        }
+        /* Selector de clase */
+        .estilo2 {
+            color: red;
+            font-family: 'David Libre Bold', serif;
+            font-size: 22px;
+        }
+        /* Selector de ID */
+        #estilo3 {
+            color: green;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+        }
+        /* Estilos para elementos hijos de padre concreto */
+        ul>li {     /* En este caso, se aplicarán estilos a los elementos <li> que son hijos directos de <ul> */
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 200px;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            font-weight: bold;
+            color: brown;
+        }
+        /* En este caso, se aplicarán estilos a los elementos <p> que son hijos directos de <div> */
+        div>form>p {
+            font-style: italic;
+            color: purple;
+        }
+        /* Si quisieramos aplicar estilos a todos los elementos de un tipo concreto que se encuentren dentro de un div> */
+        div p {
+            font-weight: bold;
+            color: orange;
+        }
+        /* Estilos para elementos con clase concreta dentro de un div */
+        div.divEstilo2 p {
+            text-decoration: underline;
+            color: teal;
+        }
+        /* Por último, tenemos los selectores universales*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* El selector universal (*) aplica estilos a todos los elementos del documento */
+    </style>
+</head>
+<body>
+    <p>Parrafo de prueba 1</p>
+    <p class="estilo2">Parrafo de prueba 2</p>
+    <p id="estilo3">Parrafo de prueba 3</p>
+    <!-- Lista desordenada -->
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <!-- Div con formulario -->
+    <div>
+        <form>
+            <p>Este párrafo está dentro de un formulario que a su vez está dentro de un div.</p>
+        </form>
+    </div>
+    <!-- Div con párrafos -->
+    <div>
+        <p>Este es un párrafo dentro de un div.</p>
+        <p style="color: blue;">Otro párrafo dentro del mismo div.</p>
+    </div>
+    <!-- Div con clase específica-->
+    <div class="divEstilo2">
+        <p>Este párrafo está dentro de un div con clase "estilo2".</p>
+    </div>
+</body>
+</html>
